@@ -47,8 +47,6 @@ public class LoginController {
         }
 
         model.addAttribute("name", user.getUserName());
-        model.addAttribute("password", user.getPassword());
-
         return "registergroom";
 	}
 }

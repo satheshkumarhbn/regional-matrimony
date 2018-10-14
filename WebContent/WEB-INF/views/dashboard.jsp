@@ -16,19 +16,20 @@
   <h1>Dashboard</h1>
   <nav>
     <ul>
+      <li><a href="javascript:void(0);" data-title="Timeline">Timeline</a></li>
       <li><a href="javascript:void(0);" data-title="Register Groom">Register Groom</a></li>
       <li><a href="javascript:void(0);" data-title="Register Bride">Register Bride</a></li>
       <li><a href="javascript:void(0);" data-title="Mailing">Mailing</a></li>
-      <li><a href="javascript:void(0);" data-title="Search">Timeline</a></li>
+      <li><a href="javascript:void(0);" data-title="Search">Search</a></li>
       <li><a href="javascript:void(0);" data-title="Settings">Settings</a></li>
-      <li><a href="javascript:void(0);" data-title="Timeline">Search</a></li>
+      <li><a href="javascript:void(0);" data-title="Reports">Reports</a></li>
     </ul>
   </nav>
 </header>
 <main>
 
   <div class="title">
-    <h2>Projects</h2>
+    <h2>Register Groom</h2>
     <a href="javascript:void(0);">Hello ${name}!</a>
   </div>
 

@@ -984,16 +984,19 @@ header nav ul li:nth-child(2) a:before {
   content: "\1f465";
 }
 header nav ul li:nth-child(3) a:before {
-  content: "\1f4c5";
+  content: "\1f465";
 }
 header nav ul li:nth-child(4) a:before {
-  content: "\e771";
+  content: "\1f4c5";
 }
 header nav ul li:nth-child(5) a:before {
-  content: "\2699";
+  content: "\1f50d";
 }
 header nav ul li:nth-child(6) a:before {
-  content: "\1f50d";
+  content: "\2699";
+}
+header nav ul li:nth-child(7) a:before {
+  content: "\e756";
 }
 main {
   flex: 1;
@@ -1009,6 +1012,7 @@ main {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  position: relative;
 }
 .title a {
   color: #AAA;
@@ -1032,18 +1036,15 @@ a:hover {
   transition: all 0.5s;
 }
 .larg {
-  max-width: 960px;
-  margin: 30px auto;
-  padding: 0 30px;
+  max-width: auto;
+  margin: 5px 0;
+  padding: 0 10px;
+  display: flex;
 }
 .larg div {
-  background-color: #F7F7F7;
-  border: 1px solid #E2E2E2;
-  padding: 0 20px;
-  margin: 15px 0;
-}
-.larg div:hover {
-  background-color: #fafafa;
+  border: 0px solid #E2E2E2;
+  padding: 10 15px;
+  margin: 5px 0;
 }
 .larg div h3 span {
   font-family: 'entypo';
@@ -1057,8 +1058,14 @@ a:hover {
   transition: all 0.5s;
 }
 .larg div p {
-  display: none;
+  display: flex;
   margin-left: 10px;
-  padding: 0 15px;
+  padding: 0 5px;
+  border-left: 1px solid #ccc;
+}
+.larg div p form {
+  display: flex;
+  margin-left: 10px;
+  padding: 0 10px;
   border-left: 1px solid #ccc;
 }
