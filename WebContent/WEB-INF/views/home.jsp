@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -78,7 +78,6 @@
   <div class="form">
   <h2 class="header">Please Login</h2>
     <form class="login-form" action="userLogin" method="post">
-    <P class="server-time">The time on the server is ${serverTime}.</p>
     <p class="errormessage">${errorMessage}</p>
       <input name="userName" type="text" placeholder="username"/>
       <input name="password" type="password" placeholder="password"/>

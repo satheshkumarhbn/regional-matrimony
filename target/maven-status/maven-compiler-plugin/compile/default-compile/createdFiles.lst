@@ -1,3 +1,12 @@
-com\springmvc\web\service\LoginService.class
-com\springmvc\web\controller\LoginController.class
-com\springmvc\web\model\User.class
+com\regionalmatrimony\web\controller\LoginController.class
+com\regionalmatrimony\web\model\Groom.class
+com\regionalmatrimony\web\model\User.class
+com\regionalmatrimony\web\dao\BrideRepository.class
+com\regionalmatrimony\web\service\SearchService.class
+com\regionalmatrimony\web\dao\LoginRepository.class
+com\regionalmatrimony\web\service\DashboardService.class
+com\regionalmatrimony\web\dao\GroomRepository.class
+com\regionalmatrimony\web\controller\SearchController.class
+com\regionalmatrimony\web\model\Bride.class
+com\regionalmatrimony\web\service\LoginService.class
+com\regionalmatrimony\web\controller\DashboardController.class

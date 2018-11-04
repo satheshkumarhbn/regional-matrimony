@@ -1,216 +1,578 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%><%-- 
+    <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>  --%>
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Regional Matrimony- Register Groom</title>
-	<link href="<c:url value="resources/css/dashboard/style.css"/>" rel="stylesheet">
-	<link href="<c:url value="resources/css/dashboard/styles.css"/>" rel="stylesheet">
-	<link href="<c:url value="resources/css/dashboard/switchery.min.css"/>" rel="stylesheet">
-	
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Regional Matrimony- Register Groom</title>
+<meta name="description" content="Regional Matrimony Admin Portal">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
+<link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
 </head>
 <body>
-<main>
-<jsp:include page="dashboard.jsp"></jsp:include>
-	<article class="larg">
-		<div id="wrapper">
-			<form action="/registerGroom" method="post">
-				<div class="col-2">
-			    <label>
-			      FirstName
-			      <input placeholder="What is Groom's first name?" id="firstName" name="firstName" required>
-			    </label>
-			  </div>
-			  <div class="col-2">
-			    <label>
-			      LastName
-			      <input placeholder="What is Groom's second name?" id="secondName" name="secondName" required>
-			    </label>
-			  </div>
-			  
-			  <div class="col-3">
-			    <label>
-			      Date of Birth
-			      <input type="date" id="dateOfBirth" name="dateOfBirth" required>
-			    </label>
-			  </div>
-			  <div class="col-3">
-			    <label>
-			      Age
-			      <input placeholder="What is Groom's age?" pattern="[0-9][0-9]" title="Age should be in 2 digit" id="age" name="age" required>
-			    </label>
-			  </div>
-			  <div class="col-3">
-			    <label>
-			      Gender
-			      <input placeholder="Male" type="text" id="gender" name="gender" disabled>
-			    </label>
-			  </div>
-			  
-			  <div class="col-2">
-			    <label>
-			      Education
-			      <input placeholder="What is Groom's highiest education qualification?" id="education" name="education" required>
-			    </label>
-			  </div>
-			  <div class="col-2">
-			    <label>
-			      Occupation
-			      <input placeholder="Where is Groom's Occupation?" id="occupation" name="occupation" required>
-			    </label>
-			  </div>
-			  <div class="col-3">
-			    <label>
-			      Annual Income
-			      <input placeholder="What is Groom's Annual Income?" id="annualIncome" name="annualIncome">
-			    </label>
-			  </div>
-			  <div class="col-3">
-			    <label>
-			      Height
-			      <input placeholder="What is Groom's Height?" id="height" name="height">
-			    </label>
-			  </div>
-			  <div class="col-3">
-			    <label>
-			      Weight
-			      <input placeholder="What is Groom's Weight?" id="weight" name="weight">
-			    </label>
-			  </div>
-			  
-			  <div class="col-2">
-			    <label>
-			      Father's Name
-			      <input placeholder="What is Groom's father name?" id="fathersName" name="fathersName" required>
-			    </label>
-			  </div>
-			  <div class="col-2">
-			    <label>
-			      Mother's Name
-			      <input placeholder="Where is Groom's mother name?" id="mothersName" name="mothersName" required>
-			    </label>
-			  </div>
-			  <div class="col-2">
-			    <label>
-			      Father's Occupation
-			      <input placeholder="What is Groom's father occupation?" id="fathersOccupation" name="fathersOccupation" required>
-			    </label>
-			  </div>
-			  <div class="col-2">
-			    <label>
-			      Mother's Occupation
-			      <input placeholder="What is Groom's mother occupation?" id="mothersOccupation" name="mothersOccupation" required>
-			    </label>
-			  </div>
-			  
-			  <div class="col-4">
-			    <label>
-			      Caste
-			      <input placeholder="What is Groom's caste?" id="caste" name="caste" required>
-			    </label>
-			  </div>
-			  <div class="col-4">
-			    <label>
-			      SubCaste
-			      <input placeholder="What is Groom's Sub Caste?" id="subCaste" name="subCaste" required>
-			    </label>
-			  </div>
-			  <div class="col-4">
-			    <label>
-			      Division
-			      <input placeholder="What is Groom's division?" id="division" name="division" required>
-			    </label>
-			  </div>
-			  <div class="col-4">
-			    <label>
-			      Diety
-			      <input placeholder="What is Groom's Diety(Kulatheivam)?" id="diety" name="diety" required>
-			    </label>
-			  </div>
-			  
-			  <div class="col-3">
-			    <label>
-			      Mobile Number
-			      <input placeholder="What is Groom's Mobile Number?" pattern="[6789][0-9]{9}" title="Mobile number starts with 6-9 and remaing 9 digit is allowed (+91 not needed)" id="mobileNumber" name="mobileNumber" required>
-			    </label>
-			  </div>
-			  
-			  <div class="col-3">
-			    <label>
-			      Alternate Mobile Number
-			      <input placeholder="What is Groom's Alternate Mobile Number?" pattern="[6789][0-9]{9}" title="Mobile number starts with 6-9 and remaing 9 digit is allowed (+91 not needed)" id="alternateMobileNumber" name="alternateMobileNumber">
-			    </label>
-			  </div>
-			  
-			  <div class="col-3">
-			    <label>
-			      Whatsapp Number
-			      <input placeholder="What is Groom's Whatsapp Number?" type="text" pattern="[6789][0-9]{9}" title="Mobile number starts with 6-9 and remaing 9 digit is allowed (+91 not needed)" id="whatsappNumber" name="whatsappNumber" required>
-			    </label>
-			  </div>
-			  
-			  <div class="col-2">
-			    <label>
-			      Email Address
-			      <input placeholder="What is Groom's E-mail address?" type="email" id="email" name="email" required>
-			    </label>
-			  </div>
-			  
-			  <div class="col-2">
-			    <label>
-			      Address
-			      <input placeholder="What is Groom's address for Communication?" type="text" id="address" name="address">
-			    </label>
-			  </div>
-			  
-			  <div class="col-4">
-			    <label>
-			      Star
-			      <input placeholder="What is Groom's Star?" type="text" id="star" name="star" required>
-			    </label>
-			  </div>
-			  <div class="col-4">
-			    <label>
-			      Raasi
-			      <input placeholder="What is Groom's Raasi?" type="text" id="raasi" name="raasi" required>
-			    </label>
-			  </div>
-			  <div class="col-4">
-			    <label>
-			      Time of birth
-			      <input placeholder="What is Groom's Time of birth?" type="text" id="timeOfBirth" name="timeOfBirth">
-			    </label>
-			  </div>
-			  <div class="col-4">
-			    <label>
-			      Place of Birth
-			      <input placeholder="What is Groom's Place of Birth?" type="text" id="placeOfBirth" name="placeOfBirth">
-			    </label>
-			  </div>
-			  
-			  <div class="col-2">
-			    <label>
-			      Horoscope
-			      <input type="file" id="horoscope" name="horoscope" required>
-			    </label>
-			  </div>
-			  
-			  <div class="col-submit">
-			    <button class="submitbtn">Register Groom</button>
-			  </div>
-			</form>
+	<jsp:include page="dashboard.jsp"></jsp:include>
+	<!-- Right Panel -->
+	<div id="right-panel" class="right-panel">
+		<div class="breadcrumbs">
+			<div class="breadcrumbs-inner">
+				<div class="row m-0">
+					<div class="col-sm-4">
+						<div class="page-header float-left">
+							<div class="page-title">
+								<h1>Register Groom</h1>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="page-header float-right">
+							<div class="page-title">
+								<ol class="breadcrumb text-right">
+									<li><a href="#">Dashboard</a></li>
+									<li class="active">Register Groom</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		<script type="text/javascript">
-		var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+		<div class="content">
+			<div class="animated fadeIn">
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="card">
+							<div class="card-header">
+								<strong>Groom Registration</strong> Form
+							</div>
+							<div class="card-body card-block">
+								<form action="registerGroomForm" method="post"
+									class="form-horizontal">
+									<!-- enctype="multipart/form-data" -->
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="firstName" class=" form-control-label">First
+												Name</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<input type="text" id="firstName" name="firstName"
+												placeholder="Please enter Groom's First Name"
+												class="form-control"><small
+												class="form-text text-muted">Name should contain
+												only alphabets</small>
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="lastName" class=" form-control-label">Last
+												Name</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<input type="text" id="lastName" name="lastName"
+												placeholder="Please enter Groom's Last Name"
+												class="form-control"><small
+												class="form-text text-muted">Name should contain
+												only alphabets</small>
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="dateofbirth" class=" form-control-label">Date
+												of Birth</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<input type="date" id=dateofbirth name="dateofbirth"
+												class="form-control"><small
+												class="form-text text-muted">Groom's age should be
+												more than 18</small>
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="age" class=" form-control-label">Age</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<select name="age" id="age" class="form-control">
+												<option value="0">Please select Groom's age</option>
+												<option value="19">19</option>
+												<option value="20">20</option>
+												<option value="21">21</option>
+												<option value="22">22</option>
+												<option value="23">23</option>
+												<option value="24">24</option>
+												<option value="25">25</option>
+												<option value="26">26</option>
+												<option value="27">27</option>
+												<option value="28">28</option>
+												<option value="29">29</option>
+												<option value="30">30</option>
+												<option value="31">31</option>
+												<option value="32">32</option>
+												<option value="33">33</option>
+												<option value="34">34</option>
+												<option value="35">35</option>
+												<option value="36">36</option>
+												<option value="37">37</option>
+												<option value="38">38</option>
+												<option value="39">39</option>
+												<option value="40">40</option>
+												<option value="41">41</option>
+												<option value="42">42</option>
+												<option value="43">43</option>
+												<option value="44">44</option>
+												<option value="45">45</option>
+												<option value="46">46</option>
+												<option value="47">47</option>
+												<option value="48">48</option>
+												<option value="49">49</option>
+												<option value="50">50</option>
+											</select>
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="gender" class=" form-control-label">Gender</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<input type="text" id="gender" name="gender"
+												placeholder="male" value="male" disabled="disabled" class="form-control">
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="education" class=" form-control-label">Educational
+												Qualification</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<select name="education" id="education" class="form-control">
+												<option value="0">Please select Groom's highest
+													educational qualification</option>
+												<option value="SSLC">SSLC</option>
+												<option value="HSC">HSC</option>
+												<option value="Bachelors in Engineering">Bachelors
+													in Engineering</option>
+												<option value="Masters in Engineering">Masters in
+													Engineering</option>
+												<option value="Bachelors in Science">Bachelors in
+													Science</option>
+												<option value="Masters in Science">Masters in
+													Science</option>
+												<option value="Bachelors in Commerce">Bachelors in
+													Commerce</option>
+												<option value="Masters in Commerce">Masters in
+													Commerce</option>
+												<option value="Bachelors in Science">Bachelors in
+													Science</option>
+												<option value="Masters in Science">Masters in
+													Science</option>
+												<option value="Bachelors in Computer Applications">Bachelors
+													in Computer Applications</option>
+												<option value="Masters in Computer Applications">Masters
+													in Computer Applications</option>
+											</select>
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="occupation" class=" form-control-label">Groom's
+												Occupation</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<select name="occupation" id="occupation"
+												class="form-control">
+												<option value="0">Please select Groom's Occupation</option>
+												<option value="Business-own">Business- own</option>
+												<option value="Business-partner">Business- partner</option>
+												<option value="Salaried-own">Salaried- public
+													sector</option>
+												<option value="Salaried-own">Salaried- private
+													sector</option>
+												<option value="other">Others</option>
+											</select>
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="annualIncome" class=" form-control-label">Groom's
+												Annual Income</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<select name="annualIncome" id="annualIncome"
+												class="form-control">
+												<option value="0">Please select Groom's Annual
+													Income</option>
+												<option value="1Lakhs-2Lakhs">1Lakhs-2Lakhs</option>
+												<option value="2Lakhs-4Lakhs">2Lakhs-4Lakhs</option>
+												<option value="4Lakhs-6Lakhs">4Lakhs-6Lakhs</option>
+												<option value="6Lakhs-8Lakhs">6Lakhs-8Lakhs</option>
+												<option value="8Lakhs-10Lakhs">8Lakhs-10Lakhs</option>
+												<option value="8Lakhs-10Lakhs">8Lakhs-10Lakhs</option>
+												<option value="10Lakhs-15Lakhs">10Lakhs-15Lakhs</option>
+												<option value="15Lakhs-20Lakhs">15Lakhs-20Lakhs</option>
+											</select>
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="workLocation" class=" form-control-label">Work
+												Location</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<input type="text" id="workLocation" name="workLocation"
+												placeholder="Please enter Groom's Work Location"
+												class="form-control">
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="height" class=" form-control-label">Height</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<input type="text" id="height" name="height"
+												placeholder="Please enter Groom's Height"
+												class="form-control">
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="weight" class=" form-control-label">Weight</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<input type="text" id="weight" name="weight"
+												placeholder="Please enter Groom's Weight"
+												class="form-control">
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="fathersName" class=" form-control-label">Father's
+												Name</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<input type="text" id="fathersName" name="fathersName"
+												placeholder="Please enter Groom's Father Name"
+												class="form-control">
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="mothersName" class=" form-control-label">Mother's
+												Name</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<input type="text" id="mothersName" name="mothersName"
+												placeholder="Please enter Groom's Mother Name"
+												class="form-control">
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="fathersOccupation" class=" form-control-label">Father's
+												Occupation</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<select name="fathersOccupation" id="fathersOccupation"
+												class="form-control">
+												<option value="0">Please select Groom's Father
+													Occupation</option>
+												<option value="own business">Own business</option>
+												<option value="public sector">Public Sector</option>
+												<option value="private sector">Private Sector</option>
+												<option value="teacher">Teacher</option>
+												<option value="doctor">Doctor</option>
+												<option value="lawyer">Lawyer</option>
+												<option value="other">Other</option>
+											</select>
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="mothersOccupation" class=" form-control-label">Mother's
+												Occupation</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<select name="mothersOccupation" id="mothersOccupation"
+												class="form-control">
+												<option value="0">Please select Groom's Mother
+													Occupation</option>
+												<option value="home maker">Home Maker</option>
+												<option value="public sector">Public Sector</option>
+												<option value="private sector">Private Sector</option>
+												<option value="teacher">Teacher</option>
+												<option value="doctor">Doctor</option>
+												<option value="lawyer">Lawyer</option>
+												<option value="other">Other</option>
+											</select>
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="caste" class=" form-control-label">Caste</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<select name="caste" id="caste" class="form-control">
+												<option value="0">Please select Groom's Caste</option>
+												<option value="hindu nadar">Hindu Nadar</option>
+												<option value="christian nadar">Christian Nadar</option>
+											</select>
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="subCaste" class=" form-control-label">Sub
+												Caste</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<select name="subCaste" id="subCaste" class="form-control">
+												<option value="0">Please select Groom's Sub Caste</option>
+												<option value="nattathi nadar">Nattathi nadar</option>
+												<option value="kongu nadar">Kongu Nadar</option>
+												<option value="nattuva nadar">Nattuva Nadar</option>
+												<option value="karunchanar">Karunchanar</option>
+												<option value="sanar">Sanar</option>
+											</select>
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="division" class=" form-control-label">Division</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<select name="division" id="division" class="form-control">
+												<option value="0">Please select Groom's Division</option>
+												<option value="pallan">Pallan</option>
+												<option value="madan kulam">Madan Kulam</option>
+												<option value="sakkarai vilambi">Sakkarai vilambi</option>
+												<option value="uppu kachi">Uppu kachi</option>
+												<option value="silambu chinnan">Silambu chinnan</option>
+												<option value="nay thinni">Nay thinni</option>
+												<option value="monnai kootam">Monnai kootam</option>
+												<option value="kadai kootam">Kadai kootam</option>
+												<option value="selathan kootam">Selathan kootam</option>
+												<option value="others">Others</option>
+											</select>
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="diety" class=" form-control-label">Diety</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<select name="diety" id="diety" class="form-control">
+												<option value="0">Please select Groom's Diety</option>
+												<option value="angalamman">Angalamman</option>
+												<option value="bathrakaliamman">Bathrakaliamman</option>
+												<option value="others">Others</option>
+											</select>
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="maritalStatus" class=" form-control-label">Marital
+												Status</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<select name="maritalStatus" id="maritalStatus"
+												class="form-control">
+												<option value="0">Please select Groom's Marital
+													Status</option>
+												<option value="never married">Never Married</option>
+												<option value="divorced">Divorced</option>
+												<option value="widowed">Widowed</option>
+												<option value="awaiting divorced">Awaiting Divorced</option>
+											</select>
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="disability" class=" form-control-label">Disabilities</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<select name="disability" id="disability"
+												class="form-control">
+												<option value="normal">Normal</option>
+												<option value="physically challenged">Physically
+													Challenged</option>
+											</select>
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="siblings" class=" form-control-label">Siblings</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<select name="siblings" id="siblings" class="form-control">
+												<option value="0">Please select Groom's Siblings</option>
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+												<option value="6">6</option>
+												<option value="7">7</option>
+											</select>
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="mobileNumber" class=" form-control-label">Mobile
+												Number</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<input type="text" id="mobileNumber" name="mobileNumber"
+												placeholder="Please enter Groom's Mobile Number"
+												class="form-control" pattern="[6789][0-9]{9}"
+												title="Mobile number starts with 6-9 and remaing 9 digit is allowed (+91 not needed)">
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="alternateMobileNumber"
+												class=" form-control-label">Alternate Mobile Number</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<input type="text" id="alternateMobileNumber"
+												name="alternateMobileNumber"
+												placeholder="Please enter Groom's Alternate Mobile Number"
+												class="form-control" pattern="[6789][0-9]{9}"
+												title="Mobile number starts with 6-9 and remaing 9 digit is allowed (+91 not needed)">
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="whatsappNumber" class=" form-control-label">Whatsapp
+												Number</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<input type="text" id="whatsappNumber" name="whatsappNumber"
+												placeholder="Please enter Groom's Whatsapp Number"
+												class="form-control" pattern="[6789][0-9]{9}"
+												title="Mobile number starts with 6-9 and remaing 9 digit is allowed (+91 not needed)">
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="email" class=" form-control-label">Email</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<input type="email" id="email" name="email"
+												placeholder="Enter Groom's Email" class="form-control"><small
+												class="help-block form-text">Please enter your email</small>
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="address" class=" form-control-label">Address</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<textarea name="address" id="address" rows="5"
+												placeholder="Please enter Groom's address for Communication"
+												class="form-control"></textarea>
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="star" class=" form-control-label">Star</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<select name="star" id="star" class="form-control">
+												<option value="ashvini">Ashvini</option>
+												<option value="bharani">Bharani</option>
+												<option value="karthigai">Karthigai</option>
+												<option value="rohini">Rohini</option>
+												<option value="mirukaseerisham">Mirukaseerisham</option>
+												<option value="thiruvathirai">Thiruvathirai</option>
+												<option value="punarpusam">Punarpusam</option>
+												<option value="poosam">Poosam</option>
+												<option value="ayilyam">Ayilyam</option>
+												<option value="maham">Maham</option>
+												<option value="pooram">Pooram</option>
+												<option value="uthiram">Uthiram</option>
+												<option value="hashtham">Hashtham</option>
+												<option value="sithirai">Sithirai</option>
+												<option value="swathi">Swathi</option>
+												<option value="visakam">Visakam</option>
+												<option value="anusham">Anusham</option>
+												<option value="kettai">kettai</option>
+												<option value="moolam">Moolam</option>
+												<option value="pooradam">Pooradam</option>
+												<option value="uthiradam">Uthiradam</option>
+												<option value="thiruvonam">Thiruvonam</option>
+												<option value="avittam">Avittam</option>
+												<option value="sathayam">Sathayam</option>
+												<option value="pooratathi">Pooratathi</option>
+												<option value="uthiratathi">Uthiratathi</option>
+												<option value="revathi">Revathi</option>
+											</select>
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="raasi" class=" form-control-label">Raasi</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<select name="raasi" id="raasi" class="form-control">
+												<option value="mesham">Mesham</option>
+												<option value="rishabam">Rishabam</option>
+												<option value="mithunam">Mithunam</option>
+												<option value="kadakam">Kadakam</option>
+												<option value="simmam">Simmam</option>
+												<option value="kanni">Kanni</option>
+												<option value="thulam">Thulam</option>
+												<option value="viruchikam">Viruchikam</option>
+												<option value="dhanusu">Dhanusu</option>
+												<option value="makaram">Makaram</option>
+												<option value="kumbam">Kumbam</option>
+												<option value="meenam">Meenam</option>
+											</select>
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="timeOfBirth" class=" form-control-label">Time
+												of birth</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<input type="time" id="timeOfBirth" name="timeOfBirth"
+												placeholder="Please enter Groom's Time of birth"
+												class="form-control">
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="placeOfBirth" class=" form-control-label">Place
+												of Birth</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<input type="text" id="placeOfBirth" name="placeOfBirth"
+												placeholder="Please enter Groom's Place of Birth"
+												class="form-control">
+										</div>
+									</div>
+									<div class="row form-group">
+										<div class="col col-md-3">
+											<label for="horoscope" class=" form-control-label">Horoscope</label>
+										</div>
+										<div class="col-12 col-md-9">
+											<input type="file" id="horoscope" name="horoscope"
+												class="form-control-file">
+										</div>
+									</div>
+									<button type="submit"
+										class="btn btn-outline-success btn-lg btn-block">Register
+										Groom</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		
-		elems.forEach(function(html) {
-		  var switchery = new Switchery(html);
-		});
-		</script>
-		<script src="resources/js/dashboard/switchery.min.js"></script>
-	</article>
-</main>
+	</div>
 </body>
 </html>
