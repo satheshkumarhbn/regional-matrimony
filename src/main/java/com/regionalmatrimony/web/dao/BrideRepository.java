@@ -10,12 +10,15 @@ import com.regionalmatrimony.web.model.Bride;
 
 public interface BrideRepository extends JpaRepository<Bride, Long> {
 
-	@Query("SELECT bride FROM Bride bride WHERE bride.mobileNumber = (:mobileNumber)")
-	List<Bride> findByMobileNumber(@Param("mobileNumber") String mobileNumber);
+	@Query("SELECT bride FROM Bride bride WHERE bride.mobileNumber = (:mobileNumber) AND bride.agencyId = (:agencyId)")
+	List<Bride> findByMobileNumber(@Param("mobileNumber") String mobileNumber, @Param("agencyId") String agencyId);
 	
-	@Query("SELECT bride FROM Bride bride WHERE bride.firstName = (:firstName) OR bride.lastName = (:lastName)")
-	List<Bride> findBrideByFullName(@Param("firstName") String firstName, @Param("lastName") String lastName);
+	@Query("SELECT bride FROM Bride bride WHERE (bride.firstName = (:firstName) OR bride.lastName = (:lastName)) AND bride.agencyId = (:agencyId)")
+	List<Bride> findBrideByFullName(@Param("firstName") String firstName, @Param("lastName") String lastName, @Param("agencyId") String agencyId);
 	
-	@Query("SELECT bride FROM Bride bride WHERE bride.star = (:star) AND bride.raasi = (:raasi)")
-	List<Bride> findBrideByStarNdRaasi(@Param("star") String star, @Param("raasi") String raasi);
+	@Query("SELECT bride FROM Bride bride WHERE bride.star = (:star) AND bride.raasi = (:raasi) AND bride.agencyId = (:agencyId)")
+	List<Bride> findBrideByStarNdRaasi(@Param("star") String star, @Param("raasi") String raasi, @Param("agencyId") String agencyId);
+	
+	@Query("SELECT bride FROM Bride bride WHERE bride.agencyId = (:agencyId)")
+	List<Bride> findBrideByAgency(@Param("agencyId") String agencyId);
 }

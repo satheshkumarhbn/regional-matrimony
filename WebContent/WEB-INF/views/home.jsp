@@ -77,10 +77,10 @@
   <div class="login-page">
   <div class="form">
   <h2 class="header">Please Login</h2>
-    <form class="login-form" action="userLogin" method="post">
+    <form class="login-form" action="agencyLogin" method="post">
     <p class="errormessage">${errorMessage}</p>
-      <input name="userName" type="text" placeholder="username"/>
-      <input name="password" type="password" placeholder="password"/>
+      <input name="agencyId" type="text" placeholder="Agency Id"/>
+      <input name="password" type="password" placeholder="Password"/>
       <button type="submit">login</button>
     </form>
   </div>

@@ -12,12 +12,15 @@ import com.regionalmatrimony.web.model.Groom;
 @Transactional
 public interface GroomRepository extends JpaRepository<Groom, Long> {
 	
-	@Query("SELECT groom FROM Groom groom WHERE groom.mobileNumber = (:mobileNumber)")
-	List<Groom> findByMobileNumber(@Param("mobileNumber") String mobileNumber);
+	@Query("SELECT groom FROM Groom groom WHERE groom.mobileNumber = (:mobileNumber) AND groom.agencyId = (:agencyId)")
+	List<Groom> findByMobileNumber(@Param("mobileNumber") String mobileNumber, @Param("agencyId") String agencyId);
 	
-	@Query("SELECT groom FROM Groom groom WHERE groom.firstName = (:firstName) OR groom.lastName = (:lastName)")
-	List<Groom> findGroomByFullName(@Param("firstName") String firstName, @Param("lastName") String lastName);
+	@Query("SELECT groom FROM Groom groom WHERE (groom.firstName = (:firstName) OR groom.lastName = (:lastName)) AND groom.agencyId = (:agencyId)")
+	List<Groom> findGroomByFullName(@Param("firstName") String firstName, @Param("lastName") String lastName, @Param("agencyId") String agencyId);
 	
-	@Query("SELECT groom FROM Groom groom WHERE groom.star = (:star) AND groom.raasi = (:raasi)")
-	List<Groom> findGroomByStarNdRaasi(@Param("star") String star, @Param("raasi") String raasi);
+	@Query("SELECT groom FROM Groom groom WHERE groom.star = (:star) AND groom.raasi = (:raasi) AND groom.agencyId = (:agencyId)")
+	List<Groom> findGroomByStarNdRaasi(@Param("star") String star, @Param("raasi") String raasi, @Param("agencyId") String agencyId);
+	
+	@Query("SELECT groom FROM Groom groom WHERE groom.agencyId = (:agencyId)")
+	List<Groom> findGroomByAgency(@Param("agencyId") String agencyId);
 }

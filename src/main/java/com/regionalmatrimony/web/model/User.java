@@ -1,36 +1,36 @@
 package com.regionalmatrimony.web.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name="USER")
 public class User {
 
-	@Id
-	@Column(name="id")
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
-	@Column(name="username")
-	private String userName;
-	@Column(name="password")
+	private String memberId;
+	private String mobileNumber;
+	private String email;
+	private String agencyId;
 	private String password;
 	
-	public Long getId() {
-		return id;
+	public String getMemberId() {
+		return memberId;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
 	}
-	public String getUserName() {
-		return userName;
+	public String getMobileNumber() {
+		return mobileNumber;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setMobileNumber(String mobileNumber) {
+		this.mobileNumber = mobileNumber;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getAgencyId() {
+		return agencyId;
+	}
+	public void setAgencyId(String agencyId) {
+		this.agencyId = agencyId;
 	}
 	public String getPassword() {
 		return password;
@@ -38,5 +38,9 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+	@Override
+	public String toString() {
+		return "User [memberId=" + memberId + ", mobileNumber=" + mobileNumber + ", email=" + email + ", agencyId="
+				+ agencyId + ", password=" + password + "]";
+	}
 }

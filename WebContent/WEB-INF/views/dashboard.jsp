@@ -112,7 +112,9 @@
     <!-- Left Panel -->
     <tag:url value="/registerGroom" var="urlGroom" />
 	<tag:url value="/registerBride" var="urlBride"/>
-	<tag:url value="/search" var="urlSearch" />
+	<tag:url value="/getAllUserReport" var="urlAllUserReport"/>
+	<tag:url value="/getGroomReport" var="urlGroomReport"/>
+	<tag:url value="/getBrideReport" var="urlBrideReport"/>
     <aside id="left-panel" class="left-panel">
         <nav class="navbar navbar-expand-sm navbar-default">
             <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -130,37 +132,34 @@
                     <li class="menu-title">Search</li><!-- /.menu-title -->
 
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Search By</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-search"></i>Search By</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-fort-awesome"></i><a href="searchbymemberid.jsp">Member Id</a></li>
-							<li><i class="menu-icon ti-themify-logo"></i><a href="searchbyfullname.jsp">Full Name</a></li>
-                            <li><i class="menu-icon ti-themify-logo"></i><a href="searchbymobilenumber.jsp">Mobile Number</a></li>
-							<li><i class="menu-icon ti-themify-logo"></i><a href="searchbystarraasi.jsp">Star & Raasi</a></li>
+                            <li><i class="menu-icon fa fa-info-circle"></i><a href="searchbymemberid.jsp">Member Id</a></li>
+							<li><i class="menu-icon fa fa-sort-alpha-asc"></i><a href="searchbyfullname.jsp">Full Name</a></li>
+                            <li><i class="menu-icon fa fa-mobile"></i><a href="searchbymobilenumber.jsp">Mobile Number</a></li>
+							<li><i class="menu-icon fa fa-star-half-o"></i><a href="searchbystarraasi.jsp">Star & Raasi</a></li>
                         </ul>
                     </li>
                     <li class="menu-title">Reports</li><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Generate Report</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Generate Report</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">All members</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">All Groom</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">All Bride</a></li>
+                            <li><i class="menu-icon fa fa-users"></i><a href="${urlAllUserReport }">All members</a></li>
+                            <li><i class="menu-icon fa fa-male"></i><a href="${urlGroomReport }">All Groom</a></li>
+                            <li><i class="menu-icon fa fa-female"></i><a href="${urlBrideReport }">All Bride</a></li>
                         </ul>
                     </li>
                     <li class="menu-title">Settings</li><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Basic Settings</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-wrench"></i>Basic Settings</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Edit Profile</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Contact admin</a></li>
-                            <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Feedback</a></li>
+                            <li><i class="menu-icon fa fa-pencil-square-o"></i><a href="page-login.html">Edit Profile</a></li>
                         </ul>
                     </li>
 					<li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-glass"></i>Advanced Settings</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-suitcase"></i>Advanced Settings</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-login.html">Edit Profile</a></li>
-                            <li><i class="menu-icon fa fa-sign-in"></i><a href="page-register.html">Contact admin</a></li>
+                            <li><i class="menu-icon fa fa-phone-square"></i><a href="page-register.html">Contact admin</a></li>
                             <li><i class="menu-icon fa fa-paper-plane"></i><a href="pages-forget.html">Feedback</a></li>
                         </ul>
                     </li>

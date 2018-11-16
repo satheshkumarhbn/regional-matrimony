@@ -87,6 +87,10 @@ public class Groom {
 	private String placeOfBirth;
 	@Column(name="horoscope")
 	private File horoscope;
+	@Column(name="agencyid")
+	private String agencyId;
+	@Column(name="password")
+	private String password;
 	
 	public Long getId() {
 		return id;
@@ -291,5 +295,17 @@ public class Groom {
 	}
 	public void setPlaceOfBirth(String placeOfBirth) {
 		this.placeOfBirth = placeOfBirth;
+	}
+	public String getAgencyId() {
+		return agencyId;
+	}
+	public void setAgencyId(String agencyId) {
+		this.agencyId = agencyId;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 }
