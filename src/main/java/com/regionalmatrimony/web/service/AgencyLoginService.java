@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.regionalmatrimony.web.dao.AgencyLoginRepository;
 import com.regionalmatrimony.web.model.Agency;
+import com.regionalmatrimony.web.utils.Utils;
 
 @Service
 public class AgencyLoginService {
@@ -23,6 +24,7 @@ public class AgencyLoginService {
 		if(user == null) {
 			agency.setAgencyId(setAgencyId());
 			agency.setActive(false);
+			agency.setPassword(Utils.generateRandomPassword());
 			return agencyRepo.save(agency);
 		} else {
 			return user;

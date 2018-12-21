@@ -5,588 +5,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!-- Google font -->
-	<link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
-
-	<!-- Bootstrap -->
-	<link rel="stylesheet" href="<c:url value="resources/clientassets/css/bootstrap.min.css" />" />
-
-	<!-- Slick -->
-	<link rel="stylesheet" href="<c:url value="resources/clientassets/css/slick.css" />" />
-	<link rel="stylesheet" href="<c:url value="resources/clientassets/css/slick-theme.css" />" />
-
-	<!-- nouislider -->
-	<link rel="stylesheet" href="<c:url value="resources/clientassets/css/nouislider.min.css" />" />
-
-	<!-- Font Awesome Icon -->
-	<link rel="stylesheet" href="<c:url value="resources/clientassets/css/font-awesome.min.css" />">
-
-	<!-- Custom stlylesheet -->
-	<link rel="stylesheet" href="<c:url value="resources/clientassets/css/style.css" />" />
-
+	<link href="resources/clientassets/img/brand/favicon.png" rel="icon" type="image/png">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <!-- Icons -->
+  <link href="<c:url value="resources/clientassets/vendor/nucleo/css/nucleo.css" />" rel="stylesheet">
+  <link href="<c:url value="resources/clientassets/vendor/font-awesome/css/font-awesome.min.css" />" rel="stylesheet">
+  <!-- Argon CSS -->
+  <link type="text/css" href="<c:url value="resources/clientassets/css/argon.css?v=1.0.1" />" rel="stylesheet">
+  <!-- Docs CSS -->
+  <link type="text/css" href="<c:url value="resources/clientassets/css/docs.min.css" />" rel="stylesheet">
 </head>
 
 <body>
 	<tag:url value="/getAllProfiles" var="urlGetAllProfiles"/>
 	<!-- HEADER -->
-	<header>
-		<!-- header -->
-		<div id="header">
-			<div class="container">
-				<div class="pull-left">
-					<!-- Logo -->
-					<div class="header-logo">
-						<a class="logo" href="#">
-							<img src="resources/images/logoclient1.png" alt="">
-						</a>
-					</div>
-					<!-- /Logo -->
-
-					<!-- Search -->
-					<div class="header-search">
-						<form>
-							<input class="input search-input" type="text" placeholder="Enter your keyword">
-							<select class="input search-categories">
-								<option value="0">Groom</option>
-								<option value="1">Bride</option>
-								<option value="1">Matrimonial Partner</option>
-							</select>
-							<button class="search-btn"><i class="fa fa-search"></i></button>
-						</form>
-					</div>
-					<!-- /Search -->
-				</div>
-				<div class="pull-right">
-					<ul class="header-btns">
-						<!-- Account -->
-						<li class="header-account dropdown default-dropdown">
-							<div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
-								<div class="header-btns-icon">
-									<i class="fa fa-user-o"></i>
-								</div>
-								<strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
-							</div>
-							<a href="#" class="text-uppercase">Login</a> / <a href="#" class="text-uppercase">Join</a>
-							<ul class="custom-menu">
-								<li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
-								<li><a href="#"><i class="fa fa-heart-o"></i> My Wishlist</a></li>
-								<li><a href="#"><i class="fa fa-exchange"></i> Compare</a></li>
-								<li><a href="#"><i class="fa fa-check"></i> Checkout</a></li>
-								<li><a href="#"><i class="fa fa-unlock-alt"></i> Login</a></li>
-								<li><a href="#"><i class="fa fa-user-plus"></i> Create An Account</a></li>
-							</ul>
-						</li>
-						<!-- /Account -->
-
-						<!-- Cart -->
-						<li class="header-cart dropdown default-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-								<div class="header-btns-icon">
-									<i class="fa fa-shopping-cart"></i>
-									<span class="qty">3</span>
-								</div>
-								<strong class="text-uppercase">My Bag:</strong>
-								<br>
-								<span>35.20$</span>
-							</a>
-							<div class="custom-menu">
-								<div id="shopping-cart">
-									<div class="shopping-cart-list">
-										<div class="product product-widget">
-											<div class="product-thumb">
-												<img src="resources/images/thumb-product01.jpg" alt="">
+	<header class="header-global">
+    <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
+      <div class="container">
+        <a class="navbar-brand mr-lg-5" href="./index.html">
+          <img src="resources/clientassets/img/brand/white.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbar_global">
+          <div class="navbar-collapse-header">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a href="./index.html">
+                  <img src="resources/clientassets/img/brand/blue.png">
+                </a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!--<ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+			
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
+                <i class="ni ni-collection d-lg-none"></i>
+                <span class="nav-link-inner--text">Examples</span>
+              </a>
+              <div class="dropdown-menu">
+                <a href="./examples/landing.html" class="dropdown-item">Landing</a>
+                <a href="./examples/profile.html" class="dropdown-item">Profile</a>
+                <a href="./examples/login.html" class="dropdown-item">Login</a>
+                <a href="./examples/register.html" class="dropdown-item">Register</a>
+              </div>
+            </li>
+          </ul>-->
+          <ul class="navbar-nav navbar-nav-hover align-items-lg-center ml-lg-auto">
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
+                <i class="ni ni-collection d-lg-none"></i>
+                <span class="nav-link-inner--text">Matches</span>
+              </a>
+              <div class="dropdown-menu">
+                <a href="./examples/landing.html" class="dropdown-item">New Matches</a>
+                <a href="./examples/profile.html" class="dropdown-item">Suggested Matches</a>
+                <a href="./examples/login.html" class="dropdown-item">Recently viewed</a>
+                <a href="./examples/register.html" class="dropdown-item">Shortlisted</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
+                <i class="ni ni-ui-04 d-lg-none"></i>
+                <span class="nav-link-inner--text">Search By</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-xl">
+                <div class="dropdown-menu-inner">
+                  <div class="media d-flex align-items-center">
+                    <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
+                      <i class="ni ni-spaceship"></i>
+                    </div>
+                    <div class="media-body ml-3">
+                      <h6 class="heading text-primary mb-md-1">Member Id</h6>
+                      <form action="" method="post">
+                      	<div class="form-group">
+			              <input type="text" placeholder="member id" class="form-control form-control-alternative" />
+			            </div>
+			            <button class="btn btn-sm btn-primary" type="button">Search</button>
+              		  </form>
+                    </div>
+                  </div>
+                  <div class="media d-flex align-items-center">
+                    <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                      <i class="ni ni-palette"></i>
+                    </div>
+                    <div class="media-body ml-3">
+                      <h6 class="heading text-primary mb-md-1">Mobile Number</h6>
+                      <div class="card-body card-block">
+							<form action="searchByMemberId" method="post" class="form-horizontal">
+								<div class="row form-group">
+									<div class="col col-md-12">
+										<div class="input-group">
+											<input type="text" id="memberid" name="memberid"
+												placeholder="Member ID" class="form-control">
+											<div class="input-group-btn">
+												<button class="btn btn-primary">Search</button>
 											</div>
-											<div class="product-body">
-												<h3 class="product-price">$32.50 <span class="qty">x3</span></h3>
-												<h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-											</div>
-											<button class="cancel-btn"><i class="fa fa-trash"></i></button>
 										</div>
-										<div class="product product-widget">
-											<div class="product-thumb">
-												<img src="resources/images/thumb-product01.jpg" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-price">$32.50 <span class="qty">x3</span></h3>
-												<h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-											</div>
-											<button class="cancel-btn"><i class="fa fa-trash"></i></button>
-										</div>
-									</div>
-									<div class="shopping-cart-btns">
-										<button class="main-btn">View Cart</button>
-										<button class="primary-btn">Checkout <i class="fa fa-arrow-circle-right"></i></button>
 									</div>
 								</div>
-							</div>
-						</li>
-						<!-- /Cart -->
-
-						<!-- Mobile nav toggle-->
-						<li class="nav-toggle">
-							<button class="nav-toggle-btn main-btn icon-btn"><i class="fa fa-bars"></i></button>
-						</li>
-						<!-- / Mobile nav toggle -->
-					</ul>
-				</div>
-			</div>
-			<!-- header -->
-		</div>
-		<!-- container -->
-	</header>
-	<!-- /HEADER -->
-
-	<!-- NAVIGATION -->
-	<div id="navigation">
-		<!-- container -->
-		<div class="container">
-			<div id="responsive-nav">
-				<!-- category nav -->
-				<div class="category-nav show-on-click">
-					<span class="category-header">Browse Profiles By<i class="fa fa-list"></i></span>
-					<ul class="category-list">
-						<li><a href="${urlGetAllProfiles }">All Profiles</a></li>
-						<li class="dropdown side-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Age<i class="fa fa-angle-right"></i></a>
-							<div class="custom-menu">
-								<div class="row">
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-											<h3 class="list-links-title">AGE</h3></li>
-											<li><a href="#">18-20</a></li>
-											<li><a href="#">21-23</a></li>
-											<li><a href="#">24-26</a></li>
-											<li><a href="#">27-29</a></li>
-											<li><a href="#">30-32</a></li>
-										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-											<h3 class="list-links-title">AGE</h3></li>
-											<li><a href="#">33-35</a></li>
-											<li><a href="#">36-38</a></li>
-											<li><a href="#">39-41</a></li>
-											<li><a href="#">Above 42</a></li>
-										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-								</div>
-							</div>
-						</li>
-						<li class="dropdown side-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Profession<i class="fa fa-angle-right"></i></a>
-							<div class="custom-menu">
-								<div class="row">
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-											<h3 class="list-links-title">PROFESSION</h3></li>
-											<li><a href="#">Engineer</a></li>
-											<li><a href="#">Doctor</a></li>
-											<li><a href="#">Lawyer</a></li>
-											<li><a href="#">Auditor</a></li>
-											<li><a href="#">Politician</a></li>
-										</ul>
-										<hr>
-										<ul class="list-links">
-											<li>
-											<h3 class="list-links-title">PROFESSION</h3></li>
-											<li><a href="#">Engineer</a></li>
-											<li><a href="#">Doctor</a></li>
-											<li><a href="#">Lawyer</a></li>
-											<li><a href="#">Auditor</a></li>
-											<li><a href="#">Politician</a></li>
-										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-											<h3 class="list-links-title">PROFESSION</h3></li>
-											<li><a href="#">Engineer</a></li>
-											<li><a href="#">Doctor</a></li>
-											<li><a href="#">Lawyer</a></li>
-											<li><a href="#">Auditor</a></li>
-											<li><a href="#">Politician</a></li>
-										</ul>
-										<hr>
-										<ul class="list-links">
-											<li>
-											<h3 class="list-links-title">PROFESSION</h3></li>
-											<li><a href="#">Engineer</a></li>
-											<li><a href="#">Doctor</a></li>
-											<li><a href="#">Lawyer</a></li>
-											<li><a href="#">Auditor</a></li>
-											<li><a href="#">Politician</a></li>
-										</ul>
-									</div>
-									<div class="col-md-4 hidden-sm hidden-xs">
-										<a class="banner banner-2" href="#">
-											<img src="resources/images/banner04.jpg" alt="">
-											<div class="banner-caption">
-												<h3 class="white-color">NEW<br>COLLECTION</h3>
-											</div>
-										</a>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li class="dropdown side-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Residential City<i class="fa fa-angle-right"></i></a>
-							<div class="custom-menu">
-								<div class="row">
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-											<h3 class="list-links-title">WORK LOCATION</h3></li>
-											<li><a href="#">Chennai</a></li>
-											<li><a href="#">Bangalore</a></li>
-											<li><a href="#">Mumbai</a></li>
-											<li><a href="#">Kolkatta</a></li>
-											<li><a href="#">Delhi</a></li>
-										</ul>
-										<hr>
-										<ul class="list-links">
-											<li>
-											<h3 class="list-links-title">WORK LOCATION</h3></li>
-											<li><a href="#">Coimbatore</a></li>
-											<li><a href="#">Madurai</a></li>
-											<li><a href="#">Trichy</a></li>
-											<li><a href="#">Tuticorin</a></li>
-											<li><a href="#">Salem</a></li>
-										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-											<h3 class="list-links-title">WORK LOCATION</h3></li>
-											<li><a href="#">US</a></li>
-											<li><a href="#">UK</a></li>
-											<li><a href="#">Russia</a></li>
-											<li><a href="#">Arab Contries</a></li>
-											<li><a href="#">Japan</a></li>
-										</ul>
-										<hr>
-										<ul class="list-links">
-											<li>
-											<h3 class="list-links-title">PROFESSION</h3></li>
-											<li><a href="#">Engineer</a></li>
-											<li><a href="#">Doctor</a></li>
-											<li><a href="#">Lawyer</a></li>
-											<li><a href="#">Auditor</a></li>
-											<li><a href="#">Politician</a></li>
-										</ul>
-									</div>
-									<div class="col-md-4 hidden-sm hidden-xs">
-										<a class="banner banner-2" href="#">
-											<img src="resources/images/banner04.jpg" alt="">
-											<div class="banner-caption">
-												<h3 class="white-color">NEW<br>COLLECTION</h3>
-											</div>
-										</a>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li class="dropdown side-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Mother Tonque<i class="fa fa-angle-right"></i></a>
-							<div class="custom-menu">
-								<div class="row">
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-											<h3 class="list-links-title">MOTHER TONQUE</h3></li>
-											<li><a href="#">Tamil</a></li>
-											<li><a href="#">English</a></li>
-											<li><a href="#">Kannada</a></li>
-											<li><a href="#">Malayalam</a></li>
-											<li><a href="#">Telugu</a></li>
-										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-											<h3 class="list-links-title">MOTHER TONQUE</h3></li>
-											<li><a href="#">Hindi</a></li>
-											<li><a href="#">Marati</a></li>
-											<li><a href="#">Odisi</a></li>
-											<li><a href="#">Bengali</a></li>
-										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-								</div>
-							</div>
-						</li>
-						<li><a href="#">Caste</a></li>
-						<li class="dropdown side-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Caste - Sub Caste<i class="fa fa-angle-right"></i></a>
-							<div class="custom-menu">
-								<div class="row">
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-											<h3 class="list-links-title">SUB CASTE</h3></li>
-											<li><a href="#">Hindu Nadar</a></li>
-											<li><a href="#">Christian Nadar</a></li>
-										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-								</div>
-							</div>
-						</li>
-						<li class="dropdown side-dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Caste - Division<i class="fa fa-angle-right"></i></a>
-							<div class="custom-menu">
-								<div class="row">
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr>
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr>
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr>
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<!-- /category nav -->
-
-				<!-- menu nav -->
-				<div class="menu-nav">
-					<span class="menu-header">Menu<i class="fa fa-bars"></i></span>
-					<ul class="menu-list">
-						<li><a href="#">Home</a></li>
-						<li class="dropdown mega-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Women <i class="fa fa-caret-down"></i></a>
-							<div class="custom-menu">
-								<div class="row">
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-										<hr class="hidden-md hidden-lg">
-									</div>
-									<div class="col-md-4">
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-									</div>
-								</div>
-								<div class="row hidden-sm hidden-xs">
-									<div class="col-md-12">
-										<hr>
-										<a class="banner banner-1" href="#">
-											<img src="resources/images/banner05.jpg" alt="">
-											<div class="banner-caption text-center">
-												<h2 class="white-color">NEW COLLECTION</h2>
-												<h3 class="white-color font-weak">HOT DEAL</h3>
-											</div>
-										</a>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li class="dropdown mega-dropdown full-width"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Men <i class="fa fa-caret-down"></i></a>
-							<div class="custom-menu">
-								<div class="row">
-									<div class="col-md-3">
-										<div class="hidden-sm hidden-xs">
-											<a class="banner banner-1" href="#">
-												<img src="resources/images/banner06.jpg" alt="">
-												<div class="banner-caption text-center">
-													<h3 class="white-color text-uppercase">Women’s</h3>
-												</div>
-											</a>
-											<hr>
-										</div>
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-									</div>
-									<div class="col-md-3">
-										<div class="hidden-sm hidden-xs">
-											<a class="banner banner-1" href="#">
-												<img src="resources/images/banner07.jpg" alt="">
-												<div class="banner-caption text-center">
-													<h3 class="white-color text-uppercase">Men’s</h3>
-												</div>
-											</a>
-										</div>
-										<hr>
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-									</div>
-									<div class="col-md-3">
-										<div class="hidden-sm hidden-xs">
-											<a class="banner banner-1" href="#">
-												<img src="resources/images/banner08.jpg" alt="">
-												<div class="banner-caption text-center">
-													<h3 class="white-color text-uppercase">Accessories</h3>
-												</div>
-											</a>
-										</div>
-										<hr>
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-									</div>
-									<div class="col-md-3">
-										<div class="hidden-sm hidden-xs">
-											<a class="banner banner-1" href="#">
-												<img src="resources/images/banner09.jpg" alt="">
-												<div class="banner-caption text-center">
-													<h3 class="white-color text-uppercase">Bags</h3>
-												</div>
-											</a>
-										</div>
-										<hr>
-										<ul class="list-links">
-											<li>
-												<h3 class="list-links-title">Categories</h3></li>
-											<li><a href="#">Women’s Clothing</a></li>
-											<li><a href="#">Men’s Clothing</a></li>
-											<li><a href="#">Phones & Accessories</a></li>
-											<li><a href="#">Jewelry & Watches</a></li>
-											<li><a href="#">Bags & Shoes</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</li>
-						<li><a href="#">Success Stories</a></li>
-						<li class="dropdown default-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">Help<i class="fa fa-caret-down"></i></a>
-							<ul class="custom-menu">
-								<li><a href="index.html">Contact Us</a></li>
-								<li><a href="products.html">Contact matrimonial partner</a></li>
-								<li><a href="product-page.html">FAQ</a></li>
-								<li><a href="checkout.html">Feedback</a></li>
-							</ul>
-						</li>
-					</ul>
-				</div>
-				<!-- menu nav -->
-			</div>
-		</div>
-		<!-- /container -->
-	</div>
+							</form>
+						</div>
+                    </div>
+                   </div>
+                  <a href="https://demos.creative-tim.com/argon-design-system/docs/components/alerts.html" class="media d-flex align-items-center">
+                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                      <i class="ni ni-ui-04"></i>
+                    </div>
+                    <div class="media-body ml-3">
+                      <h5 class="heading text-warning mb-md-1">Components</h5>
+                      <p class="description d-none d-md-inline-block mb-0">Browse our 50 beautiful handcrafted components offered in the Free version.</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </li>
+			<li class="nav-item dropdown">
+              <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
+                <i class="ni ni-collection d-lg-none"></i>
+                <span class="nav-link-inner--text">Success Stories</span>
+              </a>
+			</li>
+			<li class="nav-item dropdown">
+              <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
+                <i class="ni ni-collection d-lg-none"></i>
+                <span class="nav-link-inner--text">Help</span>
+              </a>
+              <div class="dropdown-menu">
+                <a href="./examples/landing.html" class="dropdown-item">New Matches</a>
+                <a href="./examples/profile.html" class="dropdown-item">Suggested Matches</a>
+                <a href="./examples/login.html" class="dropdown-item">Recently viewed</a>
+                <a href="./examples/register.html" class="dropdown-item">Shortlisted</a>
+              </div>
+            </li>
+			<li class="nav-item dropdown">
+              <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
+                <i class="ni ni-ui-04 d-lg-none"></i>
+                
+				<span class="btn-inner--icon">
+                  <i class="fa fa-heartbeat mr-2"></i>
+				  <span class="nav-link-inner--text">Wishlist</span>
+                </span>
+				
+              </a>
+              <div class="dropdown-menu dropdown-menu-xl">
+                <div class="dropdown-menu-inner">
+                  <a href="https://demos.creative-tim.com/argon-design-system/docs/getting-started/overview.html" class="media d-flex align-items-center">
+                    <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
+                      <i class="ni ni-spaceship"></i>
+                    </div>
+                    <div class="media-body ml-3">
+                      <h6 class="heading text-primary mb-md-1">Getting started</h6>
+                      <p class="description d-none d-md-inline-block mb-0">Learn how to use Argon compiling<br> Scss, change brand colors and more.</p>
+                    </div>
+                  </a>
+                  <a href="https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html" class="media d-flex align-items-center">
+                    <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                      <i class="ni ni-palette"></i>
+                    </div>
+                    <div class="media-body ml-3">
+                      <h6 class="heading text-primary mb-md-1">Foundation</h6>
+                      <p class="description d-none d-md-inline-block mb-0">Learn more about colors, typography, icons<br> and the grid system we used for Argon.</p>
+                    </div>
+                  </a>
+                  <a href="https://demos.creative-tim.com/argon-design-system/docs/components/alerts.html" class="media d-flex align-items-center">
+                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                      <i class="ni ni-ui-04"></i>
+                    </div>
+                    <div class="media-body ml-3">
+                      <h5 class="heading text-warning mb-md-1">Components</h5>
+                      <p class="description d-none d-md-inline-block mb-0">Browse our 50 beautiful handcrafted <br>components offered in the Free version.</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </li>
+			<li class="nav-item dropdown">
+              <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
+                <i class="ni ni-ui-04 d-lg-none"></i>
+                <!---->
+				<span class="btn-inner--icon">
+                  <i class="fa fa-user-circle mr-2"></i>
+				  <span class="nav-link-inner--text">Sathesh</span>
+                </span>
+				
+              </a>
+              <div class="dropdown-menu">
+                <a href="./examples/landing.html" class="dropdown-item">My Profile</a>
+                <a href="./examples/profile.html" class="dropdown-item">Edit Profile</a>
+                <a href="./examples/login.html" class="dropdown-item">Change Password</a>
+                <a href="./examples/register.html" class="dropdown-item">Logout</a>
+              </div>
+            </li>
+			<!--<li class="nav-item">
+              <a class="nav-link nav-link-icon" href="https://www.facebook.com/creativetim" target="_blank" data-toggle="tooltip" title="Like us on Facebook">
+                <i class="fa fa-facebook-square"></i>
+                <span class="nav-link-inner--text d-lg-none">Facebook</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-icon" href="https://www.instagram.com/creativetimofficial" target="_blank" data-toggle="tooltip" title="Follow us on Instagram">
+                <i class="fa fa-instagram"></i>
+                <span class="nav-link-inner--text d-lg-none">Instagram</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-icon" href="https://twitter.com/creativetim" target="_blank" data-toggle="tooltip" title="Follow us on Twitter">
+                <i class="fa fa-twitter-square"></i>
+                <span class="nav-link-inner--text d-lg-none">Twitter</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-link-icon" href="https://github.com/creativetimofficial/argon-design-system" target="_blank" data-toggle="tooltip" title="Star us on Github">
+                <i class="fa fa-github"></i>
+                <span class="nav-link-inner--text d-lg-none">Github</span>
+              </a>
+            </li>-->
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 	<!-- /NAVIGATION -->
 
 	<!-- jQuery Plugins -->
-	<script src="resources/clientassets/js/jquery.min.js"></script>
-	<script src="resources/clientassets/js/bootstrap.min.js"></script>
-	<script src="resources/clientassets/js/slick.min.js"></script>
-	<script src="resources/clientassets/js/nouislider.min.js"></script>
-	<script src="resources/clientassets/js/jquery.zoom.min.js"></script>
-	<script src="resources/clientassets/js/main.js"></script>
-
+  <script src="resources/clientassets/vendor/jquery/jquery.min.js"></script>
+  <script src="resources/clientassets/vendor/popper/popper.min.js"></script>
+  <script src="resources/clientassets/vendor/bootstrap/bootstrap.min.js"></script>
+  <script src="resources/clientassets/vendor/headroom/headroom.min.js"></script>
+  <!-- Optional JS -->
+  <script src="resources/clientassets/vendor/onscreen/onscreen.min.js"></script>
+  <script src="resources/clientassets/vendor/nouislider/js/nouislider.min.js"></script>
+  <script src="resources/clientassets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+  <!-- Argon JS -->
+  <script src="resources/clientassets/js/argon.js?v=1.0.1"></script>
 </body>
 
 </html>

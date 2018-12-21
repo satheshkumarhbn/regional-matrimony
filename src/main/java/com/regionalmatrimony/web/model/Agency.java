@@ -12,8 +12,8 @@ import javax.persistence.Table;
 public class Agency {
 
 	@Id
-	@Column(name="id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id")
 	private Long id;
 	@Column(name="agencyid")
 	private String agencyId;
@@ -31,6 +31,7 @@ public class Agency {
 	private String password;
 	@Column(name="isactive")
 	private boolean isActive;
+
 	public Long getId() {
 		return id;
 	}
@@ -87,7 +88,7 @@ public class Agency {
 	}
 	@Override
 	public String toString() {
-		return "Agency [id=" + id + ", agencyId=" + agencyId + ", agencyFullName=" + agencyFullName + ", email=" + email
+		return "Agency [agencyId=" + agencyId + ", agencyFullName=" + agencyFullName + ", email=" + email
 				+ ", contactPerson=" + contactPerson + ", mobileNumber=" + mobileNumber + ", address=" + address
 				+ ", password=" + password + ", isActive=" + isActive + "]";
 	}

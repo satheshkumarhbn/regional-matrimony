@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import com.regionalmatrimony.web.model.Agency;
 import com.regionalmatrimony.web.model.Bride;
 import com.regionalmatrimony.web.model.Groom;
+import com.regionalmatrimony.web.model.MatchPreference;
 import com.regionalmatrimony.web.service.DashboardService;
 
 @Controller
@@ -31,20 +32,21 @@ public class DashboardController {
 	}
 	
 	@RequestMapping(value = "/registerGroomForm", method = RequestMethod.POST)
-	public String registerGroomForm(@Validated Groom grom, @ModelAttribute("agency") Agency agency, Model model) {
+	public String registerGroomForm(@Validated Groom groom, @ModelAttribute("agency") Agency agency, Model model) {
 		logger.info("requestMapping /registerGroomForm");
-		grom.setAgencyId(agency.getAgencyId());
-		Groom registeredUser = service.registerGroom(grom);
+		groom.setAgencyId(agency.getAgencyId());
+		groom.setGender("male");
+		Groom registeredUser = service.registerGroom(groom);
 		model.addAttribute("registrar","Groom");
 		model.addAttribute("fullName", registeredUser.getFirstName().toUpperCase().concat(" ").concat(registeredUser.getLastName()).toUpperCase());
-		if(registeredUser.getId() !=0) {
-			model.addAttribute("userId", registeredUser.getId());
+		if(registeredUser.getMemberId() != null) {
+			model.addAttribute("userId", registeredUser.getMemberId());
 			model.addAttribute("whatsappNumber", registeredUser.getWhatsappNumber());
 			model.addAttribute("email", registeredUser.getEmail().toLowerCase());
-			return "timeline";
+			return "redirect:/timeline";
 		}
 		model.addAttribute("errorMessage", "Groom is not registered. Please try again!");
-		return "timeline";
+		return "redirect:/timeline";
 	}
 	
 	@RequestMapping(value= "/registerBride", method = RequestMethod.GET)
@@ -57,16 +59,39 @@ public class DashboardController {
 	public String registerBride(@Validated Bride bride, @ModelAttribute("agency") Agency agency, Model model) {
 		logger.info("requestMapping /registerBrideForm");
 		bride.setAgencyId(agency.getAgencyId());
+		bride.setGender("female");
 		Bride registeredUser = service.registerBride(bride);
 		model.addAttribute("registrar","Bride");
 		model.addAttribute("fullName", registeredUser.getFirstName().toUpperCase().concat(" ").concat(registeredUser.getLastName()).toUpperCase());
-		if(registeredUser.getId() != 0) {
-			model.addAttribute("userId", registeredUser.getId());
+		if(registeredUser.getMemberId() != null) {
+			model.addAttribute("userId", registeredUser.getMemberId());
 			model.addAttribute("whatsappNumber", registeredUser.getWhatsappNumber());
 			model.addAttribute("email", registeredUser.getEmail().toLowerCase());
-			return "timeline";
+			return "redirect:/timeline";
 		}
 		model.addAttribute("errorMessage", "Bride is not registered. Please try again!");
+		return "redirect:/timeline";
+	}
+	
+	@RequestMapping(value = "/timeline", method = RequestMethod.GET)
+	public String showTimeline(@ModelAttribute("agency") Agency agency, Model model) {
+		logger.info("request mapping /timeline");
+		Integer groomCount = service.countGroom(agency.getAgencyId());
+		model.addAttribute("groomcount", Integer.toString(groomCount));
+		Integer brideCount = service.countBride(agency.getAgencyId());
+		model.addAttribute("bridecount", Integer.toString(brideCount));
 		return "timeline";
 	}
+	
+	@RequestMapping(value = "/matchPreference", method = RequestMethod.GET)
+	public String registerMatchPreference(@ModelAttribute("agency") Agency agency, @Validated MatchPreference matPreference, Model model) {
+		logger.info("request /matchPreference");
+		MatchPreference matchPreference = service.registerMatchPreferencce(matPreference);
+		if(matchPreference != null) {
+			model.addAttribute("message", "Please add Match Preference!");
+			return "matchpreference";
+		}
+		return "redirect:/timeline";
+	}
+	
 }

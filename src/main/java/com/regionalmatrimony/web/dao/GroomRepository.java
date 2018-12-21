@@ -23,4 +23,16 @@ public interface GroomRepository extends JpaRepository<Groom, Long> {
 	
 	@Query("SELECT groom FROM Groom groom WHERE groom.agencyId = (:agencyId)")
 	List<Groom> findGroomByAgency(@Param("agencyId") String agencyId);
+	
+	@Query("SELECT MAX(groom.id) FROM Groom groom")
+	Long getMaxId();
+	
+	@Query("SELECT groom.memberId from Groom groom WHERE groom.id = (:id)")
+	String getLastUpdatedGroomId(@Param("id") Long id);
+	
+	@Query("SELECT groom from Groom groom WHERE groom.memberId = (:memberId)")
+	Groom findGroomByMemberId(@Param("memberId") String memberId);
+	
+	@Query("SELECT COUNT(groom.id) FROM Groom groom WHERE groom.agencyId = (:agencyId)")
+	int countGroom(@Param("agencyId") String agencyId);
 }

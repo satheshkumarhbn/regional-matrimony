@@ -18,7 +18,7 @@ import com.regionalmatrimony.web.model.User;
 import com.regionalmatrimony.web.service.SearchService;
 
 @Controller
-@SessionAttributes("user")
+@SessionAttributes("member")
 public class ClientHomepageController {
 
 	protected static final Logger logger = LoggerFactory.getLogger(ClientHomepageController.class);
@@ -31,17 +31,11 @@ public class ClientHomepageController {
 		logger.info("request mapping /");
 		return "login";
 	}
-	
-	@RequestMapping(value = "/contact", method = RequestMethod.GET)
-	public String contact(Model model) {
-		logger.info("request mapping /contact");
-		return "contactus";
-	}
-	
-	@RequestMapping(value = "/header", method = RequestMethod.GET)
-	public String header(Model model) {
-		logger.info("request mapping /header");
-		return "headerfooter";
+		
+	@RequestMapping(value = "/clienthomepage", method = RequestMethod.GET)
+	public String initializeClientHomepage(Model model) {
+		logger.info("request mapping /clienthomepage");
+		return "clienthomepage";
 	}
 	
 	@RequestMapping(value = "/profileslist", method = RequestMethod.GET)
@@ -51,14 +45,14 @@ public class ClientHomepageController {
 	}
 	
 	@RequestMapping(value="/getAllProfiles", method = RequestMethod.GET)
-	public String getAllProfiles(@ModelAttribute("user") User user, Model model) {
+	public String getAllProfiles(@ModelAttribute("member") User user, Model model) {
 		if(user != null) {
 			if(user.getMemberId() != null) {
-				String prefix = user.getMemberId().substring(0, 2);
-				if(prefix.equalsIgnoreCase("GR")) {
+				String prefix = user.getMemberId().substring(0, 1);
+				if(prefix.equalsIgnoreCase("G")) {
 					List<Bride> memberList = searchService.getAllBride();
 					model.addAttribute("memberList", memberList);
-				} else if(prefix.equalsIgnoreCase("BR")) {
+				} else if(prefix.equalsIgnoreCase("B")) {
 					List<Groom> memberList = searchService.getAllGroom();
 					model.addAttribute("memberList", memberList);
 				}
@@ -69,4 +63,17 @@ public class ClientHomepageController {
 		}
 		return "profileslist";
 	}
+	
+	@RequestMapping(value="/header", method = RequestMethod.GET)
+	public String getHeader(Model model) {
+		logger.info("requestMapping /header");
+		return "header";
+	}
+	
+	@RequestMapping(value="/profile", method = RequestMethod.GET)
+	public String getProfile(Model model) {
+		logger.info("requestMapping /profile");
+		return "profile";
+	}
+	
 }

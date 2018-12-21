@@ -38,7 +38,7 @@ public class AgencyLoginController {
 		}else if(user.isActive() && user.getAgencyId().equals(agency.getAgencyId())) {
 			if(user.getPassword().equals(agency.getPassword())) {
 				model.addAttribute("agency", user);
-				return "timeline";
+				return "redirect:/timeline";
 			} else {
 				model.addAttribute("errorMessage", "Password Failure. Please try again!");
 				return "home";
@@ -59,4 +59,11 @@ public class AgencyLoginController {
 		model.addAttribute("message", "User already exist with mobile number and email");
 		return "register";
 	}
+	
+	@RequestMapping(value = "/dashboard", method = RequestMethod.GET) 
+	public String showDashboardHeaderNavigation(Model model) {
+		logger.info("request mapping /dashboard");
+		return "dashboard";
+	}
+
 }

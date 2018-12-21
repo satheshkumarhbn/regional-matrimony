@@ -1,18 +1,28 @@
 package com.regionalmatrimony.web.model;
 
+import java.util.List;
+
 public class User {
 
 	private String memberId;
+	private String fullName;
 	private String mobileNumber;
 	private String email;
 	private String agencyId;
 	private String password;
+	private List<String> grantedMembers;
 	
 	public String getMemberId() {
 		return memberId;
 	}
 	public void setMemberId(String memberId) {
 		this.memberId = memberId;
+	}
+	public String getFullName() {
+		return fullName;
+	}
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 	public String getMobileNumber() {
 		return mobileNumber;
@@ -37,6 +47,12 @@ public class User {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public List<String> getGrantedMembers() {
+		return grantedMembers;
+	}
+	public void setGrantedMembers(List<String> grantedMembers) {
+		this.grantedMembers = grantedMembers;
 	}
 	@Override
 	public String toString() {

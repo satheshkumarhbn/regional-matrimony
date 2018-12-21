@@ -21,4 +21,16 @@ public interface BrideRepository extends JpaRepository<Bride, Long> {
 	
 	@Query("SELECT bride FROM Bride bride WHERE bride.agencyId = (:agencyId)")
 	List<Bride> findBrideByAgency(@Param("agencyId") String agencyId);
+	
+	@Query("SELECT MAX(bride.id) FROM Bride bride")
+	Long getMaxId();
+	
+	@Query("SELECT bride.memberId from Bride bride WHERE bride.id = (:id)")
+	String getLastUpdatedBrideId(@Param("id") Long id);
+	
+	@Query("SELECT bride from Bride bride WHERE bride.memberId = (:memberId)")
+	Bride findBrideByMemberId(@Param("memberId") String memberId);
+	
+	@Query("SELECT COUNT(bride.id) FROM Bride bride WHERE bride.agencyId = (:agencyId)")
+	int countBride(@Param("agencyId") String agencyId);
 }

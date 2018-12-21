@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%><%-- 
-    <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>  --%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="tag" uri="http://www.springframework.org/tags"%>
+<%-- <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>  --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
 <title>Regional Matrimony- Search Result</title>
 <meta name="description" content="Regional Matrimony Admin Portal">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="resources/assets/css/lib/datatable/dataTables.bootstrap.min.css">
+<link rel="stylesheet" href="<c:url value="resources/assets/css/lib/datatable/dataTables.bootstrap.min.css"/>" >
 <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
 <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
 </head>
@@ -18,6 +19,7 @@
 	<jsp:include page="dashboard.jsp"></jsp:include>
 	<!-- Right Panel -->
 	<div id="right-panel" class="right-panel">
+	<!-- breadcrump start -->
 		<div class="breadcrumbs">
 			<div class="breadcrumbs-inner">
 				<div class="row m-0">
@@ -41,6 +43,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- breadcrump end -->
 		<div class="content">
 			<div class="animated fadeIn">
 				<div class="row">
@@ -62,18 +65,18 @@
                                             <th>View</th>
                                         </tr>
                                     </thead>
-                                    <c:forEach var="result" items="searchresult">
+                                    <c:forEach var="result" items="${searchresult }">
                                     <tbody>
                                         <tr>
-                                            <td><c:out value="${result.lastName }"/></td>
+                                            <td><c:out value="${result.memberId }"/></td>
                                             <td><c:out value="${result.firstName }"/></td>
-                                            <td>${result.mobileNumber }</td>
-                                            <td>${result.fathersName}</td>
-                                            <td>${result.star}</td>
-                                            <td>${result.raasi}</td>
-                                            <td><button type="button" onclick="viewuser.jsp" class="btn btn-danger"><i class="fa fa-arrow-circle-o-right"></i>&nbsp; View</button></td>
+                                            <td><c:out value="${result.mobileNumber }"/></td>
+                                            <td><c:out value="${result.fathersName}"/></td>
+                                            <td><c:out value="${result.star}"/></td>
+                                            <td><c:out value="${result.raasi}"/></td>
+                                            <tag:url value = "/viewProfile/${result.memberId}" var = "urlviewuser" />
+                                            <td><button type="button" onclick="${urlviewuser}" class="btn btn-danger"><i class="fa fa-arrow-circle-o-right"></i>&nbsp; View</button></td>
                                         </tr>
-                                        
                                     </tbody>
                                     </c:forEach>
                                 </table>

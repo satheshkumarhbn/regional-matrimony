@@ -37,11 +37,11 @@ public class ReportController {
 		Collections.addAll(combineReport, groomList);
 		Collections.addAll(combineReport, brideList);
 		if(!combineReport.isEmpty()) {
-			model.addAttribute("combinereport", combineReport);
+			model.addAttribute("searchresult", combineReport);
 		} else {
 			model.addAttribute("report404", "No groom/Bride registered with your agency");
 		}
-		return "reportresult";
+		return "searchresult";
 	}
 	
 	@RequestMapping(value = "/getGroomReport", method = RequestMethod.GET)
@@ -49,11 +49,11 @@ public class ReportController {
 		logger.info("request mapping /getGroomReport");
 		List<Groom> groomList = service.getGroomReport(agency.getAgencyId());
 		if(!groomList.isEmpty()) {
-			model.addAttribute("groomreport", groomList);
+			model.addAttribute("searchresult", groomList);
 		} else {
 			model.addAttribute("report404", "No grooms registered with your agency");
 		}
-		return "reportresult";
+		return "searchresult";
 	}
 	
 	@RequestMapping(value = "/getBrideReport", method = RequestMethod.GET)
@@ -61,11 +61,11 @@ public class ReportController {
 		logger.info("request mapping /getBrideReport");
 		List<Bride> brideList = service.getBrideReport(agency.getAgencyId());
 		if(!brideList.isEmpty()) {
-			model.addAttribute("bridereport", brideList);
+			model.addAttribute("searchresult", brideList);
 		} else {
 			model.addAttribute("report404", "No brides registered with your agency");
 		}
-		return "reportresult";
+		return "searchresult";
 	}
 
 }

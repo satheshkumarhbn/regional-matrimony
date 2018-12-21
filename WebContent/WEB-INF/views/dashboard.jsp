@@ -2,48 +2,6 @@
     pageEncoding="ISO-8859-1"%>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@taglib prefix="tag" uri="http://www.springframework.org/tags"%>
-<%-- <!DOCTYPE html>
-<html lang="en" >
-
-<head>
-	<meta charset="UTF-8">
-	<title>Dashboard</title>
-	<link href="<c:url value="resources/css/dashboard/style.css" />" rel="stylesheet">
-</head>
-
-<body>
-<tag:url value="/registerGroom" var="urlGroom" />
-<tag:url value="/registerBride" var="urlBride"/>
-<tag:url value="/search" var="urlSearch" />
-<span class="bckg"></span>
-<header>
-  <h1>Dashboard</h1>
-  <nav>
-    <ul>
-      <li><a href="javascript:void(0);" data-title="Timeline">Timeline</a></li>
-      <li><a href="${urlGroom}" data-title="Register Groom">Register Groom</a></li>
-      <li><a href="${urlBride}" data-title="Register Bride">Register Bride</a></li>
-      <li><a href="javascript:void(0);" data-title="Mailing">Mailing</a></li>
-      <li><a href="${urlSearch}" data-title="Search">Search</a></li>
-      <li><a href="javascript:void(0);" data-title="Settings">Settings</a></li>
-      <li><a href="javascript:void(0);" data-title="Reports">Reports</a></li>
-    </ul>
-  </nav>
-</header>
-<main>
-
-  <div class="title">
-    <h2>Register Groom</h2>
-    <a href="javascript:void(0);">Hello ${name}!</a>
-  </div>
-
-  
-</main>
-  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script src="resources/js/dashboard/index.js"></script>
-</body>
-
-</html> --%>
 <!doctype html>
 <html class="no-js" lang="">
 <head>
@@ -109,7 +67,9 @@
 </head>
 
 <body>
+	
     <!-- Left Panel -->
+    <tag:url value="/timeline" var = "urlTimeline"/>
     <tag:url value="/registerGroom" var="urlGroom" />
 	<tag:url value="/registerBride" var="urlBride"/>
 	<tag:url value="/getAllUserReport" var="urlAllUserReport"/>
@@ -120,7 +80,7 @@
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="index.html"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                        <a href="${urlTimeline }"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                     </li>
                     <li class="menu-title">Register member</li><!-- /.menu-title -->
                     <li>
@@ -129,15 +89,28 @@
 					<li>
                         <a href="${urlBride}"> <i class="menu-icon fa fa-female"></i>Register Bride</a>
                     </li>
+                    <li class="menu-title">Messages</li><!-- /.menu-title -->
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-eye"></i>Access Requests </a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-plus-square"></i><a href="${urlsearchbymemberid }">New request</a></li>
+							<li><i class="menu-icon fa fa-warning (alias)"></i><a href="${urlsearchbyfullname }">Pending Request</a></li>
+                            <li><i class="menu-icon fa fa-check-square-o"></i><a href="${urlsearchbymobilenumber }">Granted Request</a></li>
+							<li><i class="menu-icon fa fa-times-circle-o"></i><a href="${urlsearchbystarraasi }">Declined Request</a></li>
+                        </ul>
+                    </li>
                     <li class="menu-title">Search</li><!-- /.menu-title -->
-
+					<tag:url value="/urlsearchbymemberid" var = "urlsearchbymemberid"/>
+					<tag:url value="/urlsearchbyfullname" var = "urlsearchbyfullname"/>
+					<tag:url value="/urlsearchbymobilenumber" var = "urlsearchbymobilenumber"/>
+					<tag:url value="/urlsearchbystarraasi" var = "urlsearchbystarraasi"/>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-search"></i>Search By</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-info-circle"></i><a href="searchbymemberid.jsp">Member Id</a></li>
-							<li><i class="menu-icon fa fa-sort-alpha-asc"></i><a href="searchbyfullname.jsp">Full Name</a></li>
-                            <li><i class="menu-icon fa fa-mobile"></i><a href="searchbymobilenumber.jsp">Mobile Number</a></li>
-							<li><i class="menu-icon fa fa-star-half-o"></i><a href="searchbystarraasi.jsp">Star & Raasi</a></li>
+                            <li><i class="menu-icon fa fa-info-circle"></i><a href="${urlsearchbymemberid }">Member Id</a></li>
+							<li><i class="menu-icon fa fa-sort-alpha-asc"></i><a href="${urlsearchbyfullname }">Full Name</a></li>
+                            <li><i class="menu-icon fa fa-mobile"></i><a href="${urlsearchbymobilenumber }">Mobile Number</a></li>
+							<li><i class="menu-icon fa fa-star-half-o"></i><a href="${urlsearchbystarraasi }">Star & Raasi</a></li>
                         </ul>
                     </li>
                     <li class="menu-title">Reports</li><!-- /.menu-title -->
@@ -147,6 +120,14 @@
                             <li><i class="menu-icon fa fa-users"></i><a href="${urlAllUserReport }">All members</a></li>
                             <li><i class="menu-icon fa fa-male"></i><a href="${urlGroomReport }">All Groom</a></li>
                             <li><i class="menu-icon fa fa-female"></i><a href="${urlBrideReport }">All Bride</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-title">Payments</li><!-- /.menu-title -->
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-credit-card"></i>Payment Ledger</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-users"></i><a href="${urlAllUserReport }">Outstanding payment</a></li>
+                            <li><i class="menu-icon fa fa-male"></i><a href="${urlGroomReport }">Payment History</a></li>
                         </ul>
                     </li>
                     <li class="menu-title">Settings</li><!-- /.menu-title -->
@@ -220,7 +201,7 @@
                             <div class="dropdown-menu" aria-labelledby="message">
                                 <p class="red">You have 4 Mails</p>
                                 <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="images/avatar/1.jpg"></span>
+                                    <span class="photo media-left"><img alt="avatar" src="resources/images/avatar/1.jpg"></span>
                                     <div class="message media-body">
                                         <span class="name float-left">Jonathan Smith</span>
                                         <span class="time float-right">Just now</span>
@@ -228,7 +209,7 @@
                                     </div>
                                 </a>
                                 <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="images/avatar/2.jpg"></span>
+                                    <span class="photo media-left"><img alt="avatar" src="resources/images/avatar/2.jpg"></span>
                                     <div class="message media-body">
                                         <span class="name float-left">Jack Sanders</span>
                                         <span class="time float-right">5 minutes ago</span>
@@ -236,7 +217,7 @@
                                     </div>
                                 </a>
                                 <a class="dropdown-item media" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="images/avatar/3.jpg"></span>
+                                    <span class="photo media-left"><img alt="avatar" src="resources/images/avatar/3.jpg"></span>
                                     <div class="message media-body">
                                         <span class="name float-left">Cheryl Wheeler</span>
                                         <span class="time float-right">10 minutes ago</span>

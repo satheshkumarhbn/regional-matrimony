@@ -32,12 +32,12 @@ public class SearchService {
 		
 	public Groom getGroomUsingId(String memberId) {
 		logger.info("service method called getGroomUsingId({})", memberId);
-		return groomRepo.findOne(Long.parseLong(memberId));
+		return groomRepo.findGroomByMemberId(memberId);
 	}
 	
 	public Bride getBrideUsingId(String memberId) {
 		logger.info("service method called getBrideUsingId({})", memberId);
-		return brideRepo.findOne(Long.parseLong(memberId));
+		return brideRepo.findBrideByMemberId(memberId);
 	}
 	
 	public List<Groom> getGroomByFullName(String firstName, String lastName, String agencyId) {

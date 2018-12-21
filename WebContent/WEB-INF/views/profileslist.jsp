@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page isELIgnored="false"%>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@taglib prefix="tag" uri="http://www.springframework.org/tags"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -200,11 +202,12 @@
 						</div>
 					</div>
 					<!-- /store top filter -->
-
+				
 					<!-- STORE -->
 					<div id="store">
 						<!-- row -->
 						<div class="row">
+						<c:forEach items = "${memberList }" var ="member">
 							<!-- Product Single -->
 							<div class="col-md-4 col-sm-6 col-xs-6">
 								<div class="product product-single">
@@ -217,8 +220,8 @@
 										<img src="resources/images/product01.jpg" alt="">
 									</div>
 									<div class="product-body">
-										<h3 class="product-price">Sathesh Kumar</h3>
-										<h4 class="product-price">ID: GR1810100</h4>
+										<h3 class="product-price">${member.firstName } ${member.lastName }</h3>
+										<h4 class="product-price">ID: ${member.memberId }</h4>
 										<!-- <div class="product-rating">
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
@@ -226,7 +229,7 @@
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star-o empty"></i>
 										</div> -->
-										<h2 class="product-name"><a href="#">age:23 | Software Engineer</a></h2>
+										<h2 class="product-name"><a href="#">age: ${member.age } | ${member.occupation }</a></h2>
 										<div class="product-btns">
 											<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
 											<!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
@@ -237,11 +240,12 @@
 							</div>
 							<!-- /Product Single -->
 							<div class="clearfix visible-sm visible-xs"></div>
+							</c:forEach>
 						</div>
 						<!-- /row -->
 					</div>
 					<!-- /STORE -->
-
+				
 					<!-- store bottom filter -->
 					<div class="store-filter clearfix">
 						<div class="pull-left">

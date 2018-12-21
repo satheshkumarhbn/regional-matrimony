@@ -53,7 +53,7 @@
 								<div class="row form-group">
 									<div class="col col-md-12">
 										<div class="input-group">
-											<input type="text" id="memberId" name="memberId"
+											<input type="text" id="memberid" name="memberid"
 												placeholder="Member ID" class="form-control">
 											<div class="input-group-btn">
 												<button class="btn btn-primary">Search</button>
