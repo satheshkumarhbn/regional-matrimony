@@ -1,9 +1,7 @@
 package com.regionalmatrimony.web.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -12,9 +10,6 @@ import javax.persistence.Table;
 public class Agency {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id")
-	private Long id;
 	@Column(name="agencyid")
 	private String agencyId;
 	@Column(name="agencyfullname")
@@ -32,12 +27,6 @@ public class Agency {
 	@Column(name="isactive")
 	private boolean isActive;
 
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
 	public String getAgencyId() {
 		return agencyId;
 	}

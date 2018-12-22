@@ -49,7 +49,7 @@ public class DashboardService {
 		String memberId = null;
 		String postfix = null;
 		if(gender.equals("male")) {
-			String lastMemberId = groomRepo.getLastUpdatedGroomId(groomRepo.getMaxId());
+			String lastMemberId = groomRepo.getLastUpdatedGroomId();
 			if(lastMemberId == null) {
 				postfix = String.format("%05d", 1);
 			} else {
@@ -58,7 +58,7 @@ public class DashboardService {
 			String year = Integer.toString(Calendar.getInstance().get(Calendar.YEAR)).substring(2,4);
 			memberId =  "G"+year+postfix;
 		} else if(gender.equals("female")) {
-			String lastMemberId = brideRepo.getLastUpdatedBrideId(brideRepo.getMaxId());
+			String lastMemberId = brideRepo.getLastUpdatedBrideId();
 			if(lastMemberId == null) {
 				postfix = String.format("%05d", 1);
 			} else {

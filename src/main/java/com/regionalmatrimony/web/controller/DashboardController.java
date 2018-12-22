@@ -16,63 +16,64 @@ import com.regionalmatrimony.web.model.Bride;
 import com.regionalmatrimony.web.model.Groom;
 import com.regionalmatrimony.web.model.MatchPreference;
 import com.regionalmatrimony.web.service.DashboardService;
+import com.regionalmatrimony.web.utils.Utils;
 
 @Controller
 @SessionAttributes("agency")
 public class DashboardController {
-	
+
 	protected static final Logger logger = LoggerFactory.getLogger(DashboardController.class);
 	@Autowired
 	DashboardService service;
-	
-	@RequestMapping(value= "/registerGroom", method = RequestMethod.GET)
+
+	@RequestMapping(value = "/registerGroom", method = RequestMethod.GET)
 	public String registerGroom(Model model) {
 		logger.info("requestMapping /registerGroom");
 		return "registergroom";
 	}
-	
+
 	@RequestMapping(value = "/registerGroomForm", method = RequestMethod.POST)
 	public String registerGroomForm(@Validated Groom groom, @ModelAttribute("agency") Agency agency, Model model) {
 		logger.info("requestMapping /registerGroomForm");
 		groom.setAgencyId(agency.getAgencyId());
 		groom.setGender("male");
+		groom.setCreationDate(Utils.getCurrentTimeStamp());
 		Groom registeredUser = service.registerGroom(groom);
-		model.addAttribute("registrar","Groom");
-		model.addAttribute("fullName", registeredUser.getFirstName().toUpperCase().concat(" ").concat(registeredUser.getLastName()).toUpperCase());
-		if(registeredUser.getMemberId() != null) {
-			model.addAttribute("userId", registeredUser.getMemberId());
-			model.addAttribute("whatsappNumber", registeredUser.getWhatsappNumber());
-			model.addAttribute("email", registeredUser.getEmail().toLowerCase());
-			return "redirect:/timeline";
+		model.addAttribute("registrar", "Groom");
+		model.addAttribute("fullName", registeredUser.getFirstName().toUpperCase().concat(" ")
+				.concat(registeredUser.getLastName()).toUpperCase());
+		if (registeredUser.getMemberId() != null) {
+			model.addAttribute("groom", registeredUser);
+			return "redirect:/viewMatPre";
 		}
 		model.addAttribute("errorMessage", "Groom is not registered. Please try again!");
 		return "redirect:/timeline";
 	}
-	
-	@RequestMapping(value= "/registerBride", method = RequestMethod.GET)
+
+	@RequestMapping(value = "/registerBride", method = RequestMethod.GET)
 	public String registerBride(Model model) {
 		logger.info("requestMapping /registerBride");
 		return "registerbride";
 	}
-	
+
 	@RequestMapping(value = "/registerBrideForm", method = RequestMethod.POST)
 	public String registerBride(@Validated Bride bride, @ModelAttribute("agency") Agency agency, Model model) {
 		logger.info("requestMapping /registerBrideForm");
 		bride.setAgencyId(agency.getAgencyId());
 		bride.setGender("female");
+		bride.setCreationDate(Utils.getCurrentTimeStamp());
 		Bride registeredUser = service.registerBride(bride);
-		model.addAttribute("registrar","Bride");
-		model.addAttribute("fullName", registeredUser.getFirstName().toUpperCase().concat(" ").concat(registeredUser.getLastName()).toUpperCase());
-		if(registeredUser.getMemberId() != null) {
-			model.addAttribute("userId", registeredUser.getMemberId());
-			model.addAttribute("whatsappNumber", registeredUser.getWhatsappNumber());
-			model.addAttribute("email", registeredUser.getEmail().toLowerCase());
-			return "redirect:/timeline";
+		model.addAttribute("registrar", "Bride");
+		model.addAttribute("fullName", registeredUser.getFirstName().toUpperCase().concat(" ")
+				.concat(registeredUser.getLastName()).toUpperCase());
+		if (registeredUser.getMemberId() != null) {
+			model.addAttribute("bride", registeredUser);
+			return "redirect:/viewMatPre";
 		}
 		model.addAttribute("errorMessage", "Bride is not registered. Please try again!");
 		return "redirect:/timeline";
 	}
-	
+
 	@RequestMapping(value = "/timeline", method = RequestMethod.GET)
 	public String showTimeline(@ModelAttribute("agency") Agency agency, Model model) {
 		logger.info("request mapping /timeline");
@@ -82,16 +83,41 @@ public class DashboardController {
 		model.addAttribute("bridecount", Integer.toString(brideCount));
 		return "timeline";
 	}
-	
+
+	@RequestMapping(value = "/viewMatPre", method = RequestMethod.GET)
+	public String viewMatchPre(@ModelAttribute("agency") Agency agency, @ModelAttribute("groom") Groom groom,
+			@ModelAttribute("bride") Bride bride, Model model) {
+		logger.info("request /viewMatPre");
+		model.addAttribute("groom", groom);
+		model.addAttribute("bride", bride);
+		return "matchpreference";
+	}
+
 	@RequestMapping(value = "/matchPreference", method = RequestMethod.GET)
-	public String registerMatchPreference(@ModelAttribute("agency") Agency agency, @Validated MatchPreference matPreference, Model model) {
+	public String registerMatchPreference(@ModelAttribute("agency") Agency agency, @ModelAttribute("groom") Groom groom,
+			@ModelAttribute("bride") Bride bride, @Validated MatchPreference matPreference, Model model) {
 		logger.info("request /matchPreference");
-		MatchPreference matchPreference = service.registerMatchPreferencce(matPreference);
-		if(matchPreference != null) {
-			model.addAttribute("message", "Please add Match Preference!");
-			return "matchpreference";
+		if (groom != null && matPreference != null) {
+			groom.setMatchPreference(matPreference);
+			Groom regGroom = service.registerGroom(groom);
+			if (regGroom != null) {
+				model.addAttribute("message",
+						"Groom added successfully. Confirmation has been sent to your mobile number("
+								+ groom.getMobileNumber() + ") and email(" + groom.getEmail() + ")");
+				return "redirect:/timeline";
+			}
+		} else if (bride != null && matPreference != null) {
+			bride.setMatchPreference(matPreference);
+			Bride regBride = service.registerBride(bride);
+			if (regBride != null) {
+				model.addAttribute("message",
+						"Bride added successfully. Confirmation has been sent to your mobile number("
+								+ bride.getMobileNumber() + ") and email(" + bride.getEmail() + ")");
+			}
+		} else {
+			model.addAttribute("message", "Some unexpected issue. Please try again after some time!");
 		}
 		return "redirect:/timeline";
 	}
-	
+
 }

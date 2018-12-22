@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.regionalmatrimony.web.model.Groom;
 
 @Transactional
-public interface GroomRepository extends JpaRepository<Groom, Long> {
+public interface GroomRepository extends JpaRepository<Groom, String> {
 	
 	@Query("SELECT groom FROM Groom groom WHERE groom.mobileNumber = (:mobileNumber) AND groom.agencyId = (:agencyId)")
 	List<Groom> findByMobileNumber(@Param("mobileNumber") String mobileNumber, @Param("agencyId") String agencyId);
@@ -23,12 +23,9 @@ public interface GroomRepository extends JpaRepository<Groom, Long> {
 	
 	@Query("SELECT groom FROM Groom groom WHERE groom.agencyId = (:agencyId)")
 	List<Groom> findGroomByAgency(@Param("agencyId") String agencyId);
-	
-	@Query("SELECT MAX(groom.id) FROM Groom groom")
-	Long getMaxId();
-	
-	@Query("SELECT groom.memberId from Groom groom WHERE groom.id = (:id)")
-	String getLastUpdatedGroomId(@Param("id") Long id);
+
+	@Query("SELECT groom.memberId from Groom groom WHERE groom.creationDate = (SELECT MAX(groom.creationDate) FROM Groom groom))")
+	String getLastUpdatedGroomId();
 	
 	@Query("SELECT groom from Groom groom WHERE groom.memberId = (:memberId)")
 	Groom findGroomByMemberId(@Param("memberId") String memberId);

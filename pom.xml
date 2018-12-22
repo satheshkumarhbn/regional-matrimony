@@ -8,7 +8,7 @@
   <description>A project which developed on Mr. Ashok Kumar's Idea.</description>
   
   <properties>
-  	<spring.version>4.2.2.RELEASE</spring.version>
+  	<spring.version>4.3.21.RELEASE</spring.version>
   	<org.slf4j.version>1.7.12</org.slf4j.version>
     <log4j.version>1.2.17</log4j.version>
     <hibernate.version>4.1.9.Final</hibernate.version>

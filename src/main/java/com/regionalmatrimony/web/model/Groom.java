@@ -99,8 +99,10 @@ public class Groom {
 	@JoinColumn(name = "mpId")
 	private MatchPreference matchPreference;
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "PAYMENTS", joinColumns = @JoinColumn(name = "memberId"), inverseJoinColumns = @JoinColumn(name = "paymentsId"))
-	private List<Payments> payments = new ArrayList<>();
+	@JoinTable(name = "ORDER", joinColumns = @JoinColumn(name = "memberid"), inverseJoinColumns = @JoinColumn(name = "orderid"))
+	private List<Order> order = new ArrayList<>();
+	@Column(name = "creationdate")
+	private Date creationDate;
 
 	public String getMemberId() {
 		return memberId;
@@ -390,12 +392,20 @@ public class Groom {
 		this.matchPreference = matchPreference;
 	}
 
-	public List<Payments> getPayments() {
-		return payments;
+	public List<Order> getOrder() {
+		return order;
 	}
 
-	public void setPayments(List<Payments> payments) {
-		this.payments = payments;
+	public void setOrder(List<Order> order) {
+		this.order = order;
+	}
+
+	public Date getCreationDate() {
+		return creationDate;
+	}
+
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
 	}
 
 }
