@@ -38,12 +38,12 @@ public class DashboardController {
 		groom.setAgencyId(agency.getAgencyId());
 		groom.setGender("male");
 		groom.setCreationDate(Utils.getCurrentTimeStamp());
-		Groom registeredUser = service.registerGroom(groom);
-		model.addAttribute("registrar", "Groom");
-		model.addAttribute("fullName", registeredUser.getFirstName().toUpperCase().concat(" ")
-				.concat(registeredUser.getLastName()).toUpperCase());
-		if (registeredUser.getMemberId() != null) {
-			model.addAttribute("groom", registeredUser);
+		String lastGroomId = service.getLastGroomId();
+		groom.setMemberId(Utils.createMemberId(groom.getGender(), lastGroomId));
+		groom.setPassword(Utils.generateRandomPassword());
+		// Groom registeredUser = service.registerGroom(groom);
+		if (groom.getMemberId() != null) {
+			model.addAttribute("groom", groom);
 			return "redirect:/viewMatPre";
 		}
 		model.addAttribute("errorMessage", "Groom is not registered. Please try again!");
@@ -62,12 +62,13 @@ public class DashboardController {
 		bride.setAgencyId(agency.getAgencyId());
 		bride.setGender("female");
 		bride.setCreationDate(Utils.getCurrentTimeStamp());
-		Bride registeredUser = service.registerBride(bride);
-		model.addAttribute("registrar", "Bride");
-		model.addAttribute("fullName", registeredUser.getFirstName().toUpperCase().concat(" ")
-				.concat(registeredUser.getLastName()).toUpperCase());
-		if (registeredUser.getMemberId() != null) {
-			model.addAttribute("bride", registeredUser);
+		String lastBrideId = service.getLastBrideId();
+		bride.setMemberId(Utils.createMemberId(bride.getGender(), lastBrideId));
+		bride.setPassword(Utils.generateRandomPassword());
+
+		// Bride registeredUser = service.registerBride(bride);
+		if (bride.getMemberId() != null) {
+			model.addAttribute("bride", bride);
 			return "redirect:/viewMatPre";
 		}
 		model.addAttribute("errorMessage", "Bride is not registered. Please try again!");
@@ -85,29 +86,29 @@ public class DashboardController {
 	}
 
 	@RequestMapping(value = "/viewMatPre", method = RequestMethod.GET)
-	public String viewMatchPre(@ModelAttribute("agency") Agency agency, @ModelAttribute("groom") Groom groom,
-			@ModelAttribute("bride") Bride bride, Model model) {
+	public String viewMatchPre(@ModelAttribute("agency") Agency agency, Model model) {
 		logger.info("request /viewMatPre");
-		model.addAttribute("groom", groom);
-		model.addAttribute("bride", bride);
+		//model.addAttribute("groom", groom);
+		//model.addAttribute("bride", bride);
 		return "matchpreference";
 	}
 
-	@RequestMapping(value = "/matchPreference", method = RequestMethod.GET)
+	@RequestMapping(value = "/matchPreference", method = RequestMethod.POST)
 	public String registerMatchPreference(@ModelAttribute("agency") Agency agency, @ModelAttribute("groom") Groom groom,
 			@ModelAttribute("bride") Bride bride, @Validated MatchPreference matPreference, Model model) {
 		logger.info("request /matchPreference");
 		if (groom != null && matPreference != null) {
 			groom.setMatchPreference(matPreference);
+			groom.setAgencyId(agency.getAgencyId());
 			Groom regGroom = service.registerGroom(groom);
 			if (regGroom != null) {
 				model.addAttribute("message",
 						"Groom added successfully. Confirmation has been sent to your mobile number("
 								+ groom.getMobileNumber() + ") and email(" + groom.getEmail() + ")");
-				return "redirect:/timeline";
 			}
 		} else if (bride != null && matPreference != null) {
 			bride.setMatchPreference(matPreference);
+			bride.setAgencyId(agency.getAgencyId());
 			Bride regBride = service.registerBride(bride);
 			if (regBride != null) {
 				model.addAttribute("message",

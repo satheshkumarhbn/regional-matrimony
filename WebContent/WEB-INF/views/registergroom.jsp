@@ -139,7 +139,8 @@
 										</div>
 										<div class="col-12 col-md-9">
 											<input type="text" id="gender" name="gender"
-												placeholder="male" value="male" disabled="disabled" class="form-control">
+												placeholder="male" value="male" disabled="disabled"
+												class="form-control">
 										</div>
 									</div>
 									<div class="row form-group">
@@ -572,7 +573,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 	</div>
 </body>
 </html>
