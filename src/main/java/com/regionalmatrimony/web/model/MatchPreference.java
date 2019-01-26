@@ -1,5 +1,7 @@
 package com.regionalmatrimony.web.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "MATCHREFERENCE")
+@Table(name = "MATCHPREFERENCE")
 public class MatchPreference {
 
 	@Id
@@ -19,11 +21,11 @@ public class MatchPreference {
 	@Column(name = "endage")
 	private int endAge;
 	@Column(name = "education")
-	private String education;
+	private List<String> education;
 	@Column(name = "occupation")
-	private String occupation;
+	private List<String> occupation;
 	@Column(name = "worklocation")
-	private String workLocation;
+	private List<String> workLocation;
 	@Column(name = "height")
 	private String height;
 	@Column(name = "weight")
@@ -33,111 +35,16 @@ public class MatchPreference {
 	@Column(name = "disability")
 	private String disability;
 	@Column(name = "caste")
-	private String caste;
+	private List<String> caste;
 	@Column(name = "subcaste")
-	private String subCaste;
+	private List<String> subCaste;
 	@Column(name = "division")
-	private String division;
+	private List<String> division;
 	@Column(name = "diety")
-	private String diety;
+	private List<String> diety;
 	@Column(name = "star")
-	private String star;
+	private List<String> star;
 	@Column(name = "raasi")
-	private String raasi;
-	public int getMpId() {
-		return mpId;
-	}
-	public void setMpId(int mpId) {
-		this.mpId = mpId;
-	}
-	public int getStartAge() {
-		return startAge;
-	}
-	public void setStartAge(int startAge) {
-		this.startAge = startAge;
-	}
-	public int getEndAge() {
-		return endAge;
-	}
-	public void setEndAge(int endAge) {
-		this.endAge = endAge;
-	}
-	public String getEducation() {
-		return education;
-	}
-	public void setEducation(String education) {
-		this.education = education;
-	}
-	public String getOccupation() {
-		return occupation;
-	}
-	public void setOccupation(String occupation) {
-		this.occupation = occupation;
-	}
-	public String getWorkLocation() {
-		return workLocation;
-	}
-	public void setWorkLocation(String workLocation) {
-		this.workLocation = workLocation;
-	}
-	public String getHeight() {
-		return height;
-	}
-	public void setHeight(String height) {
-		this.height = height;
-	}
-	public String getWeight() {
-		return weight;
-	}
-	public void setWeight(String weight) {
-		this.weight = weight;
-	}
-	public String getMaritalStatus() {
-		return maritalStatus;
-	}
-	public void setMaritalStatus(String maritalStatus) {
-		this.maritalStatus = maritalStatus;
-	}
-	public String getDisability() {
-		return disability;
-	}
-	public void setDisability(String disability) {
-		this.disability = disability;
-	}
-	public String getCaste() {
-		return caste;
-	}
-	public void setCaste(String caste) {
-		this.caste = caste;
-	}
-	public String getSubCaste() {
-		return subCaste;
-	}
-	public void setSubCaste(String subCaste) {
-		this.subCaste = subCaste;
-	}
-	public String getDivision() {
-		return division;
-	}
-	public void setDivision(String division) {
-		this.division = division;
-	}
-	public String getDiety() {
-		return diety;
-	}
-	public void setDiety(String diety) {
-		this.diety = diety;
-	}
-	public String getStar() {
-		return star;
-	}
-	public void setStar(String star) {
-		this.star = star;
-	}
-	public String getRaasi() {
-		return raasi;
-	}
-	public void setRaasi(String raasi) {
-		this.raasi = raasi;
-	}
+	private List<String> raasi;
+	
 }

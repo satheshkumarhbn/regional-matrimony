@@ -13,6 +13,86 @@
 
 <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
 <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
+<style type="text/css">
+.dropdown {
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+}
+
+a {
+  color: #fff;
+}
+
+.dropdown dd,
+.dropdown dt {
+  margin: 0px;
+  padding: 0px;
+}
+
+.dropdown ul {
+  margin: -1px 0 0 0;
+}
+
+.dropdown dd {
+  position: relative;
+}
+
+.dropdown a,
+.dropdown a:visited {
+  color: #fff;
+  text-decoration: none;
+  outline: none;
+  font-size: 12px;
+}
+
+.dropdown dt a {
+  background-color: #4F6877;
+  display: block;
+  padding: 8px 20px 5px 10px;
+  min-height: 25px;
+  line-height: 24px;
+  overflow: hidden;
+  border: 0;
+  width: 272px;
+}
+
+.dropdown dt a span,
+.multiSel span {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0 3px 2px 0;
+}
+
+.dropdown dd ul {
+  background-color: #4F6877;
+  border: 0;
+  color: #fff;
+  display: none;
+  left: 0px;
+  padding: 2px 15px 2px 5px;
+  position: absolute;
+  top: 2px;
+  width: 280px;
+  list-style: none;
+  height: 100px;
+  overflow: auto;
+}
+
+.dropdown span.value {
+  display: none;
+}
+
+.dropdown dd ul li a {
+  padding: 5px;
+  display: block;
+}
+
+.dropdown dd ul li a:hover {
+  /*background-color: #fff;*/
+}
+
+</style>
 </head>
 <body>
 	<jsp:include page="dashboard.jsp"></jsp:include>
@@ -44,7 +124,7 @@
 		<div class="content">
 			<div class="animated fadeIn">
 				<div class="row">
-					<div class="col-lg-6">
+					<div class="col-lg-12">
 						<div class="card">
 							<div class="card-header">
 								<strong>Match Preference</strong> Form
@@ -56,7 +136,7 @@
 										<div class="col col-md-3">
 											<label for="age" class=" form-control-label">Age</label>
 										</div>
-										<div class="col-12 col-md-9">
+										<div class="col-6 col-md-3">
 											<select name="startage" id="startage" class="form-control">
 												<option value="0">Please select start age</option>
 												<option value="19">19</option>
@@ -91,7 +171,10 @@
 												<option value="48">48</option>
 												<option value="49">49</option>
 												<option value="50">50</option>
-											</select> <select name="endage" id="endage" class="form-control">
+											</select>
+										</div>
+										<div class="col-12 col-md-3">
+											<select name="endage" id="endage" class="form-control">
 												<option value="0">Please select end age</option>
 												<option value="19">19</option>
 												<option value="20">20</option>
@@ -130,145 +213,298 @@
 									</div>
 									<div class="row form-group">
 										<div class="col col-md-3">
-											<label for="education" class=" form-control-label">Educational
+											<label class=" form-control-label">Educational
 												Qualification</label>
 										</div>
-										<div class="col-12 col-md-9">
-											<select name="education" id="education" class="form-control">
-												<option value="0">Please select Groom's highest
-													educational qualification</option>
-												<option value="SSLC">SSLC</option>
-												<option value="HSC">HSC</option>
-												<option value="Bachelors in Engineering">Bachelors
-													in Engineering</option>
-												<option value="Masters in Engineering">Masters in
-													Engineering</option>
-												<option value="Bachelors in Science">Bachelors in
-													Science</option>
-												<option value="Masters in Science">Masters in
-													Science</option>
-												<option value="Bachelors in Commerce">Bachelors in
-													Commerce</option>
-												<option value="Masters in Commerce">Masters in
-													Commerce</option>
-												<option value="Bachelors in Science">Bachelors in
-													Science</option>
-												<option value="Masters in Science">Masters in
-													Science</option>
-												<option value="Bachelors in Computer Applications">Bachelors
-													in Computer Applications</option>
-												<option value="Masters in Computer Applications">Masters
-													in Computer Applications</option>
-											</select>
+										<div class="col col-md-6">
+											<div class="form-check">
+												<div class="checkbox">
+													<label for="checkbox1" class="form-check-label "> <input
+														type="checkbox" id="checkbox1" name="checkbox1"
+														value="SSLC" class="form-check-input">SSLC
+													</label>
+												</div>
+												<div class="checkbox">
+													<label for="checkbox2" class="form-check-label "> <input
+														type="checkbox" id="checkbox2" name="checkbox2"
+														value="HSC" class="form-check-input"> HSC
+													</label>
+												</div>
+												<div class="checkbox">
+													<label for="checkbox3" class="form-check-label "> <input
+														type="checkbox" id="checkbox3" name="checkbox3"
+														value="Bachelors in Engineering" class="form-check-input">
+														Bachelors in Engineering
+													</label>
+												</div>
+												<div class="checkbox">
+													<label for="checkbox4" class="form-check-label "> <input
+														type="checkbox" id="checkbox4" name="checkbox4"
+														value="Masters in Engineering" class="form-check-input">
+														Masters in Engineering
+													</label>
+												</div>
+												<div class="checkbox">
+													<label for="checkbox5" class="form-check-label "> <input
+														type="checkbox" id="checkbox5" name="checkbox5"
+														value="Bachelors in Science" class="form-check-input">
+														Bachelors in Science
+													</label>
+												</div>
+												<div class="checkbox">
+													<label for="checkbox6" class="form-check-label "> <input
+														type="checkbox" id="checkbox6" name="checkbox6"
+														value="Masters in Science" class="form-check-input">
+														Masters in Science
+													</label>
+												</div>
+												<div class="checkbox">
+													<label for="checkbox7" class="form-check-label "> <input
+														type="checkbox" id="checkbox7" name="checkbox7"
+														value="Bachelors in Commerce" class="form-check-input">
+														Bachelors in Commerce
+													</label>
+												</div>
+												<div class="checkbox">
+													<label for="checkbox8" class="form-check-label "> <input
+														type="checkbox" id="checkbox8" name="checkbox8"
+														value="Masters in Commerce" class="form-check-input">
+														Masters in Commerce
+													</label>
+												</div>
+												<div class="checkbox">
+													<label for="checkbox9" class="form-check-label "> <input
+														type="checkbox" id="checkbox9" name="checkbox9"
+														value="Bachelors in Computer Applications"
+														class="form-check-input"> Bachelors in Computer
+														Applications
+													</label>
+												</div>
+												<div class="checkbox">
+													<label for="checkbox10" class="form-check-label ">
+														<input type="checkbox" id="checkbox10" name="checkbox10"
+														value="Masters in Computer Applications"
+														class="form-check-input"> Masters in Computer
+														Applications
+													</label>
+												</div>
+											</div>
 										</div>
 									</div>
 									<div class="row form-group">
 										<div class="col col-md-3">
-											<label for="occupation" class=" form-control-label">Groom's
-												Occupation</label>
+											<label class=" form-control-label">Occupation</label>
 										</div>
-										<div class="col-12 col-md-9">
-											<select name="occupation" id="occupation"
-												class="form-control">
-												<option value="0">Please select Groom's Occupation</option>
-												<option value="Business-own">Business- own</option>
-												<option value="Business-partner">Business- partner</option>
-												<option value="Salaried-own">Salaried- public
-													sector</option>
-												<option value="Salaried-own">Salaried- private
-													sector</option>
-												<option value="other">Others</option>
-											</select>
+										<div class="col col-md-9">
+											<div class="form-check">
+												<div class="checkbox">
+													<label for="checkbox1" class="form-check-label "> <input
+														type="checkbox" id="checkbox1" name="checkbox1"
+														value="Business-own" class="form-check-input">Business-
+														own
+													</label>
+												</div>
+												<div class="checkbox">
+													<label for="checkbox2" class="form-check-label "> <input
+														type="checkbox" id="checkbox2" name="checkbox2"
+														value="Business-partner" class="form-check-input">
+														Business- partner
+													</label>
+												</div>
+												<div class="checkbox">
+													<label for="checkbox3" class="form-check-label "> <input
+														type="checkbox" id="checkbox3" name="checkbox3"
+														value="Salaried-public" class="form-check-input">
+														Salaried- public sector
+													</label>
+												</div>
+												<div class="checkbox">
+													<label for="checkbox4" class="form-check-label "> <input
+														type="checkbox" id="checkbox4" name="checkbox4"
+														value="Salaried-private" class="form-check-input">
+														Salaried- private sector
+													</label>
+												</div>
+											</div>
 										</div>
 									</div>
 									<div class="row form-group">
 										<div class="col col-md-3">
-											<label for="workLocation" class=" form-control-label">Work
-												Location</label>
+											<label class=" form-control-label">Work Location</label>
 										</div>
-										<div class="col-12 col-md-9">
-											<input type="text" id="workLocation" name="workLocation"
-												placeholder="Please enter Groom's Work Location"
-												class="form-control">
+										<div class="col col-md-9">
+											<div class="form-check">
+												<div class="checkbox">
+													<label for="checkbox1" class="form-check-label "> <input
+														type="checkbox" id="checkbox1" name="checkbox1"
+														value="chennai" class="form-check-input">Chennai
+													</label>
+												</div>
+												<div class="checkbox">
+													<label for="checkbox2" class="form-check-label "> <input
+														type="checkbox" id="checkbox2" name="checkbox2"
+														value="bangalore" class="form-check-input">
+														Bangalore
+													</label>
+												</div>
+												<div class="checkbox">
+													<label for="checkbox3" class="form-check-label "> <input
+														type="checkbox" id="checkbox3" name="checkbox3"
+														value="hyderabad" class="form-check-input">
+														Hyderabad
+													</label>
+												</div>
+												<div class="checkbox">
+													<label for="checkbox4" class="form-check-label "> <input
+														type="checkbox" id="checkbox4" name="checkbox4"
+														value="mumbai" class="form-check-input"> Mumbai
+													</label>
+												</div>
+												<div class="checkbox">
+													<label for="checkbox5" class="form-check-label "> <input
+														type="checkbox" id="checkbox5" name="checkbox5"
+														value="kolkatta" class="form-check-input">
+														Kolkatta
+													</label>
+												</div>
+												<div class="checkbox">
+													<label for="checkbox6" class="form-check-label "> <input
+														type="checkbox" id="checkbox6" name="checkbox6"
+														value="delhi" class="form-check-input"> Delhi
+													</label>
+												</div>
+												<div class="checkbox">
+													<label for="checkbox7" class="form-check-label "> <input
+														type="checkbox" id="checkbox7" name="checkbox7"
+														value="other cities" class="form-check-input">
+														Other Cities
+													</label>
+												</div>
+											</div>
 										</div>
 									</div>
 									<div class="row form-group">
 										<div class="col col-md-3">
 											<label for="height" class=" form-control-label">Height</label>
 										</div>
-										<div class="col-12 col-md-9">
-											<input type="text" id="height" name="height"
-												placeholder="Please enter Groom's Height"
-												class="form-control">
+										<div class="col-6 col-md-3">
+											<select name="height" id="height" class="form-control">
+												<option value="0">Please select height range</option>
+												<option value="100-140">below 140cm</option>
+												<option value="141-150">141cm-150cm</option>
+												<option value="151-160">151cm-160cm</option>
+												<option value="161-170">161cm-170cm</option>
+												<option value="171-180">171cm-180cm</option>
+												<option value="181-190">181cm-190cm</option>
+												<option value="191-200">191cm-200cm</option>
+												<option value="201-300">above 300cm</option>
+											</select>
 										</div>
+									</div>
+									<div class="row form-group">
 										<div class="col col-md-3">
 											<label for="weight" class=" form-control-label">Weight</label>
 										</div>
-										<div class="col-12 col-md-9">
-											<input type="text" id="weight" name="weight"
-												placeholder="Please enter Groom's Weight"
-												class="form-control">
+										<div class="col-6 col-md-3">
+											<select name="weight" id="weight" class="form-control">
+												<option value="0">Please select weight range</option>
+												<option value="10-40">below 40kg</option>
+												<option value="41-50">41kg-50kg</option>
+												<option value="51-60">51kg-60kg</option>
+												<option value="61-70">61kg-70kg</option>
+												<option value="71-80">71kg-80kg</option>
+												<option value="81-90">81kg-90kg</option>
+												<option value="91-100">91kg-100kg</option>
+												<option value="101-300">above 100kg</option>
+											</select>
 										</div>
 									</div>
 									<div class="row form-group">
 										<div class="col col-md-3">
 											<label for="caste" class=" form-control-label">Caste</label>
 										</div>
-										<div class="col-12 col-md-9">
-											<select name="caste" id="caste" class="form-control">
-												<option value="0">Please select Groom's Caste</option>
-												<option value="hindu nadar">Hindu Nadar</option>
-												<option value="christian nadar">Christian Nadar</option>
-											</select>
+										<div class="col col-md-9">
+											<dl class="dropdown"> 
+											    <dt>
+											    <a href="#">
+											      <span class="hida">Bussiness Unit</span>    
+											    </a>
+											    </dt>
+											  
+											    <dd>
+											        <div class="mutliSelect">
+											            <ul>
+											              <li><a href="#" onclick="selectAll()">Select all</a></li>
+											                <li>
+											                    <input type="checkbox" value="Apple" />Apple</li>
+											                <li>
+											                    <input type="checkbox" value="Blackberry" />Blackberry</li>
+											                <li>
+											                    <input type="checkbox" value="HTC" />HTC</li>
+											                <li>
+											                    <input type="checkbox" value="Sony Ericson" />Sony Ericson</li>
+											                <li>
+											                    <input type="checkbox" value="Motorola" />Motorola</li>
+											                <li>
+											                    <input type="checkbox" value="Nokia" />Nokia</li>
+											            </ul>
+											        </div>
+											    </dd>
+											  <p class="multiSel"></p>
+											</dl>
 										</div>
 									</div>
 									<div class="row form-group">
 										<div class="col col-md-3">
-											<label for="subCaste" class=" form-control-label">Sub
+											<label for="subcaste" class=" form-control-label">Sub
 												Caste</label>
 										</div>
-										<div class="col-12 col-md-9">
-											<select name="subCaste" id="subCaste" class="form-control">
-												<option value="0">Please select Groom's Sub Caste</option>
-												<option value="nattathi nadar">Nattathi nadar</option>
-												<option value="kongu nadar">Kongu Nadar</option>
-												<option value="nattuva nadar">Nattuva Nadar</option>
-												<option value="karunchanar">Karunchanar</option>
-												<option value="sanar">Sanar</option>
-											</select>
+										<div class="col col-md-9">
+											<c:forEach var="subcaste" items="${subcastelist }">
+												<div class="form-check">
+													<div class="checkbox">
+														<label for="subcaste" class="form-check-label ">
+															<input type="checkbox" id="subcaste" name="subcaste"
+															value="${subcaste.subCasteName }"
+															class="form-check-input">${subcaste.displayName }
+														</label>
+													</div>
+												</div>
+											</c:forEach>
 										</div>
 									</div>
 									<div class="row form-group">
 										<div class="col col-md-3">
 											<label for="division" class=" form-control-label">Division</label>
 										</div>
-										<div class="col-12 col-md-9">
-											<select name="division" id="division" class="form-control">
-												<option value="0">Please select Groom's Division</option>
-												<option value="pallan">Pallan</option>
-												<option value="madan kulam">Madan Kulam</option>
-												<option value="sakkarai vilambi">Sakkarai vilambi</option>
-												<option value="uppu kachi">Uppu kachi</option>
-												<option value="silambu chinnan">Silambu chinnan</option>
-												<option value="nay thinni">Nay thinni</option>
-												<option value="monnai kootam">Monnai kootam</option>
-												<option value="kadai kootam">Kadai kootam</option>
-												<option value="selathan kootam">Selathan kootam</option>
-												<option value="others">Others</option>
-											</select>
+										<div class="col col-md-9">
+											<c:forEach var="division" items="${divisionlist }">
+												<div class="form-check">
+													<div class="checkbox">
+														<label for="checkbox1" class="form-check-label ">
+															<input type="checkbox" id="checkbox1" name="checkbox1"
+															value="${division.division }" class="form-check-input">${division.displayName }
+														</label>
+													</div>
+												</div>
+											</c:forEach>
 										</div>
 									</div>
 									<div class="row form-group">
 										<div class="col col-md-3">
 											<label for="diety" class=" form-control-label">Diety</label>
 										</div>
-										<div class="col-12 col-md-9">
-											<select name="diety" id="diety" class="form-control">
-												<option value="0">Please select Groom's Diety</option>
-												<option value="angalamman">Angalamman</option>
-												<option value="bathrakaliamman">Bathrakaliamman</option>
-												<option value="others">Others</option>
-											</select>
+										<div class="col col-md-9">
+											<c:forEach var="diety" items="${dietylist }">
+												<div class="form-check">
+													<div class="checkbox">
+														<label for="diety" class="form-check-label ">
+															<input type="checkbox" id="diety" name="diety"
+															value="${diety.diety }" class="form-check-input">${diety.displayName }
+														</label>
+													</div>
+												</div>
+											</c:forEach>
 										</div>
 									</div>
 									<div class="row form-group">
@@ -305,57 +541,34 @@
 										<div class="col col-md-3">
 											<label for="star" class=" form-control-label">Star</label>
 										</div>
-										<div class="col-12 col-md-9">
-											<select name="star" id="star" class="form-control">
-												<option value="ashvini">Ashvini</option>
-												<option value="bharani">Bharani</option>
-												<option value="karthigai">Karthigai</option>
-												<option value="rohini">Rohini</option>
-												<option value="mirukaseerisham">Mirukaseerisham</option>
-												<option value="thiruvathirai">Thiruvathirai</option>
-												<option value="punarpusam">Punarpusam</option>
-												<option value="poosam">Poosam</option>
-												<option value="ayilyam">Ayilyam</option>
-												<option value="maham">Maham</option>
-												<option value="pooram">Pooram</option>
-												<option value="uthiram">Uthiram</option>
-												<option value="hashtham">Hashtham</option>
-												<option value="sithirai">Sithirai</option>
-												<option value="swathi">Swathi</option>
-												<option value="visakam">Visakam</option>
-												<option value="anusham">Anusham</option>
-												<option value="kettai">kettai</option>
-												<option value="moolam">Moolam</option>
-												<option value="pooradam">Pooradam</option>
-												<option value="uthiradam">Uthiradam</option>
-												<option value="thiruvonam">Thiruvonam</option>
-												<option value="avittam">Avittam</option>
-												<option value="sathayam">Sathayam</option>
-												<option value="pooratathi">Pooratathi</option>
-												<option value="uthiratathi">Uthiratathi</option>
-												<option value="revathi">Revathi</option>
-											</select>
+										<div class="col col-md-9">
+											<c:forEach var="star" items="${starlist }">
+												<div class="form-check">
+													<div class="checkbox">
+														<label for="star" class="form-check-label ">
+															<input type="checkbox" id="star" name="star"
+															value="${star.starname }" class="form-check-input">${star.displayName }
+														</label>
+													</div>
+												</div>
+											</c:forEach>
 										</div>
 									</div>
 									<div class="row form-group">
 										<div class="col col-md-3">
 											<label for="raasi" class=" form-control-label">Raasi</label>
 										</div>
-										<div class="col-12 col-md-9">
-											<select name="raasi" id="raasi" class="form-control">
-												<option value="mesham">Mesham</option>
-												<option value="rishabam">Rishabam</option>
-												<option value="mithunam">Mithunam</option>
-												<option value="kadakam">Kadakam</option>
-												<option value="simmam">Simmam</option>
-												<option value="kanni">Kanni</option>
-												<option value="thulam">Thulam</option>
-												<option value="viruchikam">Viruchikam</option>
-												<option value="dhanusu">Dhanusu</option>
-												<option value="makaram">Makaram</option>
-												<option value="kumbam">Kumbam</option>
-												<option value="meenam">Meenam</option>
-											</select>
+										<div class="col col-md-9">
+											<c:forEach var="raasi" items="${raasilist }">
+												<div class="form-check">
+													<div class="checkbox">
+														<label for="raasi" class="form-check-label ">
+															<input type="checkbox" id="raasi" name="raasi"
+															value="${raasi.raasiname }" class="form-check-input">${raasi.displayName }
+														</label>
+													</div>
+												</div>
+											</c:forEach>
 										</div>
 									</div>
 									<button type="submit"
@@ -371,4 +584,39 @@
 
 	</div>
 </body>
+<script>
+$(".dropdown dt a").on('click', function() {
+	  $(".dropdown dd ul").slideToggle('fast');
+	});
+
+	$(".dropdown dd ul li a").on('click', function() {
+	  $(".dropdown dd ul").hide();
+	});
+
+	function getSelectedValue(id) {
+	  return $("#" + id).find("dt a span.value").html();
+	}
+
+	$(document).bind('click', function(e) {
+	  var $clicked = $(e.target);
+	  if (!$clicked.parents().hasClass("dropdown")) $(".dropdown dd ul").hide();
+	});
+
+	$('.mutliSelect input[type="checkbox"]').on('click', function() {
+
+	  var title = $(this).closest('.mutliSelect').find('input[type="checkbox"]').val(),
+	    title = $(this).val() + ",";
+
+	  if ($(this).is(':checked')) {
+	    var html = '<span title="' + title + '">' + title + '</span>';
+	    $('.multiSel').append(html);
+	    //$(".hida").hide();
+	  } else {
+	    $('span[title="' + title + '"]').remove();
+	    var ret = $(".hida");
+	    $('.dropdown dt a').append(ret);
+
+	  }
+	});
+</script>
 </html>

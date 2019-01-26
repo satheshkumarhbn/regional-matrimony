@@ -88,8 +88,12 @@ public class DashboardController {
 	@RequestMapping(value = "/viewMatPre", method = RequestMethod.GET)
 	public String viewMatchPre(@ModelAttribute("agency") Agency agency, Model model) {
 		logger.info("request /viewMatPre");
-		//model.addAttribute("groom", groom);
-		//model.addAttribute("bride", bride);
+		model.addAttribute("castelist", service.getCaste());
+		model.addAttribute("subcastelist", service.getSubCaste());
+		model.addAttribute("divisionlist", service.getDivision());
+		model.addAttribute("dietylist", service.getDiety());
+		model.addAttribute("starlist", service.getStar());
+		model.addAttribute("raasilist", service.getRaasi());
 		return "matchpreference";
 	}
 
