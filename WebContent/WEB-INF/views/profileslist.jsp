@@ -1,296 +1,312 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ page isELIgnored="false"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <%@taglib prefix="tag" uri="http://www.springframework.org/tags"%>
-    
+	pageEncoding="ISO-8859-1"%>
+<%@ page isELIgnored="false"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="tag" uri="http://www.springframework.org/tags"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 <body>
-<jsp:include page="header.jsp"></jsp:include>
-	<!-- BREADCRUMB -->
-	<div id="breadcrumb">
-		<div class="container">
-			<ul class="breadcrumb">
-				<li><a href="#">Home</a></li>
-				<li class="active">Products</li>
-			</ul>
-		</div>
-	</div>
-	<!-- /BREADCRUMB -->
-	<!-- section -->
-	<div class="section">
-		<!-- container -->
-		<div class="container">
-			<!-- row -->
-			<div class="row">
-				<!-- ASIDE -->
-				<div id="aside" class="col-md-3">
-					<!-- aside widget -->
-					<div class="aside">
-						<h3 class="aside-title">Shop by:</h3>
-						<ul class="filter-list">
-							<li><span class="text-uppercase">color:</span></li>
-							<li><a href="#" style="color:#FFF; background-color:#8A2454;">Camelot</a></li>
-							<li><a href="#" style="color:#FFF; background-color:#475984;">East Bay</a></li>
-							<li><a href="#" style="color:#FFF; background-color:#BF6989;">Tapestry</a></li>
-							<li><a href="#" style="color:#FFF; background-color:#9A54D8;">Medium Purple</a></li>
-						</ul>
-
-						<ul class="filter-list">
-							<li><span class="text-uppercase">Size:</span></li>
-							<li><a href="#">X</a></li>
-							<li><a href="#">XL</a></li>
-						</ul>
-
-						<ul class="filter-list">
-							<li><span class="text-uppercase">Price:</span></li>
-							<li><a href="#">MIN: $20.00</a></li>
-							<li><a href="#">MAX: $120.00</a></li>
-						</ul>
-
-						<ul class="filter-list">
-							<li><span class="text-uppercase">Gender:</span></li>
-							<li><a href="#">Men</a></li>
-						</ul>
-
-						<button class="primary-btn">Clear All</button>
-					</div>
-					<!-- /aside widget -->
-
-					<!-- aside widget -->
-					<div class="aside">
-						<h3 class="aside-title">Filter by Price</h3>
-						<div id="price-slider"></div>
-					</div>
-					<!-- aside widget -->
-
-					<!-- aside widget -->
-					<div class="aside">
-						<h3 class="aside-title">Filter By Color:</h3>
-						<ul class="color-option">
-							<li><a href="#" style="background-color:#475984;"></a></li>
-							<li><a href="#" style="background-color:#8A2454;"></a></li>
-							<li class="active"><a href="#" style="background-color:#BF6989;"></a></li>
-							<li><a href="#" style="background-color:#9A54D8;"></a></li>
-							<li><a href="#" style="background-color:#675F52;"></a></li>
-							<li><a href="#" style="background-color:#050505;"></a></li>
-							<li><a href="#" style="background-color:#D5B47B;"></a></li>
-						</ul>
-					</div>
-					<!-- /aside widget -->
-
-					<!-- aside widget -->
-					<div class="aside">
-						<h3 class="aside-title">Filter By Size:</h3>
-						<ul class="size-option">
-							<li class="active"><a href="#">S</a></li>
-							<li class="active"><a href="#">XL</a></li>
-							<li><a href="#">SL</a></li>
-						</ul>
-					</div>
-					<!-- /aside widget -->
-
-					<!-- aside widget -->
-					<div class="aside">
-						<h3 class="aside-title">Filter by Brand</h3>
-						<ul class="list-links">
-							<li><a href="#">Nike</a></li>
-							<li><a href="#">Adidas</a></li>
-							<li><a href="#">Polo</a></li>
-							<li><a href="#">Lacost</a></li>
-						</ul>
-					</div>
-					<!-- /aside widget -->
-
-					<!-- aside widget -->
-					<div class="aside">
-						<h3 class="aside-title">Filter by Gender</h3>
-						<ul class="list-links">
-							<li class="active"><a href="#">Men</a></li>
-							<li><a href="#">Women</a></li>
-						</ul>
-					</div>
-					<!-- /aside widget -->
-
-					<!-- aside widget -->
-					<div class="aside">
-						<h3 class="aside-title">Top Rated Product</h3>
-						<!-- widget product -->
-						<div class="product product-widget">
-							<div class="product-thumb">
-								<img src="./img/thumb-product01.jpg" alt="">
-							</div>
-							<div class="product-body">
-								<h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-								<h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3>
-								<div class="product-rating">
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star-o empty"></i>
-								</div>
-							</div>
-						</div>
-						<!-- /widget product -->
-
-						<!-- widget product -->
-						<div class="product product-widget">
-							<div class="product-thumb">
-								<img src="./img/thumb-product01.jpg" alt="">
-							</div>
-							<div class="product-body">
-								<h2 class="product-name"><a href="#">Product Name Goes Here</a></h2>
-								<h3 class="product-price">$32.50</h3>
-								<div class="product-rating">
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star-o empty"></i>
-								</div>
-							</div>
-						</div>
-						<!-- /widget product -->
-					</div>
-					<!-- /aside widget -->
-				</div>
-				<!-- /ASIDE -->
-
-				<!-- MAIN -->
-				<div id="main" class="col-md-9">
-					<!-- store top filter -->
-					<div class="store-filter clearfix">
-						<div class="pull-left">
-							<div class="row-filter">
-								<a href="#"><i class="fa fa-th-large"></i></a>
-								<a href="#" class="active"><i class="fa fa-bars"></i></a>
-							</div>
-							<div class="sort-filter">
-								<span class="text-uppercase">Sort By:</span>
-								<select class="input">
-										<option value="0">Position</option>
-										<option value="0">Price</option>
-										<option value="0">Rating</option>
-									</select>
-								<a href="#" class="main-btn icon-btn"><i class="fa fa-arrow-down"></i></a>
-							</div>
-						</div>
-						<div class="pull-right">
-							<div class="page-filter">
-								<span class="text-uppercase">Show:</span>
-								<select class="input">
-										<option value="0">10</option>
-										<option value="1">20</option>
-										<option value="2">30</option>
-									</select>
-							</div>
-							<ul class="store-pages">
-								<li><span class="text-uppercase">Page:</span></li>
-								<li class="active">1</li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#"><i class="fa fa-caret-right"></i></a></li>
-							</ul>
-						</div>
-					</div>
-					<!-- /store top filter -->
-				
-					<!-- STORE -->
-					<div id="store">
-						<!-- row -->
-						<div class="row">
-						<c:forEach items = "${memberList }" var ="member">
-							<!-- Product Single -->
-							<div class="col-md-4 col-sm-6 col-xs-6">
-								<div class="product product-single">
-									<div class="product-thumb">
-										<div class="product-label">
-											<span>New</span>
-											<span class="sale">-20%</span>
-										</div>
-										<button class="main-btn quick-view"><i class="fa fa-search-plus"></i>Quick View</button>
-										<img src="resources/images/product01.jpg" alt="">
-									</div>
-									<div class="product-body">
-										<h3 class="product-price">${member.firstName } ${member.lastName }</h3>
-										<h4 class="product-price">ID: ${member.memberId }</h4>
-										<!-- <div class="product-rating">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star-o empty"></i>
-										</div> -->
-										<h2 class="product-name"><a href="#">age: ${member.age } | ${member.occupation }</a></h2>
-										<div class="product-btns">
-											<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-											<!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-											<button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i>View Full Profile</button>
-										</div>
-									</div>
-								</div>
-							</div>
-							<!-- /Product Single -->
-							<div class="clearfix visible-sm visible-xs"></div>
-							</c:forEach>
-						</div>
-						<!-- /row -->
-					</div>
-					<!-- /STORE -->
-				
-					<!-- store bottom filter -->
-					<div class="store-filter clearfix">
-						<div class="pull-left">
-							<div class="row-filter">
-								<a href="#"><i class="fa fa-th-large"></i></a>
-								<a href="#" class="active"><i class="fa fa-bars"></i></a>
-							</div>
-							<div class="sort-filter">
-								<span class="text-uppercase">Sort By:</span>
-								<select class="input">
-										<option value="0">Position</option>
-										<option value="0">Price</option>
-										<option value="0">Rating</option>
-									</select>
-								<a href="#" class="main-btn icon-btn"><i class="fa fa-arrow-down"></i></a>
-							</div>
-						</div>
-						<div class="pull-right">
-							<div class="page-filter">
-								<span class="text-uppercase">Show:</span>
-								<select class="input">
-										<option value="0">10</option>
-										<option value="1">20</option>
-										<option value="2">30</option>
-									</select>
-							</div>
-							<ul class="store-pages">
-								<li><span class="text-uppercase">Page:</span></li>
-								<li class="active">1</li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#"><i class="fa fa-caret-right"></i></a></li>
-							</ul>
-						</div>
-					</div>
-					<!-- /store bottom filter -->
-				</div>
-				<!-- /MAIN -->
-			</div>
-			<!-- /row -->
-		</div>
-		<!-- /container -->
-	</div>
-	<!-- /section -->
-	<jsp:include page="footer.jsp"></jsp:include>
+	<jsp:include page="header.jsp"></jsp:include>
 	
+	<section class="section-profile-cover section-shaped my-0">
+		<!-- Circles background -->
+		<div class="shape shape-style-1 shape-primary alpha-4">
+			<span></span> <span></span> <span></span> <span></span> <span></span>
+			<span></span> <span></span>
+		</div>
+	</section>
+	<section class="section">
+		<div class="container">
+			<c:if test="${not empty groomlist }">
+				<c:forEach var="groom" items="groomlist">
+					<div class="card card-profile shadow mt--300">
+						<div class="px-4">
+							<div class="row justify-content-center">
+								<div class="col-lg-3 order-lg-1">
+									<div class="card-profile-image">
+										<a href="#"> <img
+											src="resources/clientassets/img/theme/team-4-800x800.jpeg"
+											class="rounded-circle">
+										</a>
+									</div>
+								</div>
+								<div
+									class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
+									<div class="card-profile-actions py-4 mt-lg-0">
+										<a href="#" class="btn btn-sm btn-info mr-4">Add to
+											Wishlist</a> <a href="#"
+											class="btn btn-sm btn-default float-right">Shortlist</a>
+									</div>
+								</div>
+								<div class="col-lg-4 order-lg-2">
+									<div
+										class="card-profile-stats d-flex justify-content-center py-4 mt-lg-0">
+										<div>
+											<span class="description mr-4">Name</span> <span
+												class="heading mr-4">${groom.firstName }
+												${groom.lastName }</span>
+										</div>
+										<div>
+											<span class="description mr-4">Age</span> <span
+												class="heading mr-4">${groom.age }</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row justify-content-center">
+								<div class="col-lg-4 order-lg-3">
+									<div class="card-profile-stats d-flex justify-content-center">
+
+										<div>
+											<span class="description mr-4">Star</span> <span
+												class="heading mr-4">${groom.star }</span>
+										</div>
+										<div>
+											<span class="description mr-4">Raasi</span> <span
+												class="heading mr-4">${groom.raasi }</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 order-lg-1"></div>
+								<div class="col-lg-4 order-lg-2">
+									<div class="card-profile-stats d-flex justify-content-center">
+										<div>
+											<span class="description">Caste</span> <span class="heading">${groom.caste }</span>
+										</div>
+										<div>
+											<span class="description">Sub Caste</span> <span
+												class="heading">${groom.subCaste }</span>
+										</div>
+										<div>
+											<span class="description">Division</span> <span
+												class="heading">${groom.division }</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm d-flex justify-content-center">
+									<table>
+										<tbody>
+											<tr>
+												<th class="description" scope="row">Education</th>
+												<td>${groom.education }</td>
+											</tr>
+											<tr>
+												<th class="description" scope="row">Occupation</th>
+												<td>${groom.occupation }</td>
+											</tr>
+											<tr>
+												<th class="description" scope="row">Annual Income</th>
+												<td>${groom.annualIncome }</td>
+											</tr>
+											<tr>
+												<th class="description" scope="row">Residential City</th>
+												<td>${groom.workLocation }</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="col-sm d-flex justify-content-center">
+									<table>
+										<tbody>
+											<tr>
+												<th class="description" scope="row">Height</th>
+												<td>${groom.height }</td>
+											</tr>
+											<tr>
+												<th class="description" scope="row">Weight</th>
+												<td>${groom.weight }</td>
+											</tr>
+											<tr>
+												<th class="description" scope="row">Disability</th>
+												<td>${groom.disability }</td>
+											</tr>
+											<tr>
+												<th class="description" scope="row">Marrital Status</th>
+												<td>${groom.maritalStatus }</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="col-sm d-flex justify-content-center">
+									<table>
+										<tbody>
+											<tr>
+												<th class="description" scope="row">Father's Name</th>
+												<td>${groom.fathersName }</td>
+											</tr>
+											<tr>
+												<th class="description" scope="row">Father's Occupation</th>
+												<td>${groom.fathersOccupation }</td>
+											</tr>
+											<tr>
+												<th class="description" scope="row">Mother's Name</th>
+												<td>${groom.mothersName }</td>
+											</tr>
+											<tr>
+												<th class="description" scope="row">Mother's Occupation</th>
+												<td>${groom.mothersOccupation }</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</c:forEach>
+			</c:if>
+			<c:if test="${not empty bridelist }">
+				<c:forEach var="bride" items="bridelist">
+					<div class="card card-profile shadow mt--300">
+						<div class="px-4">
+							<div class="row justify-content-center">
+								<div class="col-lg-3 order-lg-1">
+									<div class="card-profile-image">
+										<a href="#"> <img
+											src="resources/clientassets/img/theme/team-4-800x800.jpeg"
+											class="rounded-circle">
+										</a>
+									</div>
+								</div>
+								<div
+									class="col-lg-4 order-lg-3 text-lg-right align-self-lg-center">
+									<div class="card-profile-actions py-4 mt-lg-0">
+										<a href="#" class="btn btn-sm btn-info mr-4">Add to
+											Wishlist</a> <a href="#"
+											class="btn btn-sm btn-default float-right">Shortlist</a>
+									</div>
+								</div>
+								<div class="col-lg-4 order-lg-2">
+									<div
+										class="card-profile-stats d-flex justify-content-center py-4 mt-lg-0">
+										<div>
+											<span class="description mr-4">Name</span> <span
+												class="heading mr-4">${bride.firstName }
+												${bride.lastName }</span>
+										</div>
+										<div>
+											<span class="description mr-4">Age</span> <span
+												class="heading mr-4">${bride.age }</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row justify-content-center">
+								<div class="col-lg-4 order-lg-3">
+									<div class="card-profile-stats d-flex justify-content-center">
+
+										<div>
+											<span class="description mr-4">Star</span> <span
+												class="heading mr-4">${bride.star }</span>
+										</div>
+										<div>
+											<span class="description mr-4">Raasi</span> <span
+												class="heading mr-4">${bride.raasi }</span>
+										</div>
+									</div>
+								</div>
+								<div class="col-lg-4 order-lg-1"></div>
+								<div class="col-lg-4 order-lg-2">
+									<div class="card-profile-stats d-flex justify-content-center">
+										<div>
+											<span class="description">Caste</span> <span class="heading">${bride.caste }</span>
+										</div>
+										<div>
+											<span class="description">Sub Caste</span> <span
+												class="heading">${bride.subCaste }</span>
+										</div>
+										<div>
+											<span class="description">Division</span> <span
+												class="heading">${bride.division }</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm d-flex justify-content-center">
+									<table>
+										<tbody>
+											<tr>
+												<th class="description" scope="row">Education</th>
+												<td>${bride.education }</td>
+											</tr>
+											<tr>
+												<th class="description" scope="row">Occupation</th>
+												<td>${bride.occupation }</td>
+											</tr>
+											<tr>
+												<th class="description" scope="row">Annual Income</th>
+												<td>${bride.annualIncome }</td>
+											</tr>
+											<tr>
+												<th class="description" scope="row">Residential City</th>
+												<td>${bride.workLocation }</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="col-sm d-flex justify-content-center">
+									<table>
+										<tbody>
+											<tr>
+												<th class="description" scope="row">Height</th>
+												<td>${bride.height }</td>
+											</tr>
+											<tr>
+												<th class="description" scope="row">Weight</th>
+												<td>${bride.weight }</td>
+											</tr>
+											<tr>
+												<th class="description" scope="row">Disability</th>
+												<td>${bride.disability }</td>
+											</tr>
+											<tr>
+												<th class="description" scope="row">Marrital Status</th>
+												<td>${bride.maritalStatus }</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="col-sm d-flex justify-content-center">
+									<table>
+										<tbody>
+											<tr>
+												<th class="description" scope="row">Father's Name</th>
+												<td>${bride.fathersName }</td>
+											</tr>
+											<tr>
+												<th class="description" scope="row">Father's Occupation</th>
+												<td>${bride.fathersOccupation }</td>
+											</tr>
+											<tr>
+												<th class="description" scope="row">Mother's Name</th>
+												<td>${bride.mothersName }</td>
+											</tr>
+											<tr>
+												<th class="description" scope="row">Mother's Occupation</th>
+												<td>${bride.mothersOccupation }</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</c:forEach>
+			</c:if>
+		</div>
+	</section>
+
+	
+	<jsp:include page="footer.jsp"></jsp:include>
+
 </body>
 </html>

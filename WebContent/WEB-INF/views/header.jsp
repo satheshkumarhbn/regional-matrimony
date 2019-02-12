@@ -12,13 +12,14 @@
   <link href="<c:url value="resources/clientassets/vendor/nucleo/css/nucleo.css" />" rel="stylesheet">
   <link href="<c:url value="resources/clientassets/vendor/font-awesome/css/font-awesome.min.css" />" rel="stylesheet">
   <!-- Argon CSS -->
-  <link type="text/css" href="<c:url value="resources/clientassets/css/argon.css?v=1.0.1" />" rel="stylesheet">
+  <link type="text/css" href="<c:url value="resources/clientassets/css/argon.css" />" rel="stylesheet">
   <!-- Docs CSS -->
   <link type="text/css" href="<c:url value="resources/clientassets/css/docs.min.css" />" rel="stylesheet">
 </head>
 
 <body>
 	<tag:url value="/getAllProfiles" var="urlGetAllProfiles"/>
+	<tag:url value="/profile/G1900001" var="urlProfile"/>
 	<!-- HEADER -->
 	<header class="header-global">
     <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
@@ -71,6 +72,8 @@
                 <a href="./examples/profile.html" class="dropdown-item">Suggested Matches</a>
                 <a href="./examples/login.html" class="dropdown-item">Recently viewed</a>
                 <a href="./examples/register.html" class="dropdown-item">Shortlisted</a>
+                <a href="${urlGetAllProfiles }" class="dropdown-item">All Profiles</a>
+                <a href="${urlProfile }" class="dropdown-item">View Profile</a>
               </div>
             </li>
             <li class="nav-item dropdown">

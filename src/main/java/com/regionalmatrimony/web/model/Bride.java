@@ -1,20 +1,11 @@
 package com.regionalmatrimony.web.model;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.DynamicUpdate;
@@ -26,7 +17,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Bride {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "memberid")
 	private String memberId;
 	@Column(name = "firstname")
@@ -98,12 +88,12 @@ public class Bride {
 	private String agencyId;
 	@Column(name = "password")
 	private String password;
-	@OneToOne(cascade = CascadeType.ALL)
+	/*@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "mpId")
-	private MatchPreference matchPreference;
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "ORDER", joinColumns = @JoinColumn(name = "memberid"), inverseJoinColumns = @JoinColumn(name = "orderid"))
-	private List<Order> order = new ArrayList<>();
+	private MatchPreference matchPreference;*/
+	/*@OneToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "ORDER", joinColumns = @JoinColumn(name = "orderid"), inverseJoinColumns = @JoinColumn(name = "memberid"))
+	private List<Order> order = new ArrayList<>();*/
 	@Column(name = "creationdate")
 	private Date creationDate;
 
@@ -387,21 +377,21 @@ public class Bride {
 		this.password = password;
 	}
 
-	public MatchPreference getMatchPreference() {
+	/*public MatchPreference getMatchPreference() {
 		return matchPreference;
 	}
 
 	public void setMatchPreference(MatchPreference matchPreference) {
 		this.matchPreference = matchPreference;
-	}
+	}*/
 
-	public List<Order> getOrder() {
+	/*public List<Order> getOrder() {
 		return order;
 	}
 
 	public void setOrder(List<Order> order) {
 		this.order = order;
-	}
+	}*/
 
 	public Date getCreationDate() {
 		return creationDate;

@@ -13,86 +13,8 @@
 
 <link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
 <link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
-<style type="text/css">
-.dropdown {
-  position: absolute;
-  top:50%;
-  transform: translateY(-50%);
-}
-
-a {
-  color: #fff;
-}
-
-.dropdown dd,
-.dropdown dt {
-  margin: 0px;
-  padding: 0px;
-}
-
-.dropdown ul {
-  margin: -1px 0 0 0;
-}
-
-.dropdown dd {
-  position: relative;
-}
-
-.dropdown a,
-.dropdown a:visited {
-  color: #fff;
-  text-decoration: none;
-  outline: none;
-  font-size: 12px;
-}
-
-.dropdown dt a {
-  background-color: #4F6877;
-  display: block;
-  padding: 8px 20px 5px 10px;
-  min-height: 25px;
-  line-height: 24px;
-  overflow: hidden;
-  border: 0;
-  width: 272px;
-}
-
-.dropdown dt a span,
-.multiSel span {
-  cursor: pointer;
-  display: inline-block;
-  padding: 0 3px 2px 0;
-}
-
-.dropdown dd ul {
-  background-color: #4F6877;
-  border: 0;
-  color: #fff;
-  display: none;
-  left: 0px;
-  padding: 2px 15px 2px 5px;
-  position: absolute;
-  top: 2px;
-  width: 280px;
-  list-style: none;
-  height: 100px;
-  overflow: auto;
-}
-
-.dropdown span.value {
-  display: none;
-}
-
-.dropdown dd ul li a {
-  padding: 5px;
-  display: block;
-}
-
-.dropdown dd ul li a:hover {
-  /*background-color: #fff;*/
-}
-
-</style>
+<link href="<c:url value="resources/assets/css/dropdown.css"/>" rel="stylesheet">
+<link href="<c:url value="resources/assets/scss/dropdown.scss"/>" rel="stylesheet">
 </head>
 <body>
 	<jsp:include page="dashboard.jsp"></jsp:include>
@@ -137,7 +59,7 @@ a {
 											<label for="age" class=" form-control-label">Age</label>
 										</div>
 										<div class="col-6 col-md-3">
-											<select name="startage" id="startage" class="form-control">
+											<select name="mpStartAge" id="startage" class="form-control">
 												<option value="0">Please select start age</option>
 												<option value="19">19</option>
 												<option value="20">20</option>
@@ -174,7 +96,7 @@ a {
 											</select>
 										</div>
 										<div class="col-12 col-md-3">
-											<select name="endage" id="endage" class="form-control">
+											<select name="mpEndAge" id="endage" class="form-control">
 												<option value="0">Please select end age</option>
 												<option value="19">19</option>
 												<option value="20">20</option>
@@ -217,78 +139,14 @@ a {
 												Qualification</label>
 										</div>
 										<div class="col col-md-6">
-											<div class="form-check">
-												<div class="checkbox">
-													<label for="checkbox1" class="form-check-label "> <input
-														type="checkbox" id="checkbox1" name="checkbox1"
-														value="SSLC" class="form-check-input">SSLC
-													</label>
-												</div>
-												<div class="checkbox">
-													<label for="checkbox2" class="form-check-label "> <input
-														type="checkbox" id="checkbox2" name="checkbox2"
-														value="HSC" class="form-check-input"> HSC
-													</label>
-												</div>
-												<div class="checkbox">
-													<label for="checkbox3" class="form-check-label "> <input
-														type="checkbox" id="checkbox3" name="checkbox3"
-														value="Bachelors in Engineering" class="form-check-input">
-														Bachelors in Engineering
-													</label>
-												</div>
-												<div class="checkbox">
-													<label for="checkbox4" class="form-check-label "> <input
-														type="checkbox" id="checkbox4" name="checkbox4"
-														value="Masters in Engineering" class="form-check-input">
-														Masters in Engineering
-													</label>
-												</div>
-												<div class="checkbox">
-													<label for="checkbox5" class="form-check-label "> <input
-														type="checkbox" id="checkbox5" name="checkbox5"
-														value="Bachelors in Science" class="form-check-input">
-														Bachelors in Science
-													</label>
-												</div>
-												<div class="checkbox">
-													<label for="checkbox6" class="form-check-label "> <input
-														type="checkbox" id="checkbox6" name="checkbox6"
-														value="Masters in Science" class="form-check-input">
-														Masters in Science
-													</label>
-												</div>
-												<div class="checkbox">
-													<label for="checkbox7" class="form-check-label "> <input
-														type="checkbox" id="checkbox7" name="checkbox7"
-														value="Bachelors in Commerce" class="form-check-input">
-														Bachelors in Commerce
-													</label>
-												</div>
-												<div class="checkbox">
-													<label for="checkbox8" class="form-check-label "> <input
-														type="checkbox" id="checkbox8" name="checkbox8"
-														value="Masters in Commerce" class="form-check-input">
-														Masters in Commerce
-													</label>
-												</div>
-												<div class="checkbox">
-													<label for="checkbox9" class="form-check-label "> <input
-														type="checkbox" id="checkbox9" name="checkbox9"
-														value="Bachelors in Computer Applications"
-														class="form-check-input"> Bachelors in Computer
-														Applications
-													</label>
-												</div>
-												<div class="checkbox">
-													<label for="checkbox10" class="form-check-label ">
-														<input type="checkbox" id="checkbox10" name="checkbox10"
-														value="Masters in Computer Applications"
-														class="form-check-input"> Masters in Computer
-														Applications
-													</label>
-												</div>
-											</div>
+											<fieldset>
+												<c:forEach var="education" items="${educationlist }">
+													<div class="form-check form-check-inline">
+											            <input type="checkbox" id="${education.education }" name="mpEducation" value="${education.education }">
+											            <label class="form-check-label btn btn-success" for="${education.education }">${education.displayName }</label>
+											          </div>
+												</c:forEach>
+											</fieldset>
 										</div>
 									</div>
 									<div class="row form-group">
@@ -296,36 +154,14 @@ a {
 											<label class=" form-control-label">Occupation</label>
 										</div>
 										<div class="col col-md-9">
-											<div class="form-check">
-												<div class="checkbox">
-													<label for="checkbox1" class="form-check-label "> <input
-														type="checkbox" id="checkbox1" name="checkbox1"
-														value="Business-own" class="form-check-input">Business-
-														own
-													</label>
-												</div>
-												<div class="checkbox">
-													<label for="checkbox2" class="form-check-label "> <input
-														type="checkbox" id="checkbox2" name="checkbox2"
-														value="Business-partner" class="form-check-input">
-														Business- partner
-													</label>
-												</div>
-												<div class="checkbox">
-													<label for="checkbox3" class="form-check-label "> <input
-														type="checkbox" id="checkbox3" name="checkbox3"
-														value="Salaried-public" class="form-check-input">
-														Salaried- public sector
-													</label>
-												</div>
-												<div class="checkbox">
-													<label for="checkbox4" class="form-check-label "> <input
-														type="checkbox" id="checkbox4" name="checkbox4"
-														value="Salaried-private" class="form-check-input">
-														Salaried- private sector
-													</label>
-												</div>
-											</div>
+											<fieldset>
+												<c:forEach var="occupation" items="${occupationlist }">
+													<div class="form-check form-check-inline">
+											            <input type="checkbox" id="${occupation.occupation }" name="mpOccupation" value="${occupation.occupation }">
+											            <label class="form-check-label btn btn-success" for="${occupation.occupation }">${occupation.displayName }</label>
+											          </div>
+												</c:forEach>
+											</fieldset>
 										</div>
 									</div>
 									<div class="row form-group">
@@ -333,54 +169,14 @@ a {
 											<label class=" form-control-label">Work Location</label>
 										</div>
 										<div class="col col-md-9">
-											<div class="form-check">
-												<div class="checkbox">
-													<label for="checkbox1" class="form-check-label "> <input
-														type="checkbox" id="checkbox1" name="checkbox1"
-														value="chennai" class="form-check-input">Chennai
-													</label>
-												</div>
-												<div class="checkbox">
-													<label for="checkbox2" class="form-check-label "> <input
-														type="checkbox" id="checkbox2" name="checkbox2"
-														value="bangalore" class="form-check-input">
-														Bangalore
-													</label>
-												</div>
-												<div class="checkbox">
-													<label for="checkbox3" class="form-check-label "> <input
-														type="checkbox" id="checkbox3" name="checkbox3"
-														value="hyderabad" class="form-check-input">
-														Hyderabad
-													</label>
-												</div>
-												<div class="checkbox">
-													<label for="checkbox4" class="form-check-label "> <input
-														type="checkbox" id="checkbox4" name="checkbox4"
-														value="mumbai" class="form-check-input"> Mumbai
-													</label>
-												</div>
-												<div class="checkbox">
-													<label for="checkbox5" class="form-check-label "> <input
-														type="checkbox" id="checkbox5" name="checkbox5"
-														value="kolkatta" class="form-check-input">
-														Kolkatta
-													</label>
-												</div>
-												<div class="checkbox">
-													<label for="checkbox6" class="form-check-label "> <input
-														type="checkbox" id="checkbox6" name="checkbox6"
-														value="delhi" class="form-check-input"> Delhi
-													</label>
-												</div>
-												<div class="checkbox">
-													<label for="checkbox7" class="form-check-label "> <input
-														type="checkbox" id="checkbox7" name="checkbox7"
-														value="other cities" class="form-check-input">
-														Other Cities
-													</label>
-												</div>
-											</div>
+											<fieldset>
+												<c:forEach var="workLocation" items="${workloclist }">
+													<div class="form-check form-check-inline">
+											            <input type="checkbox" id="${workLocation.city }" name="mpWorkLocation" value="${workLocation.city }">
+											            <label class="form-check-label btn btn-success" for="${workLocation.city }">${workLocation.displayName }</label>
+											          </div>
+												</c:forEach>
+											</fieldset>
 										</div>
 									</div>
 									<div class="row form-group">
@@ -388,7 +184,7 @@ a {
 											<label for="height" class=" form-control-label">Height</label>
 										</div>
 										<div class="col-6 col-md-3">
-											<select name="height" id="height" class="form-control">
+											<select name="mpHeight" id="height" class="form-control">
 												<option value="0">Please select height range</option>
 												<option value="100-140">below 140cm</option>
 												<option value="141-150">141cm-150cm</option>
@@ -406,7 +202,7 @@ a {
 											<label for="weight" class=" form-control-label">Weight</label>
 										</div>
 										<div class="col-6 col-md-3">
-											<select name="weight" id="weight" class="form-control">
+											<select name="mpWeight" id="weight" class="form-control">
 												<option value="0">Please select weight range</option>
 												<option value="10-40">below 40kg</option>
 												<option value="41-50">41kg-50kg</option>
@@ -424,34 +220,14 @@ a {
 											<label for="caste" class=" form-control-label">Caste</label>
 										</div>
 										<div class="col col-md-9">
-											<dl class="dropdown"> 
-											    <dt>
-											    <a href="#">
-											      <span class="hida">Bussiness Unit</span>    
-											    </a>
-											    </dt>
-											  
-											    <dd>
-											        <div class="mutliSelect">
-											            <ul>
-											              <li><a href="#" onclick="selectAll()">Select all</a></li>
-											                <li>
-											                    <input type="checkbox" value="Apple" />Apple</li>
-											                <li>
-											                    <input type="checkbox" value="Blackberry" />Blackberry</li>
-											                <li>
-											                    <input type="checkbox" value="HTC" />HTC</li>
-											                <li>
-											                    <input type="checkbox" value="Sony Ericson" />Sony Ericson</li>
-											                <li>
-											                    <input type="checkbox" value="Motorola" />Motorola</li>
-											                <li>
-											                    <input type="checkbox" value="Nokia" />Nokia</li>
-											            </ul>
-											        </div>
-											    </dd>
-											  <p class="multiSel"></p>
-											</dl>
+											<fieldset>
+          									<c:forEach var="caste" items="${castelist }">
+									          <div class="form-check form-check-inline">
+									            <input type="checkbox" id="${caste.casteName }" name="mpCaste" value="${caste.casteName }">
+									            <label class="form-check-label btn btn-success" for="${caste.casteName }">${caste.displayName }</label>
+									          </div>
+									          </c:forEach>
+									        </fieldset>
 										</div>
 									</div>
 									<div class="row form-group">
@@ -460,17 +236,14 @@ a {
 												Caste</label>
 										</div>
 										<div class="col col-md-9">
-											<c:forEach var="subcaste" items="${subcastelist }">
-												<div class="form-check">
-													<div class="checkbox">
-														<label for="subcaste" class="form-check-label ">
-															<input type="checkbox" id="subcaste" name="subcaste"
-															value="${subcaste.subCasteName }"
-															class="form-check-input">${subcaste.displayName }
-														</label>
-													</div>
-												</div>
+										<fieldset>
+											<c:forEach var="subCaste" items="${subcastelist }">
+												<div class="form-check form-check-inline">
+										            <input type="checkbox" id="${subCaste.subCasteName }" name="mpSubCaste" value="${subCaste.subCasteName }">
+										            <label class="form-check-label btn btn-success" for="${subCaste.subCasteName }">${subCaste.displayName }</label>
+										          </div>
 											</c:forEach>
+											</fieldset>
 										</div>
 									</div>
 									<div class="row form-group">
@@ -478,16 +251,14 @@ a {
 											<label for="division" class=" form-control-label">Division</label>
 										</div>
 										<div class="col col-md-9">
+										<fieldset>
 											<c:forEach var="division" items="${divisionlist }">
-												<div class="form-check">
-													<div class="checkbox">
-														<label for="checkbox1" class="form-check-label ">
-															<input type="checkbox" id="checkbox1" name="checkbox1"
-															value="${division.division }" class="form-check-input">${division.displayName }
-														</label>
-													</div>
-												</div>
+												<div class="form-check form-check-inline">
+										            <input type="checkbox" id="${division.division }" name="mpDivision" value="${division.division }">
+										            <label class="form-check-label btn btn-success" for="${division.division }">${division.displayName }</label>
+										          </div>
 											</c:forEach>
+										</fieldset>
 										</div>
 									</div>
 									<div class="row form-group">
@@ -495,33 +266,40 @@ a {
 											<label for="diety" class=" form-control-label">Diety</label>
 										</div>
 										<div class="col col-md-9">
+										<fieldset>
 											<c:forEach var="diety" items="${dietylist }">
-												<div class="form-check">
-													<div class="checkbox">
-														<label for="diety" class="form-check-label ">
-															<input type="checkbox" id="diety" name="diety"
-															value="${diety.diety }" class="form-check-input">${diety.displayName }
-														</label>
-													</div>
-												</div>
+												<div class="form-check form-check-inline">
+										            <input type="checkbox" id="${diety.diety }" name="mpDiety" value="${diety.diety }">
+										            <label class="form-check-label btn btn-success" for="${diety.diety }">${diety.displayName }</label>
+										          </div>
 											</c:forEach>
+										</fieldset>
 										</div>
 									</div>
 									<div class="row form-group">
 										<div class="col col-md-3">
-											<label for="maritalStatus" class=" form-control-label">Marital
+											<label for="maritalstatus" class=" form-control-label">Marital
 												Status</label>
 										</div>
 										<div class="col-12 col-md-9">
-											<select name="maritalStatus" id="maritalStatus"
-												class="form-control">
-												<option value="0">Please select Groom's Marital
-													Status</option>
-												<option value="never married">Never Married</option>
-												<option value="divorced">Divorced</option>
-												<option value="widowed">Widowed</option>
-												<option value="awaiting divorced">Awaiting Divorced</option>
-											</select>
+											<fieldset>
+												<div class="form-check form-check-inline">
+										            <input type="checkbox" id="maritalstatus-never-married" name="mpMaritalStatus" value="never married">
+										            <label class="form-check-label btn btn-success" for="maritalstatus-never-married">Never married</label>
+										          </div>
+										        <div class="form-check form-check-inline">
+										            <input type="checkbox" id="maritalstatus-divorced" name="mpMaritalStatus" value="divorced">
+										            <label class="form-check-label btn btn-success" for="maritalstatus-divorced">Divorced</label>
+										          </div>
+										        <div class="form-check form-check-inline">
+										            <input type="checkbox" id="maritalstatus-widowed" name="mpMaritalStatus" value="widowed">
+										            <label class="form-check-label btn btn-success" for="maritalstatus-widowed">Widowed</label>
+										          </div>
+										        <div class="form-check form-check-inline">
+										            <input type="checkbox" id="maritalstatus-awaiting-divorced" name="mpMaritalStatus" value="awaiting divorced">
+										            <label class="form-check-label btn btn-success" for="mpMaritalstatus-awaiting-divorced">Awaiting divorced</label>
+										          </div>
+											</fieldset>
 										</div>
 									</div>
 									<div class="row form-group">
@@ -529,12 +307,16 @@ a {
 											<label for="disability" class=" form-control-label">Disabilities</label>
 										</div>
 										<div class="col-12 col-md-9">
-											<select name="disability" id="disability"
-												class="form-control">
-												<option value="normal">Normal</option>
-												<option value="physically challenged">Physically
-													Challenged</option>
-											</select>
+											<fieldset>
+												<div class="form-check form-check-inline">
+										            <input type="checkbox" id="disability-normal" name="mpDisability" value="normal">
+										            <label class="form-check-label btn btn-success" for="disability-normal">Normal</label>
+										          </div>
+										        <div class="form-check form-check-inline">
+										            <input type="checkbox" id="disability-physically-challenged" name="mpDisability" value="physically challenged">
+										            <label class="form-check-label btn btn-success" for="disability-physically-challenged">Physically Challenged</label>
+										          </div>
+											</fieldset>
 										</div>
 									</div>
 									<div class="row form-group">
@@ -542,16 +324,14 @@ a {
 											<label for="star" class=" form-control-label">Star</label>
 										</div>
 										<div class="col col-md-9">
+										<fieldset>
 											<c:forEach var="star" items="${starlist }">
-												<div class="form-check">
-													<div class="checkbox">
-														<label for="star" class="form-check-label ">
-															<input type="checkbox" id="star" name="star"
-															value="${star.starname }" class="form-check-input">${star.displayName }
-														</label>
-													</div>
-												</div>
+												<div class="form-check form-check-inline">
+										            <input type="checkbox" id="${star.starname }" name="mpStar" value="${star.starname }">
+										            <label class="form-check-label btn btn-success" for="${star.starname }">${star.displayName }</label>
+										          </div>
 											</c:forEach>
+											</fieldset>
 										</div>
 									</div>
 									<div class="row form-group">
@@ -559,18 +339,25 @@ a {
 											<label for="raasi" class=" form-control-label">Raasi</label>
 										</div>
 										<div class="col col-md-9">
+											<fieldset>
 											<c:forEach var="raasi" items="${raasilist }">
-												<div class="form-check">
-													<div class="checkbox">
-														<label for="raasi" class="form-check-label ">
-															<input type="checkbox" id="raasi" name="raasi"
-															value="${raasi.raasiname }" class="form-check-input">${raasi.displayName }
-														</label>
-													</div>
-												</div>
+												<div class="form-check form-check-inline">
+										            <input type="checkbox" id="${raasi.raasiName }" name="mpRaasi" value="${raasi.raasiName }">
+										            <label class="form-check-label btn btn-success" for="${raasi.raasiName }">${raasi.displayName }</label>
+										          </div>
 											</c:forEach>
+											</fieldset>
 										</div>
 									</div>
+									<c:choose>
+										<c:when test = "${not empty groomId }">
+											<input type="hidden" name = "memberId" value = "${groomId }">
+										</c:when>
+										<c:otherwise>
+											<input type="hidden" name = "memberId" value = "${brideId }">
+										</c:otherwise>
+									</c:choose>
+									
 									<button type="submit"
 										class="btn btn-outline-success btn-lg btn-block">Register
 										Match Preference</button>
@@ -581,42 +368,6 @@ a {
 				</div>
 			</div>
 		</div>
-
 	</div>
 </body>
-<script>
-$(".dropdown dt a").on('click', function() {
-	  $(".dropdown dd ul").slideToggle('fast');
-	});
-
-	$(".dropdown dd ul li a").on('click', function() {
-	  $(".dropdown dd ul").hide();
-	});
-
-	function getSelectedValue(id) {
-	  return $("#" + id).find("dt a span.value").html();
-	}
-
-	$(document).bind('click', function(e) {
-	  var $clicked = $(e.target);
-	  if (!$clicked.parents().hasClass("dropdown")) $(".dropdown dd ul").hide();
-	});
-
-	$('.mutliSelect input[type="checkbox"]').on('click', function() {
-
-	  var title = $(this).closest('.mutliSelect').find('input[type="checkbox"]').val(),
-	    title = $(this).val() + ",";
-
-	  if ($(this).is(':checked')) {
-	    var html = '<span title="' + title + '">' + title + '</span>';
-	    $('.multiSel').append(html);
-	    //$(".hida").hide();
-	  } else {
-	    $('span[title="' + title + '"]').remove();
-	    var ret = $(".hida");
-	    $('.dropdown dt a').append(ret);
-
-	  }
-	});
-</script>
 </html>

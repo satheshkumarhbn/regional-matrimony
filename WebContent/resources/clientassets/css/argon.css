@@ -881,11 +881,12 @@ pre code
 .col-xl-auto
 {
     position: relative;
-
     width: 100%;
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .col
@@ -1920,7 +1921,7 @@ pre code
 .table th,
 .table td
 {
-    padding: 1rem;
+    padding: .50rem 1rem .50rem;
 
     vertical-align: top;
 
@@ -5704,7 +5705,6 @@ input[type='button'].btn-block
     flex-direction: column;
 
     min-width: 0;
-
     word-wrap: break-word;
 
     border: .0625rem solid rgba(0, 0, 0, .05);
@@ -5764,7 +5764,7 @@ input[type='button'].btn-block
 .card-header
 {
     margin-bottom: 0;
-    padding: 1.25rem 1.5rem;
+    padding: .75rem 1.5rem;
 
     border-bottom: .0625rem solid rgba(0, 0, 0, .05); 
     background-color: #f6f9fc;
@@ -9686,7 +9686,7 @@ button.bg-darker:focus
 .mt-5,
 .my-5
 {
-    margin-top: 3rem !important;
+    margin-top: 1rem !important;
 }
 
 .mr-5,
@@ -9947,7 +9947,7 @@ button.bg-darker:focus
 .pt-4,
 .py-4
 {
-    padding-top: 1.5rem !important;
+    padding-top: 2rem !important;
 }
 
 .pr-4,
@@ -9959,7 +9959,7 @@ button.bg-darker:focus
 .pb-4,
 .py-4
 {
-    padding-bottom: 1.5rem !important;
+    padding-bottom: .01rem !important;
 }
 
 .pl-4,
@@ -14766,6 +14766,12 @@ a.btn-icon-only
     position: relative;
 }
 
+.card-blur
+{
+	filter: blur(8px);
+  	-webkit-filter: blur(8px);
+}
+
 .profile-page .card-profile
 {
     margin-top: -150px;
@@ -14792,12 +14798,12 @@ a.btn-icon-only
 }
 .profile-page .card-profile .card-profile-stats
 {
-    padding: 1rem 0;
+    padding: .02rem 0;
 }
 .profile-page .card-profile .card-profile-stats > div
 {
     margin-right: 1rem;
-    padding: .875rem; 
+    padding: .475rem; 
 
     text-align: center;
 }
@@ -14807,15 +14813,23 @@ a.btn-icon-only
 }
 .profile-page .card-profile .card-profile-stats > div .heading
 {
-    font-size: 1.1rem;
+    font-size: .9rem;
     font-weight: bold;
 
     display: block;
 }
+
+
 .profile-page .card-profile .card-profile-stats > div .description
 {
     font-size: .875rem;
 
+    color: #adb5bd;
+}
+.profile-page .card-profile .card-profile-stats > div .description-bold
+{
+    font-size: .875rem;
+	font-weight: 600;
     color: #adb5bd;
 }
 .profile-page .card-profile .card-profile-actions
@@ -14833,7 +14847,7 @@ a.btn-icon-only
 {
     .profile-page .card-profile .card-profile-stats
     {
-        margin-top: 30px;
+        margin-top: 0px;
     }
 }
 
@@ -15168,7 +15182,7 @@ a.btn-icon-only
 }
 .footer .col-footer .heading
 {
-    font-size: .875rem;
+    font-size: .475rem;
     font-weight: 600;
 
     margin-bottom: 1rem; 
@@ -17823,17 +17837,24 @@ p
 
 .description
 {
-    font-size: .875rem;
+    font-size: .675rem;
+}
+
+.description-bold
+{
+	font-size: .675rem;
+	font-weight: 600;
 }
 
 .heading
 {
-    font-size: .95rem;
-    font-weight: 400; 
+    font-size: .65rem;
+    font-weight: 300; 
 
     letter-spacing: .025em;
     text-transform: uppercase;
 }
+
 
 .heading-title
 {
