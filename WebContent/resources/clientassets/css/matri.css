@@ -1,0 +1,2137 @@
+@CHARSET "UTF-8";
+
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown .dropbtn {
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+	font-size: 17px;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+	font-size: 17px;
+}
+
+.dropdown-content a {
+	float: none;
+	color: white;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+
+.dropdown:hover .dropbtn {
+	background-color: #a3d2ea;
+	color: white;
+}
+
+.dropdown-content a:hover {
+	background-color: #a3d2ea;
+	color: white;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+@media screen and (max-width: 600px) {
+	.dropdown .dropbtn {
+		display: none;
+	}
+}
+/* W3.CSS 4.12 November 2018 by Jan Egil and Borge Refsnes */
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+/* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
+html {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%
+}
+
+body {
+	margin: 0
+}
+
+article, aside, details, figcaption, figure, footer, header, main, menu,
+	nav, section, summary {
+	display: block
+}
+
+audio, canvas, progress, video {
+	display: inline-block
+}
+
+progress {
+	vertical-align: baseline
+}
+
+audio
+:not
+ 
+(
+[
+controls
+]
+ 
+){
+display
+:
+ 
+none
+;
+
+	
+height
+:
+ 
+0
+}
+[hidden], template {
+	display: none
+}
+
+a {
+	background-color: transparent;
+	-webkit-text-decoration-skip: objects
+}
+
+a:active, a:hover {
+	outline-width: 0
+}
+
+abbr[title] {
+	border-bottom: none;
+	text-decoration: underline;
+	text-decoration: underline dotted
+}
+
+dfn {
+	font-style: italic
+}
+
+mark {
+	background: #ff0;
+	color: #000
+}
+
+small {
+	font-size: 80%
+}
+
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline
+}
+
+sub {
+	bottom: -0.25em
+}
+
+sup {
+	top: -0.5em
+}
+
+figure {
+	margin: 1em 40px
+}
+
+img {
+	border-style: none
+}
+
+svg
+:not
+ 
+(
+:root
+ 
+){
+overflow
+:
+ 
+hidden
+
+
+}
+code, kbd, pre, samp {
+	font-family: monospace, monospace;
+	font-size: 1em
+}
+
+hr {
+	box-sizing: content-box;
+	height: 0;
+	overflow: visible
+}
+
+button, input, select, textarea {
+	font: inherit;
+	margin: 0
+}
+
+optgroup {
+	font-weight: bold
+}
+
+button, input {
+	overflow: visible
+}
+
+button, select {
+	text-transform: none
+}
+
+button, html [type=button], [type=reset], [type=submit] {
+	-webkit-appearance: button
+}
+
+button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner,
+	[type=submit]::-moz-focus-inner {
+	border-style: none;
+	padding: 0
+}
+
+button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring,
+	[type=submit]:-moz-focusring {
+	outline: 1px dotted ButtonText
+}
+
+fieldset {
+	border: 1px solid #c0c0c0;
+	margin: 0 2px;
+	padding: .35em .625em .75em
+}
+
+legend {
+	color: inherit;
+	display: table;
+	max-width: 100%;
+	padding: 0;
+	white-space: normal
+}
+
+textarea {
+	overflow: auto
+}
+
+[type=checkbox], [type=radio] {
+	padding: 0
+}
+
+[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button
+	{
+	height: auto
+}
+
+[type=search] {
+	-webkit-appearance: textfield;
+	outline-offset: -2px
+}
+
+[type=search]::-webkit-search-cancel-button, [type=search]::-webkit-search-decoration
+	{
+	-webkit-appearance: none
+}
+
+::-webkit-input-placeholder {
+	color: inherit;
+	opacity: 0.54
+}
+
+::-webkit-file-upload-button {
+	-webkit-appearance: button;
+	font: inherit
+}
+/* End extract */
+html, body {
+	font-family: Verdana, sans-serif;
+	font-size: 15px;
+	line-height: 1.5
+}
+
+html {
+	overflow-x: hidden
+}
+
+h1 {
+	font-size: 36px
+}
+
+h2 {
+	font-size: 30px
+}
+
+h3 {
+	font-size: 24px
+}
+
+h4 {
+	font-size: 20px
+}
+
+h5 {
+	font-size: 18px
+}
+
+h6 {
+	font-size: 16px
+}
+
+.matri-serif {
+	font-family: serif
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Segoe UI", Arial, sans-serif;
+	font-weight: 400;
+	margin: 10px 0
+}
+
+.matri-wide {
+	letter-spacing: 4px
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid #eee;
+	margin: 20px 0
+}
+
+.matri-image {
+	max-width: 100%;
+	height: auto
+}
+
+img {
+	vertical-align: middle
+}
+
+a {
+	color: inherit
+}
+
+.matri-table, .matri-table-all {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	display: table
+}
+
+.matri-table-all {
+	border: 1px solid #ccc
+}
+
+.matri-bordered tr, .matri-table-all tr {
+	border-bottom: 1px solid #ddd
+}
+
+.matri-striped tbody tr:nth-child(even) {
+	background-color: #f1f1f1
+}
+
+.matri-table-all tr:nth-child(odd) {
+	background-color: #fff
+}
+
+.matri-table-all tr:nth-child(even) {
+	background-color: #f1f1f1
+}
+
+.matri-hoverable tbody tr:hover, .matri-ul.matri-hoverable li:hover {
+	background-color: #ccc
+}
+
+.matri-centered tr th, .matri-centered tr td {
+	text-align: center
+}
+
+.matri-table td, .matri-table th, .matri-table-all td, .matri-table-all th
+	{
+	padding: 8px 8px;
+	display: table-cell;
+	text-align: left;
+	vertical-align: top
+}
+
+.matri-table th:first-child, .matri-table td:first-child,
+	.matri-table-all th:first-child, .matri-table-all td:first-child {
+	padding-left: 16px
+}
+
+.matri-btn, .matri-button {
+	border: none;
+	display: inline-block;
+	padding: 8px 16px;
+	vertical-align: middle;
+	overflow: hidden;
+	text-decoration: none;
+	color: inherit;
+	background-color: inherit;
+	text-align: center;
+	cursor: pointer;
+	white-space: nowrap
+}
+
+.matri-btn:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0
+		rgba(0, 0, 0, 0.19)
+}
+
+.matri-btn, .matri-button {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+}
+
+.matri-disabled, .matri-btn:disabled, .matri-button:disabled {
+	cursor: not-allowed;
+	opacity: 0.3
+}
+
+.matri-disabled *, :disabled * {
+	pointer-events: none
+}
+
+.matri-btn.matri-disabled:hover, .matri-btn:disabled:hover {
+	box-shadow: none
+}
+
+.matri-badge, .matri-tag {
+	background-color: #000;
+	color: #fff;
+	display: inline-block;
+	padding-left: 8px;
+	padding-right: 8px;
+	text-align: center
+}
+
+.matri-badge {
+	border-radius: 50%
+}
+
+.matri-ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0
+}
+
+.matri-ul li {
+	padding: 8px 16px;
+	border-bottom: 1px solid #ddd
+}
+
+.matri-ul li:last-child {
+	border-bottom: none
+}
+
+.matri-tooltip, .matri-display-container {
+	position: relative
+}
+
+.matri-tooltip .matri-text {
+	display: none
+}
+
+.matri-tooltip:hover .matri-text {
+	display: inline-block
+}
+
+.matri-ripple:active {
+	opacity: 0.5
+}
+
+.matri-ripple {
+	transition: opacity 0s
+}
+
+.matri-input {
+	padding: 8px;
+	display: block;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	width: 100%
+}
+
+.matri-select {
+	padding: 9px 0;
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid #ccc
+}
+
+.matri-dropdown-click, .matri-dropdown-hover {
+	position: relative;
+	display: inline-block;
+	cursor: pointer
+}
+
+.matri-dropdown-hover:hover .matri-dropdown-content {
+	display: block
+}
+
+.matri-dropdown-hover:first-child, .matri-dropdown-click:hover {
+	background-color: #ccc;
+	color: #000
+}
+
+.matri-dropdown-hover:hover>.matri-button:first-child,
+	.matri-dropdown-click:hover>.matri-button:first-child {
+	background-color: #ccc;
+	color: #000
+}
+
+.matri-dropdown-content {
+	cursor: auto;
+	color: #000;
+	background-color: #fff;
+	display: none;
+	position: absolute;
+	min-width: 160px;
+	margin: 0;
+	padding: 0;
+	z-index: 1
+}
+
+.matri-check, .matri-radio {
+	width: 24px;
+	height: 24px;
+	position: relative;
+	top: 6px
+}
+
+.matri-sidebar {
+	height: 100%;
+	width: 200px;
+	background-color: #fff;
+	position: fixed !important;
+	z-index: 1;
+	overflow: auto
+}
+
+.matri-bar-block .matri-dropdown-hover, .matri-bar-block .matri-dropdown-click
+	{
+	width: 100%
+}
+
+.matri-bar-block .matri-dropdown-hover .matri-dropdown-content,
+	.matri-bar-block .matri-dropdown-click .matri-dropdown-content {
+	min-width: 100%
+}
+
+.matri-bar-block .matri-dropdown-hover .matri-button, .matri-bar-block .matri-dropdown-click .matri-button
+	{
+	width: 100%;
+	text-align: left;
+	padding: 8px 16px
+}
+
+.matri-main, #main {
+	transition: margin-left .4s
+}
+
+.matri-modal {
+	z-index: 3;
+	display: none;
+	padding-top: 100px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4)
+}
+
+.matri-modal-content {
+	margin: auto;
+	background-color: #fff;
+	position: relative;
+	padding: 0;
+	outline: 0;
+	width: 600px
+}
+
+.matri-bar {
+	width: 100%;
+	overflow: hidden;
+}
+
+.matri-center .matri-bar {
+	display: inline-block;
+	width: auto
+}
+
+.matri-bar .matri-bar-item {
+	padding: 8px 16px;
+	float: left;
+	width: auto;
+	border: none;
+	display: block;
+	outline: 0
+}
+
+.matri-bar .matri-dropdown-hover, .matri-bar .matri-dropdown-click {
+	position: static;
+	float: left
+}
+
+.matri-bar .matri-button {
+	white-space: normal
+}
+
+.matri-bar-block .matri-bar-item {
+	width: 100%;
+	display: block;
+	padding: 8px 16px;
+	text-align: left;
+	border: none;
+	white-space: normal;
+	float: none;
+	outline: 0
+}
+
+.matri-bar-block.matri-center .matri-bar-item {
+	text-align: center
+}
+
+.matri-block {
+	display: block;
+	width: 100%
+}
+
+.matri-responsive {
+	display: block;
+	overflow-x: auto
+}
+
+.matri-container:after, .matri-container:before, .matri-panel:after,
+	.matri-panel:before, .matri-row:after, .matri-row:before,
+	.matri-row-padding:after, .matri-row-padding:before, .matri-cell-row:before,
+	.matri-cell-row:after, .matri-clear:after, .matri-clear:before,
+	.matri-bar:before, .matri-bar:after {
+	content: "";
+	display: table;
+	clear: both
+}
+
+.matri-col, .matri-half, .matri-third, .matri-twothird,
+	.matri-threequarter, .matri-quarter {
+	float: left;
+	width: 100%
+}
+
+.matri-col.s1 {
+	width: 8.33333%
+}
+
+.matri-col.s2 {
+	width: 16.66666%
+}
+
+.matri-col.s3 {
+	width: 24.99999%
+}
+
+.matri-col.s4 {
+	width: 33.33333%
+}
+
+.matri-col.s5 {
+	width: 41.66666%
+}
+
+.matri-col.s6 {
+	width: 49.99999%
+}
+
+.matri-col.s7 {
+	width: 58.33333%
+}
+
+.matri-col.s8 {
+	width: 66.66666%
+}
+
+.matri-col.s9 {
+	width: 74.99999%
+}
+
+.matri-col.s10 {
+	width: 83.33333%
+}
+
+.matri-col.s11 {
+	width: 91.66666%
+}
+
+.matri-col.s12 {
+	width: 99.99999%
+}
+
+@media ( min-width :601px) {
+	.matri-col.m1 {
+		width: 8.33333%
+	}
+	.matri-col.m2 {
+		width: 16.66666%
+	}
+	.matri-col.m3, .matri-quarter {
+		width: 24.99999%
+	}
+	.matri-col.m4, .matri-third {
+		width: 33.33333%
+	}
+	.matri-col.m5 {
+		width: 41.66666%
+	}
+	.matri-col.m6, .matri-half {
+		width: 49.99999%
+	}
+	.matri-col.m7 {
+		width: 58.33333%
+	}
+	.matri-col.m8, .matri-twothird {
+		width: 66.66666%
+	}
+	.matri-col.m9, .matri-threequarter {
+		width: 74.99999%
+	}
+	.matri-col.m10 {
+		width: 83.33333%
+	}
+	.matri-col.m11 {
+		width: 91.66666%
+	}
+	.matri-col.m12 {
+		width: 99.99999%
+	}
+}
+
+@media ( min-width :993px) {
+	.matri-col.l1 {
+		width: 8.33333%
+	}
+	.matri-col.l2 {
+		width: 16.66666%
+	}
+	.matri-col.l3 {
+		width: 24.99999%
+	}
+	.matri-col.l4 {
+		width: 33.33333%
+	}
+	.matri-col.l5 {
+		width: 41.66666%
+	}
+	.matri-col.l6 {
+		width: 49.99999%
+	}
+	.matri-col.l7 {
+		width: 58.33333%
+	}
+	.matri-col.l8 {
+		width: 66.66666%
+	}
+	.matri-col.l9 {
+		width: 74.99999%
+	}
+	.matri-col.l10 {
+		width: 83.33333%
+	}
+	.matri-col.l11 {
+		width: 91.66666%
+	}
+	.matri-col.l12 {
+		width: 99.99999%
+	}
+}
+
+.matri-rest {
+	overflow: hidden
+}
+
+.matri-stretch {
+	margin-left: -16px;
+	margin-right: -16px
+}
+
+.matri-content, .matri-auto {
+	margin-left: auto;
+	margin-right: auto
+}
+
+.matri-content {
+	max-width: 980px
+}
+
+.matri-auto {
+	max-width: 1140px
+}
+
+.matri-cell-row {
+	display: table;
+	width: 100%
+}
+
+.matri-cell {
+	display: table-cell
+}
+
+.matri-cell-top {
+	vertical-align: top
+}
+
+.matri-cell-middle {
+	vertical-align: middle
+}
+
+.matri-cell-bottom {
+	vertical-align: bottom
+}
+
+.matri-hide {
+	display: none !important
+}
+
+.matri-show-block, .matri-show {
+	display: block !important
+}
+
+.matri-show-inline-block {
+	display: inline-block !important
+}
+
+@media ( max-width :1205px) {
+	.matri-auto {
+		max-width: 95%
+	}
+}
+
+@media ( max-width :600px) {
+	.matri-modal-content {
+		margin: 0 10px;
+		width: auto !important
+	}
+	.matri-modal {
+		padding-top: 30px
+	}
+	.matri-dropdown-hover.matri-mobile .matri-dropdown-content,
+		.matri-dropdown-click.matri-mobile .matri-dropdown-content {
+		position: relative
+	}
+	.matri-hide-small {
+		display: none !important
+	}
+	.matri-mobile {
+		display: block;
+		width: 100% !important
+	}
+	.matri-bar-item.matri-mobile, .matri-dropdown-hover.matri-mobile,
+		.matri-dropdown-click.matri-mobile {
+		text-align: center
+	}
+	.matri-dropdown-hover.matri-mobile, .matri-dropdown-hover.matri-mobile .matri-btn,
+		.matri-dropdown-hover.matri-mobile .matri-button,
+		.matri-dropdown-click.matri-mobile, .matri-dropdown-click.matri-mobile .matri-btn,
+		.matri-dropdown-click.matri-mobile .matri-button {
+		width: 100%
+	}
+}
+
+@media ( max-width :768px) {
+	.matri-modal-content {
+		width: 500px
+	}
+	.matri-modal {
+		padding-top: 50px
+	}
+}
+
+@media ( min-width :993px) {
+	.matri-modal-content {
+		width: 900px
+	}
+	.matri-hide-large {
+		display: none !important
+	}
+	.matri-sidebar.matri-collapse {
+		display: block !important
+	}
+}
+
+@media ( max-width :992px) and (min-width:601px) {
+	.matri-hide-medium {
+		display: none !important
+	}
+}
+
+@media ( max-width :992px) {
+	.matri-sidebar.matri-collapse {
+		display: none
+	}
+	.matri-main {
+		margin-left: 0 !important;
+		margin-right: 0 !important
+	}
+	.matri-auto {
+		max-width: 100%
+	}
+}
+
+.matri-top, .matri-bottom {
+	position: fixed;
+	width: 100%;
+	z-index: 1
+}
+
+.matri-top {
+	top: 0
+}
+
+.matri-bottom {
+	bottom: 0
+}
+
+.matri-overlay {
+	position: fixed;
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 2
+}
+
+.matri-display-topleft {
+	position: absolute;
+	left: 0;
+	top: 0
+}
+
+.matri-display-topright {
+	position: absolute;
+	right: 0;
+	top: 0
+}
+
+.matri-display-bottomleft {
+	position: absolute;
+	left: 0;
+	bottom: 0
+}
+
+.matri-display-bottomright {
+	position: absolute;
+	right: 0;
+	bottom: 0
+}
+
+.matri-display-middle {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%)
+}
+
+.matri-display-left {
+	position: absolute;
+	top: 50%;
+	left: 0%;
+	transform: translate(0%, -50%);
+	-ms-transform: translate(-0%, -50%)
+}
+
+.matri-display-right {
+	position: absolute;
+	top: 50%;
+	right: 0%;
+	transform: translate(0%, -50%);
+	-ms-transform: translate(0%, -50%)
+}
+
+.matri-display-topmiddle {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	transform: translate(-50%, 0%);
+	-ms-transform: translate(-50%, 0%)
+}
+
+.matri-display-bottommiddle {
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translate(-50%, 0%);
+	-ms-transform: translate(-50%, 0%)
+}
+
+.matri-display-container:hover .matri-display-hover {
+	display: block
+}
+
+.matri-display-container:hover span.matri-display-hover {
+	display: inline-block
+}
+
+.matri-display-hover {
+	display: none
+}
+
+.matri-display-position {
+	position: absolute
+}
+
+.matri-circle {
+	border-radius: 50%
+}
+
+.matri-round-small {
+	border-radius: 2px
+}
+
+.matri-round, .matri-round-medium {
+	border-radius: 4px
+}
+
+.matri-round-large {
+	border-radius: 8px
+}
+
+.matri-round-xlarge {
+	border-radius: 16px
+}
+
+.matri-round-xxlarge {
+	border-radius: 32px
+}
+
+.matri-row-padding, .matri-row-padding>.matri-half, .matri-row-padding>.matri-third,
+	.matri-row-padding>.matri-twothird, .matri-row-padding>.matri-threequarter,
+	.matri-row-padding>.matri-quarter, .matri-row-padding>.matri-col {
+	padding: 0 8px
+}
+
+.matri-container, .matri-panel {
+	padding: 0.01em 16px
+}
+
+.matri-panel {
+	margin-top: 16px;
+	margin-bottom: 16px
+}
+
+.matri-code, .matri-codespan {
+	font-family: Consolas, "courier new";
+	font-size: 16px
+}
+
+.matri-code {
+	width: auto;
+	background-color: #fff;
+	padding: 8px 12px;
+	border-left: 4px solid #4CAF50;
+	word-wrap: break-word
+}
+
+.matri-codespan {
+	color: crimson;
+	background-color: #f1f1f1;
+	padding-left: 4px;
+	padding-right: 4px;
+	font-size: 110%
+}
+
+.matri-card, .matri-card-2 {
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0
+		rgba(0, 0, 0, 0.12)
+}
+
+.matri-card-4, .matri-hover-shadow:hover {
+	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0
+		rgba(0, 0, 0, 0.19)
+}
+
+.matri-spin {
+	animation: matri-spin 2s infinite linear
+}
+
+@
+keyframes matri-spin { 0%{
+	transform: rotate(0deg)
+}
+
+100%{
+transform
+
+
+:rotate(359deg)
+
+
+}
+}
+.matri-animate-fading {
+	animation: fading 10s infinite
+}
+
+@
+keyframes fading { 0%{
+	opacity: 0
+}
+
+50%{
+opacity
+
+
+:
+
+
+1
+}
+100%{
+opacity
+
+
+:
+
+
+0
+}
+}
+.matri-animate-opacity {
+	animation: opac 0.8s
+}
+
+@
+keyframes opac {
+	from {opacity: 0
+}
+
+to {
+	opacity: 1
+}
+
+}
+.matri-animate-top {
+	position: relative;
+	animation: animatetop 0.4s
+}
+
+@
+keyframes animatetop {
+	from {top: -300px;
+	opacity: 0
+}
+
+to {
+	top: 0;
+	opacity: 1
+}
+
+}
+.matri-animate-left {
+	position: relative;
+	animation: animateleft 0.4s
+}
+
+@
+keyframes animateleft {
+	from {left: -300px;
+	opacity: 0
+}
+
+to {
+	left: 0;
+	opacity: 1
+}
+
+}
+.matri-animate-right {
+	position: relative;
+	animation: animateright 0.4s
+}
+
+@
+keyframes animateright {
+	from {right: -300px;
+	opacity: 0
+}
+
+to {
+	right: 0;
+	opacity: 1
+}
+
+}
+.matri-animate-bottom {
+	position: relative;
+	animation: animatebottom 0.4s
+}
+
+@
+keyframes animatebottom {
+	from {bottom: -300px;
+	opacity: 0
+}
+
+to {
+	bottom: 0;
+	opacity: 1
+}
+
+}
+.matri-animate-zoom {
+	animation: animatezoom 0.6s
+}
+
+@
+keyframes animatezoom {
+	from {transform: scale(0)
+}
+
+to {
+	transform: scale(1)
+}
+
+}
+.matri-animate-input {
+	transition: width 0.4s ease-in-out
+}
+
+.matri-animate-input:focus {
+	width: 100% !important
+}
+
+.matri-opacity, .matri-hover-opacity:hover {
+	opacity: 0.60
+}
+
+.matri-opacity-off, .matri-hover-opacity-off:hover {
+	opacity: 1
+}
+
+.matri-opacity-max {
+	opacity: 0.25
+}
+
+.matri-opacity-min {
+	opacity: 0.75
+}
+
+.matri-greyscale-max, .matri-grayscale-max, .matri-hover-greyscale:hover,
+	.matri-hover-grayscale:hover {
+	filter: grayscale(100%)
+}
+
+.matri-greyscale, .matri-grayscale {
+	filter: grayscale(75%)
+}
+
+.matri-greyscale-min, .matri-grayscale-min {
+	filter: grayscale(50%)
+}
+
+.matri-sepia {
+	filter: sepia(75%)
+}
+
+.matri-sepia-max, .matri-hover-sepia:hover {
+	filter: sepia(100%)
+}
+
+.matri-sepia-min {
+	filter: sepia(50%)
+}
+
+.matri-tiny {
+	font-size: 10px !important
+}
+
+.matri-small {
+	font-size: 12px !important
+}
+
+.matri-medium {
+	font-size: 15px !important
+}
+
+.matri-large {
+	font-size: 18px !important
+}
+
+.matri-xlarge {
+	font-size: 24px !important
+}
+
+.matri-xxlarge {
+	font-size: 36px !important
+}
+
+.matri-xxxlarge {
+	font-size: 48px !important
+}
+
+.matri-jumbo {
+	font-size: 64px !important
+}
+
+.matri-left-align {
+	text-align: left !important
+}
+
+.matri-right-align {
+	text-align: right !important
+}
+
+.matri-justify {
+	text-align: justify !important
+}
+
+.matri-center {
+	text-align: center !important
+}
+
+.matri-border-0 {
+	border: 0 !important
+}
+
+.matri-border {
+	border: 1px solid #ccc !important
+}
+
+.matri-border-top {
+	border-top: 1px solid #ccc !important
+}
+
+.matri-border-bottom {
+	border-bottom: 1px solid #ccc !important
+}
+
+.matri-border-left {
+	border-left: 1px solid #ccc !important
+}
+
+.matri-border-right {
+	border-right: 1px solid #ccc !important
+}
+
+.matri-topbar {
+	border-top: 6px solid #ccc !important
+}
+
+.matri-bottombar {
+	border-bottom: 6px solid #ccc !important
+}
+
+.matri-leftbar {
+	border-left: 6px solid #ccc !important
+}
+
+.matri-rightbar {
+	border-right: 6px solid #ccc !important
+}
+
+.matri-section, .matri-code {
+	margin-top: 16px !important;
+	margin-bottom: 16px !important
+}
+
+.matri-margin {
+	margin: 16px !important
+}
+
+.matri-margin-top {
+	margin-top: 16px !important
+}
+
+.matri-margin-bottom {
+	margin-bottom: 16px !important
+}
+
+.matri-margin-left {
+	margin-left: 16px !important
+}
+
+.matri-margin-right {
+	margin-right: 16px !important
+}
+
+.matri-padding-small {
+	padding: 4px 8px !important
+}
+
+.matri-padding {
+	padding: 8px 16px !important
+}
+
+.matri-padding-large {
+	padding: 12px 24px !important
+}
+
+.matri-padding-16 {
+	padding-top: 16px !important;
+	padding-bottom: 16px !important
+}
+
+.matri-padding-24 {
+	padding-top: 24px !important;
+	padding-bottom: 24px !important
+}
+
+.matri-padding-32 {
+	padding-top: 32px !important;
+	padding-bottom: 32px !important
+}
+
+.matri-padding-48 {
+	padding-top: 48px !important;
+	padding-bottom: 48px !important
+}
+
+.matri-padding-64 {
+	padding-top: 64px !important;
+	padding-bottom: 64px !important
+}
+
+.matri-left {
+	float: left !important
+}
+
+.matri-right {
+	float: right !important
+}
+
+.matri-button:hover {
+	color: #000 !important;
+	background-color: #ccc !important
+}
+
+.matri-transparent, .matri-hover-none:hover {
+	background-color: transparent !important
+}
+
+.matri-hover-none:hover {
+	box-shadow: none !important
+}
+/* Colors */
+.matri-amber, .matri-hover-amber:hover {
+	color: #000 !important;
+	background-color: white; !important
+}
+
+.matri-aqua, .matri-hover-aqua:hover {
+	color: #000 !important;
+	background-color: #00ffff !important
+}
+
+.matri-blue, .matri-hover-blue:hover {
+	color: #fff !important;
+	background-color: #2196F3 !important
+}
+
+.matri-light-blue, .matri-hover-light-blue:hover {
+	color: #000 !important;
+	background-color: #87CEEB !important
+}
+
+.matri-brown, .matri-hover-brown:hover {
+	color: #fff !important;
+	background-color: #795548 !important
+}
+
+.matri-cyan, .matri-hover-cyan:hover {
+	color: #000 !important;
+	background-color: #00bcd4 !important
+}
+
+.matri-blue-grey, .matri-hover-blue-grey:hover, .matri-blue-gray,
+	.matri-hover-blue-gray:hover {
+	color: #fff !important;
+	background-color: #607d8b !important
+}
+
+.matri-green, .matri-hover-green:hover {
+	color: #fff !important;
+	background-color: #4CAF50 !important
+}
+
+.matri-light-green, .matri-hover-light-green:hover {
+	color: #000 !important;
+	background-color: #8bc34a !important
+}
+
+.matri-indigo, .matri-hover-indigo:hover {
+	color: #fff !important;
+	background-color: #3f51b5 !important
+}
+
+.matri-khaki, .matri-hover-khaki:hover {
+	color: #000 !important;
+	background-color: #f0e68c !important
+}
+
+.matri-lime, .matri-hover-lime:hover {
+	color: #000 !important;
+	background-color: #cddc39 !important
+}
+
+.matri-orange, .matri-hover-orange:hover {
+	color: #000 !important;
+	background-color: #ff9800 !important
+}
+
+.matri-deep-orange, .matri-hover-deep-orange:hover {
+	color: #fff !important;
+	background-color: #ff5722 !important
+}
+
+.matri-pink, .matri-hover-pink:hover {
+	color: #fff !important;
+	background-color: #e91e63 !important
+}
+
+.matri-purple, .matri-hover-purple:hover {
+	color: #fff !important;
+	background-color: #9c27b0 !important
+}
+
+.matri-deep-purple, .matri-hover-deep-purple:hover {
+	color: #fff !important;
+	background-color: #673ab7 !important
+}
+
+.matri-red, .matri-hover-red:hover {
+	color: #fff !important;
+	background-color: #f44336 !important
+}
+
+.matri-sand, .matri-hover-sand:hover {
+	color: #000 !important;
+	background-color: #fdf5e6 !important
+}
+
+.matri-teal, .matri-hover-teal:hover {
+	color: #fff !important;
+	background-color: #009688 !important
+}
+
+.matri-yellow, .matri-hover-yellow:hover {
+	color: #000 !important;
+	background-color: #ffeb3b !important
+}
+
+.matri-white, .matri-hover-white:hover {
+	color: #000 !important;
+	background-color: #fff !important
+}
+
+.matri-black, .matri-hover-black:hover {
+	color: #fff !important;
+	background-color: #000 !important
+}
+
+.matri-grey, .matri-hover-grey:hover, .matri-gray, .matri-hover-gray:hover
+	{
+	color: #000 !important;
+	background-color: #9e9e9e !important
+}
+
+.matri-light-grey, .matri-hover-light-grey:hover, .matri-light-gray,
+	.matri-hover-light-gray:hover {
+	color: #000 !important;
+	background-color: #f1f1f1 !important
+}
+
+.matri-dark-grey, .matri-hover-dark-grey:hover, .matri-dark-gray,
+	.matri-hover-dark-gray:hover {
+	color: #fff !important;
+	background-color: #616161 !important
+}
+
+.matri-pale-red, .matri-hover-pale-red:hover {
+	color: #000 !important;
+	background-color: #ffdddd !important
+}
+
+.matri-pale-green, .matri-hover-pale-green:hover {
+	color: #000 !important;
+	background-color: #ddffdd !important
+}
+
+.matri-pale-yellow, .matri-hover-pale-yellow:hover {
+	color: #000 !important;
+	background-color: #ffffcc !important
+}
+
+.matri-pale-blue, .matri-hover-pale-blue:hover {
+	color: #000 !important;
+	background-color: #ddffff !important
+}
+
+.matri-text-amber, .matri-hover-text-amber:hover {
+	color: #ffc107 !important
+}
+
+.matri-text-aqua, .matri-hover-text-aqua:hover {
+	color: #00ffff !important
+}
+
+.matri-text-blue, .matri-hover-text-blue:hover {
+	color: #2196F3 !important
+}
+
+.matri-text-light-blue, .matri-hover-text-light-blue:hover {
+	color: #87CEEB !important
+}
+
+.matri-text-brown, .matri-hover-text-brown:hover {
+	color: #795548 !important
+}
+
+.matri-text-cyan, .matri-hover-text-cyan:hover {
+	color: #00bcd4 !important
+}
+
+.matri-text-blue-grey, .matri-hover-text-blue-grey:hover,
+	.matri-text-blue-gray, .matri-hover-text-blue-gray:hover {
+	color: #607d8b !important
+}
+
+.matri-text-green, .matri-hover-text-green:hover {
+	color: #4CAF50 !important
+}
+
+.matri-text-light-green, .matri-hover-text-light-green:hover {
+	color: #8bc34a !important
+}
+
+.matri-text-indigo, .matri-hover-text-indigo:hover {
+	color: #3f51b5 !important
+}
+
+.matri-text-khaki, .matri-hover-text-khaki:hover {
+	color: #b4aa50 !important
+}
+
+.matri-text-lime, .matri-hover-text-lime:hover {
+	color: #cddc39 !important
+}
+
+.matri-text-orange, .matri-hover-text-orange:hover {
+	color: #ff9800 !important
+}
+
+.matri-text-deep-orange, .matri-hover-text-deep-orange:hover {
+	color: #ff5722 !important
+}
+
+.matri-text-pink, .matri-hover-text-pink:hover {
+	color: #e91e63 !important
+}
+
+.matri-text-purple, .matri-hover-text-purple:hover {
+	color: #9c27b0 !important
+}
+
+.matri-text-deep-purple, .matri-hover-text-deep-purple:hover {
+	color: #673ab7 !important
+}
+
+.matri-text-red, .matri-hover-text-red:hover {
+	color: #f44336 !important
+}
+
+.matri-text-sand, .matri-hover-text-sand:hover {
+	color: #fdf5e6 !important
+}
+
+.matri-text-teal, .matri-hover-text-teal:hover {
+	color: #009688 !important
+}
+
+.matri-text-yellow, .matri-hover-text-yellow:hover {
+	color: #d2be0e !important
+}
+
+.matri-text-white, .matri-hover-text-white:hover {
+	color: #fff !important
+}
+
+.matri-text-black, .matri-hover-text-black:hover {
+	color: #000 !important
+}
+
+.matri-text-grey, .matri-hover-text-grey:hover, .matri-text-gray,
+	.matri-hover-text-gray:hover {
+	color: #757575 !important
+}
+
+.matri-text-light-grey, .matri-hover-text-light-grey:hover,
+	.matri-text-light-gray, .matri-hover-text-light-gray:hover {
+	color: #f1f1f1 !important
+}
+
+.matri-text-dark-grey, .matri-hover-text-dark-grey:hover,
+	.matri-text-dark-gray, .matri-hover-text-dark-gray:hover {
+	color: #3a3a3a !important
+}
+
+.matri-border-amber, .matri-hover-border-amber:hover {
+	border-color: #ffc107 !important
+}
+
+.matri-border-aqua, .matri-hover-border-aqua:hover {
+	border-color: #00ffff !important
+}
+
+.matri-border-blue, .matri-hover-border-blue:hover {
+	border-color: #2196F3 !important
+}
+
+.matri-border-light-blue, .matri-hover-border-light-blue:hover {
+	border-color: #87CEEB !important
+}
+
+.matri-border-brown, .matri-hover-border-brown:hover {
+	border-color: #795548 !important
+}
+
+.matri-border-cyan, .matri-hover-border-cyan:hover {
+	border-color: #00bcd4 !important
+}
+
+.matri-border-blue-grey, .matri-hover-border-blue-grey:hover,
+	.matri-border-blue-gray, .matri-hover-border-blue-gray:hover {
+	border-color: #607d8b !important
+}
+
+.matri-border-green, .matri-hover-border-green:hover {
+	border-color: #4CAF50 !important
+}
+
+.matri-border-light-green, .matri-hover-border-light-green:hover {
+	border-color: #8bc34a !important
+}
+
+.matri-border-indigo, .matri-hover-border-indigo:hover {
+	border-color: #3f51b5 !important
+}
+
+.matri-border-khaki, .matri-hover-border-khaki:hover {
+	border-color: #f0e68c !important
+}
+
+.matri-border-lime, .matri-hover-border-lime:hover {
+	border-color: #cddc39 !important
+}
+
+.matri-border-orange, .matri-hover-border-orange:hover {
+	border-color: #ff9800 !important
+}
+
+.matri-border-deep-orange, .matri-hover-border-deep-orange:hover {
+	border-color: #ff5722 !important
+}
+
+.matri-border-pink, .matri-hover-border-pink:hover {
+	border-color: #e91e63 !important
+}
+
+.matri-border-purple, .matri-hover-border-purple:hover {
+	border-color: #9c27b0 !important
+}
+
+.matri-border-deep-purple, .matri-hover-border-deep-purple:hover {
+	border-color: #673ab7 !important
+}
+
+.matri-border-red, .matri-hover-border-red:hover {
+	border-color: #f44336 !important
+}
+
+.matri-border-sand, .matri-hover-border-sand:hover {
+	border-color: #fdf5e6 !important
+}
+
+.matri-border-teal, .matri-hover-border-teal:hover {
+	border-color: #009688 !important
+}
+
+.matri-border-yellow, .matri-hover-border-yellow:hover {
+	border-color: #ffeb3b !important
+}
+
+.matri-border-white, .matri-hover-border-white:hover {
+	border-color: #fff !important
+}
+
+.matri-border-black, .matri-hover-border-black:hover {
+	border-color: #000 !important
+}
+
+.matri-border-grey, .matri-hover-border-grey:hover, .matri-border-gray,
+	.matri-hover-border-gray:hover {
+	border-color: #9e9e9e !important
+}
+
+.matri-border-light-grey, .matri-hover-border-light-grey:hover,
+	.matri-border-light-gray, .matri-hover-border-light-gray:hover {
+	border-color: #f1f1f1 !important
+}
+
+.matri-border-dark-grey, .matri-hover-border-dark-grey:hover,
+	.matri-border-dark-gray, .matri-hover-border-dark-gray:hover {
+	border-color: #616161 !important
+}
+
+.matri-border-pale-red, .matri-hover-border-pale-red:hover {
+	border-color: #ffe7e7 !important
+}
+
+.matri-border-pale-green, .matri-hover-border-pale-green:hover {
+	border-color: #e7ffe7 !important
+}
+
+.matri-border-pale-yellow, .matri-hover-border-pale-yellow:hover {
+	border-color: #ffffcc !important
+}
+
+.matri-border-pale-blue, .matri-hover-border-pale-blue:hover {
+	border-color: #e7ffff !important
+}
+
+.matri-theme-l5 {
+	color: #000 !important;
+	background-color: #fffbf0 !important
+}
+
+.matri-theme-l4 {
+	color: #000 !important;
+	background-color: #fff3cd !important
+}
+
+.matri-theme-l3 {
+	color: #000 !important;
+	background-color: #ffe69b !important
+}
+
+.matri-theme-l2 {
+	color: #000 !important;
+	background-color: #ffda69 !important
+}
+
+.matri-theme-l1 {
+	color: #000 !important;
+	background-color: #ffcd37 !important
+}
+
+.matri-theme-d1 {
+	color: #000 !important;
+	background-color: #a3d2ea !important
+}
+
+.matri-theme-d2 {
+	color: #fff !important;
+	background-color: #0d457b !important
+}
+
+.matri-theme-d3 {
+	color: #fff !important;
+	background-color: #b68900 !important
+}
+
+.matri-theme-d4 {
+	color: #fff !important;
+	background-color: #9c7500 !important
+}
+
+.matri-theme-d5 {
+	color: #fff !important;
+	background-color: #826200 !important
+}
+
+.matri-theme-light {
+	color: #000 !important;
+	background-color: #fffbf0 !important
+}
+
+.matri-theme-dark {
+	color: #fff !important;
+	background-color: #826200 !important
+}
+
+.matri-theme-action {
+	color: #fff !important;
+	background-color: #826200 !important
+}
+
+.matri-theme {
+	color: #000 !important;
+	background-color: #ffc107 !important
+}
+
+.matri-text-theme {
+	color: #ffc107 !important
+}
+
+.matri-border-theme {
+	border-color: #ffc107 !important
+}
+
+.matri-hover-theme:hover {
+	color: #000 !important;
+	background-color: #ffc107 !important
+}
+
+.matri-hover-text-theme:hover {
+	color: #ffc107 !important
+}
+
+.matri-hover-border-theme:hover {
+	border-color: #ffc107 !important
+}
+
+.sidepanel {
+	height: 100%; /* Specify a height */
+	width: 0; /* 0 width - change this with JavaScript */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Stay on top */
+	top: 0;
+	left: 0;
+	background-color: #111; /* Black*/
+	overflow-x: hidden; /* Disable horizontal scroll */
+	padding-top: 60px; /* Place content 60px from the top */
+	transition: 0.5s;
+	/* 0.5 second transition effect to slide in the sidepanel */
+}
+
+.sidepanel a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: white;
+	display: block;
+	transition: 0.3s;
+}
+
+.sidepanel a:hover {
+	color: #f1f1f1;
+}
+
+.sidepanel .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+.openbtn {
+	font-size: 20px;
+	cursor: pointer;
+	background-color: #0d457b;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+}
+
+.openbtn:hover {
+	background-color: #a3d2ea;
+}
+
+.accordion {
+  background-color: #0d457b;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  color: white;
+}
+
+.active, .accordion:hover {
+  background-color: #1d56ad;
+  color: white;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: #78caea;
+  display: none;
+  overflow: hidden;
+  color: white;
+}
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 17px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: white;
+}
+
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #1d56ad;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.profile-card {
+  background-color: transparent;
+  width: 100%;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; 
+}
+
+.small-profile-card {
+  background-color: red;
+  width: 100%;
+  height: 80px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; 
+}
+
+.profile-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.small-profile-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.profile-card:hover .profile-card-inner {
+  transform: rotateY(180deg);
+}
+
+.profile-card-front, .profile-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.profile-card-front {
+  background-color: white;
+  color: black;
+}
+
+.profile-card-back {
+  background-color: #0d457b;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.profile-card-back p {
+	text-align: left;
+	margin-left: 12px;
+}
+
+.profile-card-name {
+  background-color: #1d56ad;
+  width : 100%;
+  height: 50px;
+  position: relative;
+  color: white;
+}
+
+.view-profile-btn {
+	height: 100%; 
+	color: white;
+}
+
+.view-profile-btn:hover {
+	background-color: #0d457b;
+}
+
+.reg-tab-loginpage {
+  height: 100%;
+  margin: 0;
+}
+

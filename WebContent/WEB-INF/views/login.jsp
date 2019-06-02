@@ -6,232 +6,255 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="NextGen Matrimonial Portal for searching a perfect life partner">
-  <meta name="author" content="Regional Matrimony">
-  <title>Regional Matrimony - NextGen Matrimonial Portal</title>
-  <!-- Favicon -->
-  <link href="resources/clientassets/img/brand/favicon.png" rel="icon" type="image/png">
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-  <!-- Icons -->
-  <link href="<c:url value="resources/clientassets/vendor/nucleo/css/nucleo.css" />" rel="stylesheet">
-  <link href="<c:url value="resources/clientassets/vendor/font-awesome/css/font-awesome.min.css" />" rel="stylesheet">
-  <!-- Argon CSS -->
-  <link type="text/css" href="<c:url value="resources/clientassets/css/argon.css?v=1.0.1" />" rel="stylesheet">
-  <!-- Docs CSS -->
-  <link type="text/css" href="<c:url value="resources/clientassets/css/docs.min.css" />" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description"
+	content="NextGen Matrimonial Portal for searching a perfect life partner">
+<meta name="author" content="Regional Matrimony">
+<title>Regional Matrimony - NextGen Matrimonial Portal</title>
+<!-- Favicon -->
+<link href="resources/clientassets/img/brand/favicon.png" rel="icon"
+	type="image/png">
+<link type="text/css"
+	href="<c:url value="resources/clientassets/css/matri.css" />"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, html {
+	height: 100%;
+	margin: 0;
+}
+
+.tablink {
+	background-color: #555;
+	color: white;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	font-size: 17px;
+	width: 50%;
+}
+
+.tablink:hover {
+	background-color: #777;
+}
+
+.tabcontent {
+	color: white;
+	display: none;
+	padding: 100px 20px;
+	height: 100%;
+}
+
+#login-form {
+	background-color: #0d457b;
+}
+
+#register-form {
+	background-color: #0d457b;
+}
+
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+	background-color: #ddd;
+	outline: none;
+}
+
+hr {
+	border: 1px solid #f1f1f1;
+	margin-bottom: 25px;
+}
+
+.registerbtn {
+	background-color: #4CAF50;
+	color: white;
+	padding: 16px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	opacity: 0.9;
+}
+
+.registerbtn:hover {
+	opacity: 1;
+}
+
+a {
+	color: dodgerblue;
+}
+
+.signin {
+	background-color: #f1f1f1;
+	text-align: center;
+}
+</style>
 </head>
-
 <body>
-	<header class="header-global">
-		<nav id="navbar-main"
-			class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
-			<div class="container">
-				<a class="navbar-brand mr-lg-5" href="./index.html"> <img
-					src="resources/clientassets/img/brand/white.png">
-				</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse"
-					data-target="#navbar_global" aria-controls="navbar_global"
-					aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
+	<tag:url value="/" var="urlHome"/>
+	<div class="matri-row matri-padding matri-theme-d2 matri-xlarge">
+		<div class="matri-quarter">
+			<div class="matri-bar">
+				<!--  <a href="#" class="matri-bar-item matri-button matri-left"><i
+					class="fa fa-bars"></i></a> -->
+				<button class="matri-bar-item matri-button matri-left openbtn"
+					onclick="openNav()">
+					<i class="fa fa-bars"></i>
 				</button>
-				<div class="navbar-collapse collapse" id="navbar_global">
-					<div class="navbar-collapse-header">
-						<div class="row">
-							<div class="col-6 collapse-brand">
-								<a href="./index.html"> <img
-									src="resources/clientassets/img/brand/blue.png">
-								</a>
-							</div>
-							<div class="col-6 collapse-close">
-								<button type="button" class="navbar-toggler"
-									data-toggle="collapse" data-target="#navbar_global"
-									aria-controls="navbar_global" aria-expanded="false"
-									aria-label="Toggle navigation">
-									<span></span> <span></span>
-								</button>
-							</div>
-						</div>
-					</div>
-					<ul
-						class="navbar-nav navbar-nav-hover align-items-lg-center ml-lg-auto">
-						<li class="nav-item dropdown"><a href="#" class="nav-link"
-							data-toggle="dropdown" href="#" role="button"> <i
-								class="ni ni-collection d-lg-none"></i> <span
-								class="nav-link-inner--text">Success Stories</span>
-						</a></li>
-						<li class="nav-item dropdown"><a href="#" class="nav-link"
-							data-toggle="dropdown" href="#" role="button"> <i
-								class="ni ni-collection d-lg-none"></i> <span
-								class="nav-link-inner--text">Help</span>
-						</a>
-							<div class="dropdown-menu">
-								<a href="./examples/landing.html" class="dropdown-item">Contact Us</a> 
-								<a href="./examples/profile.html" class="dropdown-item">Feedback</a> 
-								<a href="./examples/login.html" class="dropdown-item">FAQ</a> 
-								<a href="./examples/register.html" class="dropdown-item">Business Queries</a>
-							</div></li>
-						<li class="nav-item"><a class="nav-link nav-link-icon"
-							href="https://www.facebook.com/creativetim" target="_blank"
-							data-toggle="tooltip" title="Like us on Facebook"> <i
-								class="fa fa-facebook-square"></i> <span
-								class="nav-link-inner--text d-lg-none">Facebook</span>
-						</a></li>
-						<li class="nav-item"><a class="nav-link nav-link-icon"
-							href="https://www.instagram.com/creativetimofficial"
-							target="_blank" data-toggle="tooltip"
-							title="Follow us on Instagram"> <i class="fa fa-instagram"></i>
-								<span class="nav-link-inner--text d-lg-none">Instagram</span>
-						</a></li>
-						<li class="nav-item"><a class="nav-link nav-link-icon"
-							href="https://twitter.com/creativetim" target="_blank"
-							data-toggle="tooltip" title="Follow us on Twitter"> <i
-								class="fa fa-twitter-square"></i> <span
-								class="nav-link-inner--text d-lg-none">Twitter</span>
-						</a></li>
-						<li class="nav-item"><a class="nav-link nav-link-icon"
-							href="https://github.com/creativetimofficial/argon-design-system"
-							target="_blank" data-toggle="tooltip" title="Star us on Github">
-								<i class="fa fa-github"></i> <span
-								class="nav-link-inner--text d-lg-none">Github</span>
-						</a></li>
-					</ul>
+				<div id="headerpanel" class="sidepanel matri-theme-d2">
+					<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+					<a href="${urlHome }">Home</a> <a href="#">About Us</a> <a href="#">Success
+						Stories</a> <a href="#">Clients</a> <a href="#">Help</a> <a
+						style="font-size: 19px"><i class="fa fa-mobile-phone"></i> +91
+						90955-94034</a> <a style="font-size: 19px"><i
+						class="fa fa-envelope-o"></i> sathesh@engineer.com</a> <a
+						style="font-size: 19px"><i class="fa fa-mobile-phone"></i>
+						(+91) 90955-94034</a>
 				</div>
-			</div>
-		</nav>
-	</header>
-	<main>
-	<section class="section section-lg section-shaped">
-		<div class="shape shape-style-1 shape-default">
-			<span></span> <span></span> <span></span> <span></span> <span></span>
-			<span></span> <span></span> <span></span>
-		</div>
-		<div class="container py-md">
-			<div class="row row-grid justify-content-between align-items-center">
-				<div class="col-lg-6">
-					<h3 class="display-3 text-white">
-						NextGen Matrimonial Portal <span class="text-white">New way of MatchMaking</span>
-					</h3>
-					<p class="lead text-white">The Design System comes with four
-						pre-built pages to help you get started faster. You can change the
-						text and images and you're good to go. More importantly, looking
-						at them will give you a picture of what you can built with this
-						powerful Bootstrap 4 Design System.</p>
-					<div class="btn-wrapper">
-						<a href="./examples/login.html" class="btn btn-success">About Us</a> <a href="./examples/register.html" class="btn btn-white">Success Stories</a>
-					</div>
-				</div>
-				<div class="col-lg-5 mb-lg-auto">
-					<div class="transform-perspective-right">
-						<div class="card bg-secondary shadow border-0">
-							<!--  <div class="card-header bg-white pb-5">
-								<div class="text-muted text-center mb-3">
-									<small>Sign in with</small>
-								</div>
-								<div class="btn-wrapper text-center">
-									<a href="#" class="btn btn-neutral btn-icon"> <span
-										class="btn-inner--icon"> <img
-											src="resources/clientassets/img/icons/common/facebook.svg">
-									</span> <span class="btn-inner--text">facebook</span>
-									</a> <a href="#" class="btn btn-neutral btn-icon"> <span
-										class="btn-inner--icon"> <img
-											src="resources/clientassets/img/icons/common/googleplus.svg">
-									</span> <span class="btn-inner--text">Google+</span>
-									</a>
-								</div>
-							</div> -->
-							<div class="card-body px-lg-5 py-lg-5">
-								<div class="text-center text-muted mb-4">
-									<small>Sign in with credentials</small>
-								</div>
-								<form role="form" action="memberLogin" method="post">
-									<div class="form-group mb-3">
-										<div class="input-group input-group-alternative">
-											<div class="input-group-prepend">
-												<span class="input-group-text"><i
-													class="ni ni-email-83"></i></span>
-											</div>
-											<input class="form-control" placeholder="member id" type="text" name="memberId" id="memberId">
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="input-group input-group-alternative">
-											<div class="input-group-prepend">
-												<span class="input-group-text"><i
-													class="ni ni-lock-circle-open"></i></span>
-											</div>
-											<input class="form-control" placeholder="password"
-												type="password" name="password" id="password">
-										</div>
-									</div>
-									<div
-										class="custom-control custom-control-alternative custom-checkbox">
-										<input class="custom-control-input" id=" customCheckLogin2"
-											type="checkbox"> <label class="custom-control-label"
-											for=" customCheckLogin2"> <span>Remember me</span>
-										</label>
-									</div>
-									<div class="text-center">
-										<button type="submit" class="btn btn-primary my-4">Sign
-											in</button>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
+				<a class="matri-bar-item matri-button matri-center"><img
+					class="matri-circle"
+					src="<c:url value="resources/images/logo2.png" />"
+					style="height: 40px;"></a>
 			</div>
 		</div>
-		<!-- SVG separator -->
-		<div class="separator separator-bottom separator-skew">
-			<svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none"
-				version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
-        </svg>
-		</div>
-	</section>
-  </main>
-  <footer class="footer has-cards">
-    <div class="container">
-      <div class="row align-items-center justify-content-md-between">
-        <div class="col-md-6">
-          <div class="copyright">
-            &copy; <script>document.write(new Date().getFullYear());</script>
-            <a href="https://www.creative-tim.com" target="_blank">Regional Matrimony</a>.
-          </div>
-        </div>
-        <div class="col-md-6">
-          <ul class="nav nav-footer justify-content-end">
-            <li class="nav-item">
-              <a href="https://www.regionalmatrimony.com" class="nav-link" target="_blank">Login</a>
-            </li>
-            <li class="nav-item">
-              <a href="https://www.regionalmatrimony.com" class="nav-link" target="_blank">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a href="https://www.regionalmatrimony.com" class="nav-link" target="_blank">Success Stories</a>
-            </li>
-            <li class="nav-item">
-              <a href="https://www.regionalmatrimony.com" class="nav-link" target="_blank">Contact Us</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-	<!-- Core -->
-  <script src="resources/clientassets/vendor/jquery/jquery.min.js"></script>
-  <script src="resources/clientassets/vendor/popper/popper.min.js"></script>
-  <script src="resources/clientassets/vendor/bootstrap/bootstrap.min.js"></script>
-  <script src="resources/clientassets/vendor/headroom/headroom.min.js"></script>
-  <!-- Optional JS -->
-  <script src="resources/clientassets/vendor/onscreen/onscreen.min.js"></script>
-  <script src="resources/clientassets/vendor/nouislider/js/nouislider.min.js"></script>
-  <script src="resources/clientassets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-  <!-- Argon JS -->
-  <script src="resources/clientassets/js/argon.js?v=1.0.1"></script>
-</body>
 
+		<div class="matri-half">
+			<div class="matri-bar matri-xlarge">
+
+				<div class="dropdown matri-right">
+					<button class="dropbtn">
+						Help <i class="fa fa-question-circle"></i>
+					</button>
+					<div class="dropdown-content matri-theme-d2">
+						<a href="#">E-mail Us</a> <a href="#">Call Us</a> <a href="#">Chat
+							with Us</a>
+					</div>
+				</div>
+				<div class="dropdown matri-right">
+					<button class="dropbtn">Success Stories</button>
+				</div>
+				<div class="dropdown matri-right">
+					<button class="dropbtn">About Us</button>
+				</div>
+				<div class="dropdown matri-right">
+					<button type = "button" onclick = "window.location.href = '${urlHome }'" class="dropbtn" >Home</button>
+				</div>
+			</div>
+		</div>
+		<div class="matri-quarter">
+			<div class="matri-bar">
+				<button class="matri-bar-item matri-button matri-right openbtn">
+					<i class="fa fa-facebook"></i>
+				</button>
+				<button class="matri-bar-item matri-button matri-right openbtn">
+					<i class="fa fa-instagram"></i>
+				</button>
+				<button class="matri-bar-item matri-button matri-right openbtn">
+					<i class="fa fa-twitter"></i>
+				</button>
+				<button class="matri-bar-item matri-button matri-right openbtn">
+					<i class="fa fa-whatsapp"></i>
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="matri-row matri-xlarge">
+		<div class="matri-col s8 matri-right matri-mobile"></div>
+		<div class="matri-col s4 matri-left matri-mobile">
+			<button class="tablink"
+				onclick="openPage('login-form', this, '#0d457b')" id="defaultOpen">Login
+				with Us!</button>
+			<button class="tablink"
+				onclick="openPage('register-form', this, '#0d457b')">Sign-up
+				with Us!!</button>
+			<div id="login-form" class="tabcontent">
+				<form action="memberLogin" method="post" autocomplete="off">
+					<div class="matri-container" style="font-size: 17px;">
+						<p style="margin: 0; font-size: 17px;">Please enter
+							credentials to login.</p>
+						<label for="memberId"><b>E-mail</b></label> <input type="text"
+							placeholder="Enter member Id" name="memberId" id="memberId"
+							required> <label for="password"><b>Password</b></label> <input
+							type="password" placeholder="Enter Password" name="password"
+							id="password" required>
+						<hr>
+						<p style = "color: red;">${errormsg }</p>
+						<p>
+							By creating an account you agree to our <a href="#">Terms Nd
+								Privacy</a>.
+						</p>
+						<button type="submit" class="registerbtn">
+							<b>Login</b>
+						</button>
+					</div>
+				</form>
+			</div>
+
+			<div id="register-form" class="tabcontent">
+				<form action="" method="post" autocomplete="off">
+					<div class="matri-container"
+						style="font-size: 17px; margin-botton: 17px;">
+						<p style="margin: 0; font-size: 17px;">Please fill this form
+							to create free account.</p>
+						<label for="email"><b>E-mail</b></label> <input type="text"
+							placeholder="Enter Email" name="email" required> <label
+							for="mobileNumber"><b>Mobile Number</b></label> <input
+							type="text" placeholder="Enter Mobile Number" name="mobileNumber"
+							required> <label for="fullName"><b>Full Name</b></label> <input type="text" placeholder="Enter FullName"
+							name="fullName" required>
+						<hr>
+						<p>
+							By creating an account you agree to our <a href="#">Terms Nd
+								Privacy</a>.
+						</p>
+						<button type="submit" class="registerbtn">
+							<b>Register</b>
+						</button>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	function openNav() {
+		document.getElementById("headerpanel").style.width = "300px";
+	}
+
+	function closeNav() {
+		document.getElementById("headerpanel").style.width = "0";
+	}
+
+	function openPage(pageName, elmnt, color) {
+		var i, tabcontent, tablinks;
+		tabcontent = document.getElementsByClassName("tabcontent");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+
+		tablinks = document.getElementsByClassName("tablink");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].style.backgroundColor = "";
+		}
+
+		document.getElementById(pageName).style.display = "block";
+
+		elmnt.style.backgroundColor = color;
+	}
+
+	document.getElementById("defaultOpen").click();
+</script>
 </html>

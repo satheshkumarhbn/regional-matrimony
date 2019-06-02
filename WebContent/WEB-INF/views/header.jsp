@@ -1,256 +1,128 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    <%@taglib prefix="tag" uri="http://www.springframework.org/tags"%>
+	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="tag" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link href="resources/clientassets/img/brand/favicon.png" rel="icon" type="image/png">
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-  <!-- Icons -->
-  <link href="<c:url value="resources/clientassets/vendor/nucleo/css/nucleo.css" />" rel="stylesheet">
-  <link href="<c:url value="resources/clientassets/vendor/font-awesome/css/font-awesome.min.css" />" rel="stylesheet">
-  <!-- Argon CSS -->
-  <link type="text/css" href="<c:url value="resources/clientassets/css/argon.css" />" rel="stylesheet">
-  <!-- Docs CSS -->
-  <link type="text/css" href="<c:url value="resources/clientassets/css/docs.min.css" />" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link
+	href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+	rel="stylesheet">
+<link type="text/css"
+	href="<c:url value="resources/clientassets/css/matri.css" />"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
 <body>
-	<tag:url value="/getAllProfiles" var="urlGetAllProfiles"/>
-	<tag:url value="/profile/G1900001" var="urlProfile"/>
-	<!-- HEADER -->
-	<header class="header-global">
-    <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
-      <div class="container">
-        <a class="navbar-brand mr-lg-5" href="./index.html">
-          <img src="resources/clientassets/img/brand/white.png">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse" id="navbar_global">
-          <div class="navbar-collapse-header">
-            <div class="row">
-              <div class="col-6 collapse-brand">
-                <a href="./index.html">
-                  <img src="resources/clientassets/img/brand/blue.png">
-                </a>
-              </div>
-              <div class="col-6 collapse-close">
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
-                  <span></span>
-                  <span></span>
-                </button>
-              </div>
-            </div>
-          </div>
-          <!--<ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-			
-            <li class="nav-item dropdown">
-              <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
-                <i class="ni ni-collection d-lg-none"></i>
-                <span class="nav-link-inner--text">Examples</span>
-              </a>
-              <div class="dropdown-menu">
-                <a href="./examples/landing.html" class="dropdown-item">Landing</a>
-                <a href="./examples/profile.html" class="dropdown-item">Profile</a>
-                <a href="./examples/login.html" class="dropdown-item">Login</a>
-                <a href="./examples/register.html" class="dropdown-item">Register</a>
-              </div>
-            </li>
-          </ul>-->
-          <ul class="navbar-nav navbar-nav-hover align-items-lg-center ml-lg-auto">
-            <li class="nav-item dropdown">
-              <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
-                <i class="ni ni-collection d-lg-none"></i>
-                <span class="nav-link-inner--text">Matches</span>
-              </a>
-              <div class="dropdown-menu">
-                <a href="./examples/landing.html" class="dropdown-item">New Matches</a>
-                <a href="./examples/profile.html" class="dropdown-item">Suggested Matches</a>
-                <a href="./examples/login.html" class="dropdown-item">Recently viewed</a>
-                <a href="./examples/register.html" class="dropdown-item">Shortlisted</a>
-                <a href="${urlGetAllProfiles }" class="dropdown-item">All Profiles</a>
-                <a href="${urlProfile }" class="dropdown-item">View Profile</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
-                <i class="ni ni-ui-04 d-lg-none"></i>
-                <span class="nav-link-inner--text">Search By</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-xl">
-                <div class="dropdown-menu-inner">
-                  <div class="media d-flex align-items-center">
-                    <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
-                      <i class="ni ni-spaceship"></i>
-                    </div>
-                    <div class="media-body ml-3">
-                      <h6 class="heading text-primary mb-md-1">Member Id</h6>
-                      <form action="" method="post">
-                      	<div class="form-group">
-			              <input type="text" placeholder="member id" class="form-control form-control-alternative" />
-			            </div>
-			            <button class="btn btn-sm btn-primary" type="button">Search</button>
-              		  </form>
-                    </div>
-                  </div>
-                  <div class="media d-flex align-items-center">
-                    <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
-                      <i class="ni ni-palette"></i>
-                    </div>
-                    <div class="media-body ml-3">
-                      <h6 class="heading text-primary mb-md-1">Mobile Number</h6>
-                      <div class="card-body card-block">
-							<form action="searchByMemberId" method="post" class="form-horizontal">
-								<div class="row form-group">
-									<div class="col col-md-12">
-										<div class="input-group">
-											<input type="text" id="memberid" name="memberid"
-												placeholder="Member ID" class="form-control">
-											<div class="input-group-btn">
-												<button class="btn btn-primary">Search</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</form>
+	<tag:url value="/getAllProfiles" var="urlGetAllProfiles" />
+	<tag:url value="/profile/G1900001" var="urlProfile" />
+
+	<div class="matri-row matri-padding matri-theme-d2 matri-xlarge">
+		<div class="matri-quarter">
+			<div class="matri-bar">
+				<!--  <a href="#" class="matri-bar-item matri-button matri-left"><i
+					class="fa fa-bars"></i></a> -->
+				<button class="matri-bar-item matri-button matri-left openbtn"
+					onclick="openNav()">
+					<i class="fa fa-bars"></i>
+				</button>
+				<div id="headerpanel" class="sidepanel matri-theme-d2">
+					<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+					<c:if test="${not empty user.fullName }">
+						<div class="dropdown matri-left" style="width: 100%;">
+							<button class="dropbtn"
+								style="font-size: 22px; font-align: left;">
+								<i class="fa fa-user-circle matri-left"></i> ${ user.fullName }
+							</button>
+							<div class="dropdown-content matri-theme-d2">
+								<a href="#">My Profile</a> <a href="#">Change Password</a> <a
+									href="#">Logout</a>
+							</div>
 						</div>
-                    </div>
-                   </div>
-                  <a href="https://demos.creative-tim.com/argon-design-system/docs/components/alerts.html" class="media d-flex align-items-center">
-                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                      <i class="ni ni-ui-04"></i>
-                    </div>
-                    <div class="media-body ml-3">
-                      <h5 class="heading text-warning mb-md-1">Components</h5>
-                      <p class="description d-none d-md-inline-block mb-0">Browse our 50 beautiful handcrafted components offered in the Free version.</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </li>
-			<li class="nav-item dropdown">
-              <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
-                <i class="ni ni-collection d-lg-none"></i>
-                <span class="nav-link-inner--text">Success Stories</span>
-              </a>
-			</li>
-			<li class="nav-item dropdown">
-              <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
-                <i class="ni ni-collection d-lg-none"></i>
-                <span class="nav-link-inner--text">Help</span>
-              </a>
-              <div class="dropdown-menu">
-                <a href="./examples/landing.html" class="dropdown-item">New Matches</a>
-                <a href="./examples/profile.html" class="dropdown-item">Suggested Matches</a>
-                <a href="./examples/login.html" class="dropdown-item">Recently viewed</a>
-                <a href="./examples/register.html" class="dropdown-item">Shortlisted</a>
-              </div>
-            </li>
-			<li class="nav-item dropdown">
-              <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
-                <i class="ni ni-ui-04 d-lg-none"></i>
-                
-				<span class="btn-inner--icon">
-                  <i class="fa fa-heartbeat mr-2"></i>
-				  <span class="nav-link-inner--text">Wishlist</span>
-                </span>
-				
-              </a>
-              <div class="dropdown-menu dropdown-menu-xl">
-                <div class="dropdown-menu-inner">
-                  <a href="https://demos.creative-tim.com/argon-design-system/docs/getting-started/overview.html" class="media d-flex align-items-center">
-                    <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
-                      <i class="ni ni-spaceship"></i>
-                    </div>
-                    <div class="media-body ml-3">
-                      <h6 class="heading text-primary mb-md-1">Getting started</h6>
-                      <p class="description d-none d-md-inline-block mb-0">Learn how to use Argon compiling<br> Scss, change brand colors and more.</p>
-                    </div>
-                  </a>
-                  <a href="https://demos.creative-tim.com/argon-design-system/docs/foundation/colors.html" class="media d-flex align-items-center">
-                    <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
-                      <i class="ni ni-palette"></i>
-                    </div>
-                    <div class="media-body ml-3">
-                      <h6 class="heading text-primary mb-md-1">Foundation</h6>
-                      <p class="description d-none d-md-inline-block mb-0">Learn more about colors, typography, icons<br> and the grid system we used for Argon.</p>
-                    </div>
-                  </a>
-                  <a href="https://demos.creative-tim.com/argon-design-system/docs/components/alerts.html" class="media d-flex align-items-center">
-                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                      <i class="ni ni-ui-04"></i>
-                    </div>
-                    <div class="media-body ml-3">
-                      <h5 class="heading text-warning mb-md-1">Components</h5>
-                      <p class="description d-none d-md-inline-block mb-0">Browse our 50 beautiful handcrafted <br>components offered in the Free version.</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </li>
-			<li class="nav-item dropdown">
-              <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
-                <i class="ni ni-ui-04 d-lg-none"></i>
-                <!---->
-				<span class="btn-inner--icon">
-                  <i class="fa fa-user-circle mr-2"></i>
-				  <span class="nav-link-inner--text">Sathesh</span>
-                </span>
-				
-              </a>
-              <div class="dropdown-menu">
-                <a href="./examples/landing.html" class="dropdown-item">My Profile</a>
-                <a href="./examples/profile.html" class="dropdown-item">Edit Profile</a>
-                <a href="./examples/login.html" class="dropdown-item">Change Password</a>
-                <a href="./examples/register.html" class="dropdown-item">Logout</a>
-              </div>
-            </li>
-			<!--<li class="nav-item">
-              <a class="nav-link nav-link-icon" href="https://www.facebook.com/creativetim" target="_blank" data-toggle="tooltip" title="Like us on Facebook">
-                <i class="fa fa-facebook-square"></i>
-                <span class="nav-link-inner--text d-lg-none">Facebook</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-link-icon" href="https://www.instagram.com/creativetimofficial" target="_blank" data-toggle="tooltip" title="Follow us on Instagram">
-                <i class="fa fa-instagram"></i>
-                <span class="nav-link-inner--text d-lg-none">Instagram</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-link-icon" href="https://twitter.com/creativetim" target="_blank" data-toggle="tooltip" title="Follow us on Twitter">
-                <i class="fa fa-twitter-square"></i>
-                <span class="nav-link-inner--text d-lg-none">Twitter</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link nav-link-icon" href="https://github.com/creativetimofficial/argon-design-system" target="_blank" data-toggle="tooltip" title="Star us on Github">
-                <i class="fa fa-github"></i>
-                <span class="nav-link-inner--text d-lg-none">Github</span>
-              </a>
-            </li>-->
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-	<!-- /NAVIGATION -->
+					</c:if>
+					<a href="#">About</a> <a href="#">Services</a> <a href="#">Clients</a>
+					<a href="#">Contact</a>
 
-	<!-- jQuery Plugins -->
-  <script src="resources/clientassets/vendor/jquery/jquery.min.js"></script>
-  <script src="resources/clientassets/vendor/popper/popper.min.js"></script>
-  <script src="resources/clientassets/vendor/bootstrap/bootstrap.min.js"></script>
-  <script src="resources/clientassets/vendor/headroom/headroom.min.js"></script>
-  <!-- Optional JS -->
-  <script src="resources/clientassets/vendor/onscreen/onscreen.min.js"></script>
-  <script src="resources/clientassets/vendor/nouislider/js/nouislider.min.js"></script>
-  <script src="resources/clientassets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-  <!-- Argon JS -->
-  <script src="resources/clientassets/js/argon.js?v=1.0.1"></script>
+				</div>
+				<a class="matri-bar-item matri-button matri-center"><img
+					class="matri-circle"
+					src="<c:url value="resources/images/logo2.png" />"
+					style="height: 40px;"></a>
+			</div>
+		</div>
+
+		<div class="matri-half">
+			<div class="matri-bar matri-xlarge">
+				<c:if test="${not empty user.fullName }">
+					<div class="dropdown matri-right">
+						<button class="dropbtn">
+							${user.fullName } <i class="fa fa-user-circle"></i>
+						</button>
+						<div class="dropdown-content matri-theme-d2">
+							<a href="#">My Profile</a> <a href="#">Change Password</a> <a
+								href="#">Logout</a>
+						</div>
+					</div>
+				</c:if>
+				<div class="dropdown matri-right">
+					<button class="dropbtn">
+						Wishlist <i class="fa fa-heartbeat"></i>
+					</button>
+					<div class="dropdown-content matri-theme-d2">
+						<a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link
+							3</a>
+					</div>
+				</div>
+				<div class="dropdown matri-right">
+					<button class="dropbtn">
+						Help <i class="fa fa-question-circle"></i>
+					</button>
+					<div class="dropdown-content matri-theme-d2">
+						<a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link
+							3</a>
+					</div>
+				</div>
+				<div class="dropdown matri-right">
+					<button class="dropbtn">Stories</button>
+				</div>
+				<div class="dropdown matri-right">
+					<button class="dropbtn">
+						Search By <i class="fa fa-search-plus"></i>
+					</button>
+					<div class="dropdown-content matri-theme-d2">
+						<a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link
+							3</a>
+					</div>
+				</div>
+				<div class="dropdown matri-right">
+					<button class="dropbtn">
+						Matches <i class="fa fa-users"></i>
+					</button>
+					<div class="dropdown-content matri-theme-d2">
+						<a href="${ urlGetAllProfiles}">All Profile</a> <a href="#">Suggested
+							Matches</a> <a href="#">Recently viewed</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="matri-quarter">
+			<a href="#" class="matri-bar-item matri-button matri-right"><i
+				class="fa fa-search"></i></a> <input type="text"
+				class="matri-amber matri-border-0 matri-padding matri-right"
+				style="width: 80%;">
+		</div>
+	</div>
 </body>
+<script type="text/javascript">
+	function openNav() {
+		document.getElementById("headerpanel").style.width = "300px";
+	}
 
+	function closeNav() {
+		document.getElementById("headerpanel").style.width = "0";
+	}
+</script>
 </html>

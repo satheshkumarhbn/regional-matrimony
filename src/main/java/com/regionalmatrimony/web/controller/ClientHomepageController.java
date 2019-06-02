@@ -47,18 +47,23 @@ public class ClientHomepageController {
 
 	@RequestMapping(value = "/profileslist", method = RequestMethod.GET)
 	public String productlist(@ModelAttribute("groomlist") ArrayList<Groom> groomList,
-			@ModelAttribute("bridelist") ArrayList<Bride> brideList, @ModelAttribute("user") String user,
+			@ModelAttribute("bridelist") ArrayList<Bride> brideList, @ModelAttribute("member") User user,
 			@ModelAttribute("message") String message, Model model, RedirectAttributes redirAttr) {
 		logger.info("request mapping /profileslist");
 		
 		if(!groomList.isEmpty()) {
 			model.addAttribute("groomlist", groomList);
+			model.addAttribute("user", user);
+			logger.info(user.toString());
 		} else if(!brideList.isEmpty()) {
 			model.addAttribute("bridelist", brideList);
+			model.addAttribute("user", user);
+			logger.info(user.toString());
 		} else {
 			model.addAttribute("user", user);
 			model.addAttribute("message", message);
 		}
+		logger.info("passing to profileslist view");
 		return "profileslist";
 	}
 
@@ -69,11 +74,9 @@ public class ClientHomepageController {
 				String prefix = user.getMemberId().substring(0, 1);
 				if (prefix.equalsIgnoreCase("G")) {
 					List<Bride> memberList = searchService.getAllBride();
-					// model.addAttribute("memberList", memberList);
 					redirAttr.addFlashAttribute("bridelist", memberList);
 				} else if (prefix.equalsIgnoreCase("B")) {
 					List<Groom> memberList = searchService.getAllGroom();
-					// model.addAttribute("memberList", memberList);
 					redirAttr.addFlashAttribute("groomlist", memberList);
 				}
 			}
@@ -110,7 +113,9 @@ public class ClientHomepageController {
 	public String getAbc(Model model) {
 		logger.info("request mapping /abc");
 		Groom groom = dashService.getGroomById("G1900001");
-		model.addAttribute("member", groom);
+		model.addAttribute("groomlist", searchService.getAllGroom());
+		model.addAttribute("bridelist", searchService.getAllBride());
+		model.addAttribute("groom", groom);
 		return "profileslist";
 	}
 }
