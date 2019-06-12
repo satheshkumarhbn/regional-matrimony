@@ -86,24 +86,38 @@ progress {
 }
 
 audio
+
+
 :not
+
  
+
 (
 [
 controls
 ]
+
  
+
 ){
 display
-:
- 
-none
-;
 
-	
-height
+
 :
+
  
+
+none
+
+
+;
+height
+
+
+:
+
+ 
+
 0
 }
 [hidden], template {
@@ -162,16 +176,28 @@ img {
 }
 
 svg
+
+
 :not
+
  
+
 (
 :root
+
  
+
 ){
 overflow
+
+
 :
+
  
+
 hidden
+
+
 
 
 }
@@ -321,11 +347,11 @@ hr {
 
 .matri-image {
 	max-width: 100%;
-	height: auto
+	height: auto;
 }
 
 img {
-	vertical-align: middle
+	vertical-align: middle;
 }
 
 a {
@@ -1094,7 +1120,11 @@ keyframes matri-spin { 0%{
 transform
 
 
+
+
 :rotate(359deg)
+
+
 
 
 }
@@ -1112,7 +1142,11 @@ keyframes fading { 0%{
 opacity
 
 
+
+
 :
+
+
 
 
 1
@@ -1121,7 +1155,11 @@ opacity
 opacity
 
 
+
+
 :
+
+
 
 
 0
@@ -1281,7 +1319,7 @@ to {
 }
 
 .matri-medium {
-	font-size: 15px !important
+	font-size: 13px !important
 }
 
 .matri-large {
@@ -1445,7 +1483,9 @@ to {
 /* Colors */
 .matri-amber, .matri-hover-amber:hover {
 	color: #000 !important;
-	background-color: white; !important
+	background-color: white;
+	!
+	important
 }
 
 .matri-aqua, .matri-hover-aqua:hover {
@@ -1969,143 +2009,161 @@ to {
 }
 
 .accordion {
-  background-color: #0d457b;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-  transition: 0.4s;
-  color: white;
+	background-color: #0d457b;
+	color: #444;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	text-align: left;
+	border: none;
+	outline: none;
+	transition: 0.4s;
+	color: white;
 }
 
 .active, .accordion:hover {
-  background-color: #1d56ad;
-  color: white;
+	background-color: #1d56ad;
+	color: white;
 }
 
 .panel {
-  padding: 0 18px;
-  background-color: #78caea;
-  display: none;
-  overflow: hidden;
-  color: white;
+	padding: 0 18px;
+	background-color: #78caea;
+	display: none;
+	overflow: hidden;
+	color: white;
 }
+
 .checkbox-container {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 17px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 17px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .checkbox-container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
 }
 
 .checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: white;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: white;
 }
 
 .checkbox-container:hover input ~ .checkmark {
-  background-color: #ccc;
+	background-color: #ccc;
 }
 
 .checkbox-container input:checked ~ .checkmark {
-  background-color: #1d56ad;
+	background-color: #1d56ad;
 }
+
 .checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
+	content: "";
+	position: absolute;
+	display: none;
 }
 
 .checkbox-container input:checked ~ .checkmark:after {
-  display: block;
+	display: block;
 }
 
 .checkbox-container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+	left: 9px;
+	top: 5px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
 }
 
 .profile-card {
-  background-color: transparent;
-  width: 100%;
-  height: 200px;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px; 
+	background-color: transparent;
+	width: 100%;
+	height: 200px;
+	border: 1px solid #f1f1f1;
+	perspective: 1000px;
+}
+
+.matri-profile {
+	background-color: transparent;
+	width: 200px;
+	height: 200px;
+}
+
+.previous-button {
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+}
+
+.next-button {
+	writing-mode: vertical-lr;
+	text-orientation: mixed;
 }
 
 .small-profile-card {
-  background-color: red;
-  width: 100%;
-  height: 80px;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px; 
+	background-color: red;
+	width: 100%;
+	height: 80px;
+	border: 1px solid #f1f1f1;
+	perspective: 1000px;
 }
 
 .profile-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
 }
 
 .small-profile-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
 }
 
 .profile-card:hover .profile-card-inner {
-  transform: rotateY(180deg);
+	transform: rotateY(180deg);
 }
 
 .profile-card-front, .profile-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
 }
 
 .profile-card-front {
-  background-color: white;
-  color: black;
+	background-color: white;
+	color: black;
 }
 
 .profile-card-back {
-  background-color: #0d457b;
-  color: white;
-  transform: rotateY(180deg);
+	background-color: #0d457b;
+	color: white;
+	transform: rotateY(180deg);
 }
 
 .profile-card-back p {
@@ -2114,15 +2172,15 @@ to {
 }
 
 .profile-card-name {
-  background-color: #1d56ad;
-  width : 100%;
-  height: 50px;
-  position: relative;
-  color: white;
+	background-color: #1d56ad;
+	width: 100%;
+	height: 50px;
+	position: relative;
+	color: white;
 }
 
 .view-profile-btn {
-	height: 100%; 
+	height: 100%;
 	color: white;
 }
 
@@ -2131,7 +2189,6 @@ to {
 }
 
 .reg-tab-loginpage {
-  height: 100%;
-  margin: 0;
+	height: 100%;
+	margin: 0;
 }
-

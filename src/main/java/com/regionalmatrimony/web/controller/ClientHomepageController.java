@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -50,12 +52,12 @@ public class ClientHomepageController {
 			@ModelAttribute("bridelist") ArrayList<Bride> brideList, @ModelAttribute("member") User user,
 			@ModelAttribute("message") String message, Model model, RedirectAttributes redirAttr) {
 		logger.info("request mapping /profileslist");
-		
-		if(!groomList.isEmpty()) {
+
+		if (!groomList.isEmpty()) {
 			model.addAttribute("groomlist", groomList);
 			model.addAttribute("user", user);
 			logger.info(user.toString());
-		} else if(!brideList.isEmpty()) {
+		} else if (!brideList.isEmpty()) {
 			model.addAttribute("bridelist", brideList);
 			model.addAttribute("user", user);
 			logger.info(user.toString());
@@ -95,7 +97,7 @@ public class ClientHomepageController {
 	}
 
 	@RequestMapping(value = "/profile", method = RequestMethod.GET)
-	public String getProfile(@RequestParam("memberid") String memberId, Model model) {
+	public String getProfile(@PathVariable("memberid") String memberId, @ModelAttribute("member") User user, Model model) {
 		logger.info("requestMapping /profile/{memberid}");
 		if (memberId.startsWith("G")) {
 			Groom groom = dashService.getGroomById(memberId);
@@ -108,14 +110,29 @@ public class ClientHomepageController {
 		}
 		return "profile";
 	}
-	
+
 	@RequestMapping(value = "/abc", method = RequestMethod.GET)
 	public String getAbc(Model model) {
 		logger.info("request mapping /abc");
 		Groom groom = dashService.getGroomById("G1900001");
-		model.addAttribute("groomlist", searchService.getAllGroom());
-		model.addAttribute("bridelist", searchService.getAllBride());
 		model.addAttribute("groom", groom);
-		return "profileslist";
+		return "profile";
+	}
+
+	@PostMapping("/simplesearch")
+	public String getSimpleSearchResults(@RequestParam("education") String education,
+			@RequestParam("occupation") String occupation, @RequestParam("mobileNumber") String mobileNumber,
+			@RequestParam("subCaste") String subCaste, @RequestParam("star") String star,
+			@RequestParam("raasi") String raasi, @ModelAttribute("member") User user, Model model, RedirectAttributes redirAttr) {
+		if(user.getMemberId().startsWith("G") || user.getMemberId().startsWith("g")) {
+			List<Bride> brideList = searchService.getBrideSimpleSearch(education, occupation, mobileNumber, subCaste, star, raasi);
+			redirAttr.addFlashAttribute("bridelist", brideList);
+			logger.info("Bride count--", brideList.size());
+		} else if(user.getMemberId().startsWith("B") || user.getMemberId().startsWith("b")) {
+			List<Groom> groomList = searchService.getGroomSimpleSearch(education, occupation, mobileNumber, subCaste, star, raasi);
+			redirAttr.addFlashAttribute("groomlist", groomList);
+			logger.info("Groom count--", groomList.size());
+		}
+		return "redirect:/profileslist";
 	}
 }

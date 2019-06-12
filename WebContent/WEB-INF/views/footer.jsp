@@ -7,34 +7,37 @@
 <head>
 </head>
 <body>
-  <footer class="footer has-cards">
-    <div class="container">
-      <div class="row align-items-center justify-content-md-between">
-        <div class="col-md-6">
-          <div class="copyright">
-            &copy; <script>document.write(new Date().getFullYear());</script>
-            <a href="https://www.creative-tim.com" target="_blank">Regional Matrimony</a>.
-          </div>
-        </div>
-        <div class="col-md-6">
-          <ul class="nav nav-footer justify-content-end">
-            <li class="nav-item">
-              <a href="https://www.regionalmatrimony.com" class="nav-link" target="_blank">Login</a>
-            </li>
-            <li class="nav-item">
-              <a href="https://www.regionalmatrimony.com" class="nav-link" target="_blank">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a href="https://www.regionalmatrimony.com" class="nav-link" target="_blank">Success Stories</a>
-            </li>
-            <li class="nav-item">
-              <a href="https://www.regionalmatrimony.com" class="nav-link" target="_blank">Contact Us</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
+<div class="matri-row matri-padding matri-theme-d2 matri-xlarge">
+	<div class="matri-half matri-left matri-xlarge">
+		<div class="dropdown" style="font-size: 17px;">
+			<a href="">home</a>
+			<a href="">Success Stories</a>
+			<a href="">help</a>
+			<a href="">wishlist</a>
+		</div>
+	</div>
+	<div class="matri-quarter">
+		<div>
+			<p style="margin: 5px; font-size: 15px;">All rights Reserved Regional Matrimony ©2019</p>
+		</div>
+	</div>
+	<div class="matri-quarter matri-right">
+			<div class="matri-bar matri-center">
+				<button class="matri-bar-item matri-button openbtn">
+					<i class="fa fa-facebook"></i>
+				</button>
+				<button class="matri-bar-item matri-button openbtn">
+					<i class="fa fa-instagram"></i>
+				</button>
+				<button class="matri-bar-item matri-button openbtn">
+					<i class="fa fa-twitter"></i>
+				</button>
+				<button class="matri-bar-item matri-button openbtn">
+					<i class="fa fa-whatsapp"></i>
+				</button>
+			</div>
+		</div>
+</div>
 </body>
 
 </html>

@@ -18,6 +18,7 @@
 <body>
 	<tag:url value="/getAllProfiles" var="urlGetAllProfiles" />
 	<tag:url value="/profile/G1900001" var="urlProfile" />
+	<tag:url value="/logout" var="urlLogout" />
 
 	<div class="matri-row matri-padding matri-theme-d2 matri-xlarge">
 		<div class="matri-quarter">
@@ -38,7 +39,7 @@
 							</button>
 							<div class="dropdown-content matri-theme-d2">
 								<a href="#">My Profile</a> <a href="#">Change Password</a> <a
-									href="#">Logout</a>
+									href="${urlLogout }">Logout</a>
 							</div>
 						</div>
 					</c:if>
@@ -62,7 +63,7 @@
 						</button>
 						<div class="dropdown-content matri-theme-d2">
 							<a href="#">My Profile</a> <a href="#">Change Password</a> <a
-								href="#">Logout</a>
+								href="${urlLogout }">Logout</a>
 						</div>
 					</div>
 				</c:if>
@@ -85,16 +86,7 @@
 					</div>
 				</div>
 				<div class="dropdown matri-right">
-					<button class="dropbtn">Stories</button>
-				</div>
-				<div class="dropdown matri-right">
-					<button class="dropbtn">
-						Search By <i class="fa fa-search-plus"></i>
-					</button>
-					<div class="dropdown-content matri-theme-d2">
-						<a href="#">Link 1</a> <a href="#">Link 2</a> <a href="#">Link
-							3</a>
-					</div>
+					<button class="dropbtn">Success Stories</button>
 				</div>
 				<div class="dropdown matri-right">
 					<button class="dropbtn">

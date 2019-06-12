@@ -69,5 +69,13 @@ public class SearchService {
 		logger.info("service method called getBrideByStarNdRaasi({},{},{})", star, raasi, agencyId);
 		return brideRepo.findBrideByStarNdRaasi(star, raasi, agencyId);
 	}
+	
+	public List<Groom> getGroomSimpleSearch(String education, String occupation, String mobileNumber, String subCaste, String star, String raasi) {
+		return groomRepo.getSimpleSearch(education, occupation, mobileNumber, subCaste, star, raasi);
+	}
+	
+	public List<Bride> getBrideSimpleSearch(String education, String occupation, String mobileNumber, String subCaste, String star, String raasi) {
+		return brideRepo.getSimpleSearch(education, occupation, mobileNumber, subCaste, star, raasi);
+	}
 
 }

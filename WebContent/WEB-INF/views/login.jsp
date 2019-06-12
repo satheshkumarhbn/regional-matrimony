@@ -103,7 +103,7 @@ a {
 </style>
 </head>
 <body>
-	<tag:url value="/" var="urlHome"/>
+	<tag:url value="/" var="urlHome" />
 	<div class="matri-row matri-padding matri-theme-d2 matri-xlarge">
 		<div class="matri-quarter">
 			<div class="matri-bar">
@@ -149,7 +149,8 @@ a {
 					<button class="dropbtn">About Us</button>
 				</div>
 				<div class="dropdown matri-right">
-					<button type = "button" onclick = "window.location.href = '${urlHome }'" class="dropbtn" >Home</button>
+					<button type="button"
+						onclick="window.location.href = '${urlHome }'" class="dropbtn">Home</button>
 				</div>
 			</div>
 		</div>
@@ -171,7 +172,6 @@ a {
 		</div>
 	</div>
 	<div class="matri-row matri-xlarge">
-		<div class="matri-col s8 matri-right matri-mobile"></div>
 		<div class="matri-col s4 matri-left matri-mobile">
 			<button class="tablink"
 				onclick="openPage('login-form', this, '#0d457b')" id="defaultOpen">Login
@@ -190,7 +190,7 @@ a {
 							type="password" placeholder="Enter Password" name="password"
 							id="password" required>
 						<hr>
-						<p style = "color: red;">${errormsg }</p>
+						<p style="color: red;">${errormsg }</p>
 						<p>
 							By creating an account you agree to our <a href="#">Terms Nd
 								Privacy</a>.
@@ -212,8 +212,9 @@ a {
 							placeholder="Enter Email" name="email" required> <label
 							for="mobileNumber"><b>Mobile Number</b></label> <input
 							type="text" placeholder="Enter Mobile Number" name="mobileNumber"
-							required> <label for="fullName"><b>Full Name</b></label> <input type="text" placeholder="Enter FullName"
-							name="fullName" required>
+							required> <label for="fullName"><b>Full Name</b></label>
+						<input type="text" placeholder="Enter FullName" name="fullName"
+							required>
 						<hr>
 						<p>
 							By creating an account you agree to our <a href="#">Terms Nd
@@ -225,9 +226,16 @@ a {
 					</div>
 				</form>
 			</div>
-
+		</div>
+		<div class="matri-col s8 matri-right matri-mobile">
+			<div class="matri-row">
+				<c:forEach var="image" items="${imagelist }" varStatus="counter">
+					
+				</c:forEach>
+			</div>
 		</div>
 	</div>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 <script type="text/javascript">
 	function openNav() {
@@ -256,5 +264,14 @@ a {
 	}
 
 	document.getElementById("defaultOpen").click();
+	
+	$().ready(function() {
+	    if(document.referrer != 'http://localhost:8080/logout'){ 
+	        history.pushState(null, null, 'login');
+	        window.addEventListener('popstate', function () {
+	            history.pushState(null, null, 'login');
+	        });
+	    }
+	});
 </script>
 </html>

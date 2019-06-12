@@ -123,14 +123,16 @@
 												<p>Height/Weight: ${groom.height }cm/ ${groom.weight }kg</p>
 												<p>Blood Group: B+ve</p>
 												<p>Education: ${groom.education }</p>
-												<p>Occupation/Place: ${groom.occupation }, ${groom.workLocation }
+												<p>Occupation/Place: ${groom.occupation },
+													${groom.workLocation }
 												<p>Marittal Status: ${groom.maritalStatus }</p>
 											</div>
 											<div class="matri-col s6 m6 l6">
 												<p>Caste/Sub-Caste: ${groom.caste }/ ${groom.subCaste }</p>
 												<p>Division/Diety: ${groom.division }/ ${groom.diety }</p>
 												<p>Star/Raasi: ${groom.star }/ ${groom.raasi }</p>
-												<p>Father/Mother : ${groom.fathersName }/ ${groom.mothersName }
+												<p>Father/Mother : ${groom.fathersName }/
+													${groom.mothersName }
 												<p>Occupation: Engineer, Noida
 											</div>
 										</div>
@@ -139,7 +141,8 @@
 							</div>
 							<div class="profile-card-name">
 								<button class="matri-btn view-profile-btn matri-left"
-									style="width: 60%">${groom.firstName } ${groom.lastName }, ${groom.age }</button>
+									style="width: 60%">${groom.firstName }
+									${groom.lastName }, ${groom.age }</button>
 								<button class="matri-btn view-profile-btn matri-right">
 									View Profile <i class="fa fa-eye"></i>
 								</button>
@@ -167,14 +170,16 @@
 												<p>Height/Weight: ${bride.height }cm/${bride.weight }kg</p>
 												<p>Blood Group: B+ve</p>
 												<p>Education: ${bride.education }</p>
-												<p>Occupation/Place: ${bride.occupation }, ${bride.workLocation }
+												<p>Occupation/Place: ${bride.occupation },
+													${bride.workLocation }
 												<p>Marittal Status: ${bride.maritalStatus }</p>
 											</div>
 											<div class="matri-col s6">
 												<p>Caste/Sub-Caste: ${bride.caste }/ ${bride.subCaste }</p>
 												<p>Division/Diety: ${bride.division }/ ${bride.diety }</p>
 												<p>Star/Raasi: ${bride.star }/ ${bride.raasi }</p>
-												<p>Father/Mother : ${bride.fathersName }/ ${bride.mothersName }
+												<p>Father/Mother : ${bride.fathersName }/
+													${bride.mothersName }
 											</div>
 										</div>
 									</div>
@@ -182,7 +187,8 @@
 							</div>
 							<div class="profile-card-name">
 								<button class="matri-btn view-profile-btn matri-left"
-									style="width: 60%">${bride.firstName } ${bride.lastName }, ${bride.age }</button>
+									style="width: 60%">${bride.firstName }
+									${bride.lastName }, ${bride.age }</button>
 								<button class="matri-btn view-profile-btn matri-right">
 									View Profile <i class="fa fa-eye"></i>
 								</button>
@@ -194,14 +200,18 @@
 					</c:forEach>
 				</c:when>
 				<c:when test="${empty groomlist && empty bridelist }"></c:when>
-				
+
 				<c:otherwise>
-				
+
 				</c:otherwise>
 			</c:choose>
 		</div>
 		<div class="matri-col s3 matri-mobile">
-			<div class="profile-card-name"><button class = "matri-btn matri-hover-none matri-center-align" style = "height:100%; width:100%;">Recently Added Profiles</button></div>
+			<div class="profile-card-name">
+				<button class="matri-btn matri-hover-none matri-center-align"
+					style="height: 100%; width: 100%; font-size: 20px;">Recently
+					Added Profiles</button>
+			</div>
 			<div class="small-profile-card"></div>
 		</div>
 	</div>

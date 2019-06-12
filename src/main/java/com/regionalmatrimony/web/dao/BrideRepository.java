@@ -30,4 +30,12 @@ public interface BrideRepository extends JpaRepository<Bride, String> {
 	
 	@Query("SELECT COUNT(bride.id) FROM Bride bride WHERE bride.agencyId = (:agencyId)")
 	int countBride(@Param("agencyId") String agencyId);
+	
+	@Query("SELECT bride FROM Bride bride ORDER BY bride.creationDate DESC")
+	List<Bride> findRecentlyAddedBride();
+
+	@Query("SELECT bride FROM Bride bride WHERE bride.education=(:education) OR bride.occupation=(:occupation) OR bride.mobileNumber=(:mobileNumber) OR bride.subCaste=(:subCaste) OR bride.star=(:star) OR bride.raasi=(:raasi)")
+	List<Bride> getSimpleSearch(@Param("education") String education, @Param("occupation") String occupation,
+			@Param("mobileNumber") String mobileNumber, @Param("subCaste") String subCaste, @Param("star") String star,
+			@Param("raasi") String raasi);
 }

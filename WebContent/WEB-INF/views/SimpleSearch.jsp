@@ -93,21 +93,23 @@
 		<i class="fa fa-search"></i> Simple Search
 	</button>
 	<div class="chat-popup" id="myForm">
-		<form action="" method="post" class="form-container">
-			<label for="education"><b>Education</b></label> <input type="text"
-				placeholder="start typing education.." name="education"
-				id="education"> <label for="occupation"><b>Profession</b></label>
+		<form action="/simplesearch" method="post" class="form-container">
+			<label for="education"><b>Education</b></label> 
+			<input type="text" placeholder="start typing education.." name="education" id="education"> 
+			<label for="occupation"><b>Profession</b></label>
 			<input type="text" placeholder="start typing profession.."
 				name="occupation" id="occupation" style="margin: 5px 0 17px 0;">
-			<label for="mobileNumber"><b>Mobile Number</b></label> <input
-				type="text" placeholder="start typing mobile number.."
+			<label for="mobileNumber"><b>Mobile Number</b></label> 
+			<input type="text" placeholder="start typing mobile number.."
 				name="mobileNumber" id="mobileNumber" style="margin: 5px 0 17px 0;">
-			<label for="subCaste"><b>Sub-Caste</b></label><input type="text"
-				placeholder="start typing sub caste.." name="subCaste" id="subCaste"
-				style="margin: 5px 0 17px 0;"> <label for="star"><b>Star</b></label><input
-				type="text" placeholder="start typing star.." name="star" id="star"
-				style="margin: 5px 0 17px 0;"> <label for="raasi"><b>Raasi</b></label><input
-				type="text" placeholder="start typing raasi.." name="raasi"
+			<label for="subCaste"><b>Sub-Caste</b></label>
+			<input type="text" placeholder="start typing sub caste.." name="subCaste" id="subCaste"
+				style="margin: 5px 0 17px 0;"> 
+			<label for="star"><b>Star</b></label>
+			<input type="text" placeholder="start typing star.." name="star" id="star"
+				style="margin: 5px 0 17px 0;"> 
+			<label for="raasi"><b>Raasi</b></label>
+			<input type="text" placeholder="start typing raasi.." name="raasi"
 				id="raasi" style="margin: 5px 0 17px 0;">
 
 			<button type="submit" class="btn">
