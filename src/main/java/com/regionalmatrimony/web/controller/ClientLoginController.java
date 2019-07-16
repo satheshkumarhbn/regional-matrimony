@@ -24,6 +24,7 @@ import com.regionalmatrimony.web.model.Bride;
 import com.regionalmatrimony.web.model.Groom;
 import com.regionalmatrimony.web.model.User;
 import com.regionalmatrimony.web.security.UserAuthenticationProvider;
+import com.regionalmatrimony.web.service.BusinessLogicService;
 import com.regionalmatrimony.web.service.ClientLoginService;
 
 @Controller
@@ -34,6 +35,9 @@ public class ClientLoginController {
 
 	@Autowired
 	ClientLoginService service;
+	
+	@Autowired
+	BusinessLogicService bisService;
 
 	@Autowired
 	UserAuthenticationProvider authenticationProvider;
@@ -53,7 +57,7 @@ public class ClientLoginController {
 				user.setAgencyId(groom.getAgencyId());
 				user.setMobileNumber(groom.getMobileNumber());
 				user.setFullName(groom.getFirstName());
-				List<Bride> recAddBrideList = service.getRecentlyAddedBrides();
+				List<Bride> recAddBrideList = bisService.getRecentlyAddedBrides();
 				model.addAttribute("member", user);
 				model.addAttribute("recAddBrideList", recAddBrideList);
 				logger.info("Groom login success");
@@ -64,7 +68,7 @@ public class ClientLoginController {
 				user.setAgencyId(bride.getAgencyId());
 				user.setMobileNumber(bride.getMobileNumber());
 				user.setFullName(bride.getFirstName());
-				List<Groom> recAddGroomList = service.getRecentlyAddedGrooms();
+				List<Groom> recAddGroomList = bisService.getRecentlyAddedGrooms();
 				model.addAttribute("member", user);
 				model.addAttribute("recAddGroomList", recAddGroomList);
 				logger.info("Bride login success");

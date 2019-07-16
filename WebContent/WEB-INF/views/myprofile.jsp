@@ -17,13 +17,16 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+	<tag:url value="/editProfile" var="urlEditProfile"></tag:url>
 	<jsp:include page="header.jsp"></jsp:include>
 	<div class="matri-row">
-		<div class="matri-col s6">
+		<div class="matri-col s6 m6">
 			<p class="matri-left" style="width: 100%; padding-left: 30px; font-size: 20px; margin-top: 5px; margin-bottom: 5px;">Personal
 				Profile</p>
 		</div>
-		<div class="matri-col s9"></div>
+		<div class="matri-col s2 m6 matri-right matri-padding-small">
+			<button onclick="window.location.href = '${urlEditProfile }'" class="matri-button matri-right matri-theme-d3"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Profile</button>
+		</div>
 	</div>
 
 	<div class="matri-row matri-xlarge matri-mobile">
@@ -165,10 +168,10 @@
 					</div>
 					<div class="matri-row matri-xlarge">
 						<div class="matri-col s4">
-							<label class="matri-medium matri-padding-small">Landline</label>
+							<label class="matri-medium matri-padding-small">Alt-mobile</label>
 						</div>
 						<div class="matri-col s8">
-							<label class="matri-medium matri-padding-small">+04294-263033</label>
+							<label class="matri-medium matri-padding-small">${mem.alternateMobileNumber }</label>
 						</div>
 					</div>
 					<div class="matri-row matri-xlarge">

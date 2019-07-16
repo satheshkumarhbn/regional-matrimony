@@ -14,9 +14,9 @@ public class Star {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Id
-	@Column(name = "starname")
+	@Column(name = "STARNAME")
 	private String starname;
-	@Column(name = "displayname")
+	@Column(name = "DISPLAYNAME")
 	private String displayName;
 	public int getId() {
 		return id;

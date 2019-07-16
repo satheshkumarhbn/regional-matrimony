@@ -6,25 +6,25 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="agency")
+@Table(name="AGENCY")
 public class Agency {
 
 	@Id
-	@Column(name="agencyid")
+	@Column(name="AGENCYID")
 	private String agencyId;
-	@Column(name="agencyfullname")
+	@Column(name="AGENCYFULLNAME")
 	private String agencyFullName;
-	@Column(name="email")
+	@Column(name="EMAIL")
 	private String email;
-	@Column(name="contactperson")
+	@Column(name="CONTACTPERSON")
 	private String contactPerson;
-	@Column(name="mobilenumber")
+	@Column(name="MOBILENUMBER")
 	private String mobileNumber;
-	@Column(name="address")
+	@Column(name="ADDRESS")
 	private String address;
-	@Column(name="password")
+	@Column(name="PASSWORD")
 	private String password;
-	@Column(name="isactive")
+	@Column(name="ISACTIVE")
 	private boolean isActive;
 
 	public String getAgencyId() {

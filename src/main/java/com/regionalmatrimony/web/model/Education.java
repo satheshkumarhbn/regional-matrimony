@@ -14,9 +14,9 @@ public class Education {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Id
-	@Column(name = "education")
+	@Column(name = "EDUCATION")
 	private String education;
-	@Column(name = "displayname")
+	@Column(name = "DISPLAYNAME")
 	private String displayName;
 	public int getId() {
 		return id;

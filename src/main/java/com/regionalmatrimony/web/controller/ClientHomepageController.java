@@ -8,8 +8,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,6 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.regionalmatrimony.web.model.Bride;
 import com.regionalmatrimony.web.model.Groom;
 import com.regionalmatrimony.web.model.User;
+import com.regionalmatrimony.web.service.BusinessLogicService;
 import com.regionalmatrimony.web.service.DashboardService;
 import com.regionalmatrimony.web.service.SearchService;
 
@@ -34,6 +36,9 @@ public class ClientHomepageController {
 
 	@Autowired
 	DashboardService dashService;
+
+	@Autowired
+	BusinessLogicService bisService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Model model) {
@@ -57,16 +62,29 @@ public class ClientHomepageController {
 			model.addAttribute("groomlist", groomList);
 			model.addAttribute("user", user);
 			logger.info(user.toString());
+			model = getRecentlyAddedProfiles(user, model);
 		} else if (!brideList.isEmpty()) {
 			model.addAttribute("bridelist", brideList);
 			model.addAttribute("user", user);
 			logger.info(user.toString());
+			model = getRecentlyAddedProfiles(user, model);
 		} else {
 			model.addAttribute("user", user);
 			model.addAttribute("message", message);
 		}
 		logger.info("passing to profileslist view");
 		return "profileslist";
+	}
+
+	private Model getRecentlyAddedProfiles(User user, Model model) {
+		if (user.getMemberId().startsWith("G") || user.getMemberId().startsWith("g")) {
+			List<Bride> brideList = bisService.getRecentlyAddedBrides();
+			model.addAttribute("recAddBrideList", brideList);
+		} else if (user.getMemberId().startsWith("B") || user.getMemberId().startsWith("b")) {
+			List<Groom> groomList = bisService.getRecentlyAddedGrooms();
+			model.addAttribute("recAddGroomList", groomList);
+		}
+		return model;
 	}
 
 	@RequestMapping(value = "/getAllProfiles", method = RequestMethod.GET)
@@ -96,40 +114,101 @@ public class ClientHomepageController {
 		return "header";
 	}
 
-	@RequestMapping(value = "/profile", method = RequestMethod.GET)
-	public String getProfile(@PathVariable("memberid") String memberId, @ModelAttribute("member") User user, Model model) {
-		logger.info("requestMapping /profile/{memberid}");
-		if (memberId.startsWith("G")) {
+	@RequestMapping(value = "/profile", params = { "memberid" }, method = RequestMethod.GET)
+	public String getProfile(@RequestParam("memberid") String memberId, @ModelAttribute("member") User user,
+			Model model) {
+		logger.info("requestMapping /profile/{}", memberId);
+		if (memberId.startsWith("G") || memberId.startsWith("g")) {
 			Groom groom = dashService.getGroomById(memberId);
-			model.addAttribute("member", groom);
-		} else if (memberId.startsWith("B")) {
+			model = getRecentlyAddedProfiles(user, model);
+			model.addAttribute("mem", groom);
+			model.addAttribute("user", user);
+		} else if (memberId.startsWith("B") || memberId.startsWith("b")) {
 			Bride bride = dashService.getBrideById(memberId);
-			model.addAttribute("member", bride);
+			model.addAttribute("mem", bride);
+			model.addAttribute("user", user);
+			model = getRecentlyAddedProfiles(user, model);
 		} else {
 			model.addAttribute("message", "Something went wrong! please try again after sometime");
 		}
 		return "profile";
 	}
 
+	@GetMapping("/editProfile")
+	public String editProfile(Model model, @ModelAttribute("member") User user) {
+		if (user.getMemberId().startsWith("G") || user.getMemberId().startsWith("g")) {
+			Groom groom = dashService.getGroomById(user.getMemberId());
+			model.addAttribute("groom", groom);
+			model.addAttribute("user", user);
+			model = getRecentlyAddedProfiles(user, model);
+		} else if (user.getMemberId().startsWith("B") || user.getMemberId().startsWith("b")) {
+			Bride bride = dashService.getBrideById(user.getMemberId());
+			model.addAttribute("bride", bride);
+			model.addAttribute("user", user);
+			model = getRecentlyAddedProfiles(user, model);
+		}
+		return "editmyprofile";
+	}
+
 	@RequestMapping(value = "/abc", method = RequestMethod.GET)
-	public String getAbc(Model model) {
+	public String getAbc(Model model, @ModelAttribute("member") User user) {
 		logger.info("request mapping /abc");
 		Groom groom = dashService.getGroomById("G1900001");
 		model.addAttribute("groom", groom);
-		return "profile";
+		model.addAttribute("user", user);
+		return "editmyprofile";
+	}
+	
+	@GetMapping("/myprofile")
+	public String getMyProfile(Model model, @ModelAttribute("member") User user) {
+		if (user.getMemberId().startsWith("G") || user.getMemberId().startsWith("g")) {
+			Groom groom = dashService.getGroomById(user.getMemberId());
+			model.addAttribute("mem", groom);
+			model.addAttribute("user", user);
+			model = getRecentlyAddedProfiles(user, model);
+		} else if (user.getMemberId().startsWith("B") || user.getMemberId().startsWith("b")) {
+			Bride bride = dashService.getBrideById(user.getMemberId());
+			model.addAttribute("mem", bride);
+			model.addAttribute("user", user);
+			model = getRecentlyAddedProfiles(user, model);
+		}
+		return "myprofile";
+	}
+
+	@PostMapping("/updategroomprofile")
+	public String updateGroomProfile(@Validated Groom groom, Model model, @ModelAttribute("member") User user) {
+		if (groom.getMemberId().startsWith("G") || groom.getMemberId().startsWith("g")) {
+			groom = dashService.registerGroom(groom);
+			model.addAttribute("mem", groom);
+			model.addAttribute("user", user);
+		}
+		return "myprofile";
+	}
+
+	@PostMapping("/updatebrideprofile")
+	public String updateBrideProfile(@Validated Bride bride, Model model, @ModelAttribute("member") User user) {
+		if (bride.getMemberId().startsWith("B") || bride.getMemberId().startsWith("b")) {
+			bride = dashService.registerBride(bride);
+			model.addAttribute("mem", bride);
+			model.addAttribute("user", user);
+		}
+		return "myprofile";
 	}
 
 	@PostMapping("/simplesearch")
 	public String getSimpleSearchResults(@RequestParam("education") String education,
 			@RequestParam("occupation") String occupation, @RequestParam("mobileNumber") String mobileNumber,
 			@RequestParam("subCaste") String subCaste, @RequestParam("star") String star,
-			@RequestParam("raasi") String raasi, @ModelAttribute("member") User user, Model model, RedirectAttributes redirAttr) {
-		if(user.getMemberId().startsWith("G") || user.getMemberId().startsWith("g")) {
-			List<Bride> brideList = searchService.getBrideSimpleSearch(education, occupation, mobileNumber, subCaste, star, raasi);
+			@RequestParam("raasi") String raasi, @ModelAttribute("member") User user, Model model,
+			RedirectAttributes redirAttr) {
+		if (user.getMemberId().startsWith("G") || user.getMemberId().startsWith("g")) {
+			List<Bride> brideList = searchService.getBrideSimpleSearch(education, occupation, mobileNumber, subCaste,
+					star, raasi);
 			redirAttr.addFlashAttribute("bridelist", brideList);
 			logger.info("Bride count--", brideList.size());
-		} else if(user.getMemberId().startsWith("B") || user.getMemberId().startsWith("b")) {
-			List<Groom> groomList = searchService.getGroomSimpleSearch(education, occupation, mobileNumber, subCaste, star, raasi);
+		} else if (user.getMemberId().startsWith("B") || user.getMemberId().startsWith("b")) {
+			List<Groom> groomList = searchService.getGroomSimpleSearch(education, occupation, mobileNumber, subCaste,
+					star, raasi);
 			redirAttr.addFlashAttribute("groomlist", groomList);
 			logger.info("Groom count--", groomList.size());
 		}

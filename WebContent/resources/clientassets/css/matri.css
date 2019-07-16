@@ -88,35 +88,51 @@ progress {
 audio
 
 
+
+
 :not
 
+
  
+
 
 (
 [
 controls
 ]
 
+
  
+
 
 ){
 display
 
 
+
+
 :
+
 
  
 
+
 none
+
+
 
 
 ;
 height
 
 
+
+
 :
 
+
  
+
 
 0
 }
@@ -178,24 +194,36 @@ img {
 svg
 
 
+
+
 :not
 
+
  
+
 
 (
 :root
 
+
  
+
 
 ){
 overflow
 
 
+
+
 :
+
 
  
 
+
 hidden
+
+
 
 
 
@@ -1122,7 +1150,11 @@ transform
 
 
 
+
+
 :rotate(359deg)
+
+
 
 
 
@@ -1144,7 +1176,11 @@ opacity
 
 
 
+
+
 :
+
+
 
 
 
@@ -1157,7 +1193,11 @@ opacity
 
 
 
+
+
 :
+
+
 
 
 
@@ -1319,7 +1359,7 @@ to {
 }
 
 .matri-medium {
-	font-size: 13px !important
+	font-size: 14px !important
 }
 
 .matri-large {
@@ -1421,6 +1461,10 @@ to {
 
 .matri-margin-right {
 	margin-right: 16px !important
+}
+
+.matri-padding-tiny {
+	padding: 2px 4px !important
 }
 
 .matri-padding-small {
@@ -2119,7 +2163,7 @@ to {
 }
 
 .small-profile-card {
-	background-color: red;
+	background-color: white;
 	width: 100%;
 	height: 80px;
 	border: 1px solid #f1f1f1;
@@ -2191,4 +2235,10 @@ to {
 .reg-tab-loginpage {
 	height: 100%;
 	margin: 0;
+}
+
+.matri-wrap {
+	line-height: 1.25;
+	display: inline-block;
+	vertical-align: top;
 }

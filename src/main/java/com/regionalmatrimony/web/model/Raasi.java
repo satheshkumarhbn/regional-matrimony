@@ -14,9 +14,9 @@ public class Raasi {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Id
-	@Column(name = "raasiname")
+	@Column(name = "RAASINAME")
 	private String raasiName;
-	@Column(name = "displayname")
+	@Column(name = "DISPLAYNAME")
 	private String displayName;
 	public int getId() {
 		return id;

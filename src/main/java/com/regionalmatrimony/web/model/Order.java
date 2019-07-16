@@ -20,35 +20,35 @@ public class Order implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "orderid")
+	@Column(name = "ORDERID")
 	private int orderId;
-	@Column(name = "ordername")
+	@Column(name = "ORDERNAME")
 	private String orderName;
-	@Column(name = "agencyid")
+	@Column(name = "AGENCYID")
 	private String agencyId;
-	@Column(name = "paytmtxnid")
+	@Column(name = "PAYTMTXNID")
 	private String paytmTxnId;
-	@Column(name = "banktxnid")
+	@Column(name = "BANKTXNID")
 	private String bankTxnId;
-	@Column(name = "bankname")
+	@Column(name = "BANKNAME")
 	private String bankName;
-	@Column(name = "paymentmode")
+	@Column(name = "PAYMENTMODE")
 	private String paymentMode;
-	@Column(name = "txnamount")
+	@Column(name = "TXNAMOUNT")
 	private float txnAmount;
-	@Column(name = "txntime")
+	@Column(name = "TXNTIME")
 	private Timestamp txnTime;
-	@Column(name = "txnstatus")
+	@Column(name = "TXNSTATUS")
 	private String txnStatus;
-	@Column(name = "respcode")
+	@Column(name = "RESPCODE")
 	private int respCode;
-	@Column(name = "respmsg")
+	@Column(name = "RESPMSG")
 	private String respMsg;
-	@Column(name = "mid")
+	@Column(name = "MID")
 	private String mid;
-	@Column(name = "refundant")
+	@Column(name = "REFUNDANT")
 	private float refundant;
-	@Column(name = "memberid")
+	@Column(name = "MEMBERID")
 	private String memberId;
 
 	public int getOrderId() {

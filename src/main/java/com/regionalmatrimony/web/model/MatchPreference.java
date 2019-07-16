@@ -10,44 +10,44 @@ import javax.persistence.Table;
 import org.hibernate.annotations.DynamicUpdate;
 
 @Entity
-@Table(name = "MATCHREFERENCE")
+@Table(name = "MATCHPREFERENCE")
 @DynamicUpdate
 public class MatchPreference {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int mpId;
-	@Column(name = "startage")
+	@Column(name = "STARTAGE")
 	private int startAge;
-	@Column(name = "endage")
+	@Column(name = "ENDAGE")
 	private int endAge;
-	@Column(name = "education")
+	@Column(name = "EDUCATION")
 	private String education;
-	@Column(name = "occupation")
+	@Column(name = "OCCUPATION")
 	private String occupation;
-	@Column(name = "worklocation")
+	@Column(name = "WORKLOCATION")
 	private String workLocation;
-	@Column(name = "height")
+	@Column(name = "HEIGHT")
 	private String height;
-	@Column(name = "weight")
+	@Column(name = "WEIGHT")
 	private String weight;
-	@Column(name = "maritalstatus")
+	@Column(name = "MARITALSTATUS")
 	private String maritalStatus;
-	@Column(name = "disability")
+	@Column(name = "DISABILITY")
 	private String disability;
-	@Column(name = "caste")
+	@Column(name = "CASTE")
 	private String caste;
-	@Column(name = "subcaste")
+	@Column(name = "SUBCASTE")
 	private String subCaste;
-	@Column(name = "division")
+	@Column(name = "DIVISION")
 	private String division;
-	@Column(name = "diety")
+	@Column(name = "DIETY")
 	private String diety;
-	@Column(name = "star")
+	@Column(name = "STAR")
 	private String star;
-	@Column(name = "raasi")
+	@Column(name = "RAASI")
 	private String raasi;
-	@Column(name = "memberid")
+	@Column(name = "MEMBERID")
 	private String memberId;
 	public int getMpId() {
 		return mpId;

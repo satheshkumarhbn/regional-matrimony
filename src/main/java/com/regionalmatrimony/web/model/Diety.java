@@ -14,9 +14,9 @@ public class Diety {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
 	@Id
-	@Column(name = "diety")
+	@Column(name = "DIETY")
 	private String diety;
-	@Column(name = "displayname")
+	@Column(name = "DISPLAYNAME")
 	private String displayName;
 	public int getId() {
 		return id;

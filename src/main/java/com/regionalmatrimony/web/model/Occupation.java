@@ -14,9 +14,9 @@ public class Occupation {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Id
-	@Column(name = "occupation")
+	@Column(name = "OCCUPATION")
 	private String occupation;
-	@Column(name = "displayname")
+	@Column(name = "DISPLAYNAME")
 	private String displayName;
 	public int getId() {
 		return id;

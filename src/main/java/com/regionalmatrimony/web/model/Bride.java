@@ -17,76 +17,76 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Bride {
 
 	@Id
-	@Column(name = "memberid")
+	@Column(name = "MEMBERID")
 	private String memberId;
-	@Column(name = "firstname")
+	@Column(name = "FIRSTNAME")
 	private String firstName;
-	@Column(name = "lastname")
+	@Column(name = "LASTNAME")
 	private String lastName;
-	@Column(name = "dateofbirth")
+	@Column(name = "DATEOFBIRTH")
 	@DateTimeFormat(pattern = "MM-dd-yyyy")
 	private Date dateOfBirth;
-	@Column(name = "age")
+	@Column(name = "AGE")
 	private int age;
-	@Column(name = "gender")
+	@Column(name = "GENDER")
 	private String gender;
-	@Column(name = "education")
+	@Column(name = "EDUCATION")
 	private String education;
-	@Column(name = "occupation")
+	@Column(name = "OCCUPATION")
 	private String occupation;
-	@Column(name = "annualincome")
+	@Column(name = "ANNUALINCOME")
 	private String annualIncome;
-	@Column(name = "worklocation")
+	@Column(name = "WORKLOCATION")
 	private String workLocation;
-	@Column(name = "height")
+	@Column(name = "HEIGHT")
 	private String height;
-	@Column(name = "weight")
+	@Column(name = "WEIGHT")
 	private String weight;
-	@Column(name = "fathersname")
+	@Column(name = "FATHERSNAME")
 	private String fathersName;
-	@Column(name = "fathersoccupation")
+	@Column(name = "FATHERSOCCUPATION")
 	private String fathersOccupation;
-	@Column(name = "mothersname")
+	@Column(name = "MOTHERSNAME")
 	private String mothersName;
-	@Column(name = "mothersoccupation")
+	@Column(name = "MOTHERSOCCUPATION")
 	private String mothersOccupation;
-	@Column(name = "maritalstatus")
+	@Column(name = "MARITALSTATUS")
 	private String maritalStatus;
-	@Column(name = "disability")
+	@Column(name = "DISABILITY")
 	private String disability;
-	@Column(name = "siblings")
+	@Column(name = "SIBLINGS")
 	private String siblings;
-	@Column(name = "caste")
+	@Column(name = "CASTE")
 	private String caste;
-	@Column(name = "subcaste")
+	@Column(name = "SUBCASTE")
 	private String subCaste;
-	@Column(name = "division")
+	@Column(name = "DIVISION")
 	private String division;
-	@Column(name = "diety")
+	@Column(name = "DIETY")
 	private String diety;
-	@Column(name = "mobilenumber")
+	@Column(name = "MOBILENUMBER")
 	private String mobileNumber;
-	@Column(name = "alternatemobilenumber")
+	@Column(name = "ALTERNATEMOBILENUMBER")
 	private String alternateMobileNumber;
-	@Column(name = "whatsappnumber")
+	@Column(name = "WHATSAPPNUMBER")
 	private String whatsappNumber;
-	@Column(name = "email")
+	@Column(name = "EMAIL")
 	private String email;
-	@Column(name = "address")
+	@Column(name = "ADDRESS")
 	private String address;
-	@Column(name = "star")
+	@Column(name = "STAR")
 	private String star;
-	@Column(name = "raasi")
+	@Column(name = "RAASI")
 	private String raasi;
-	@Column(name = "timeofbirth")
+	@Column(name = "TIMEOFBIRTH")
 	private String timeOfBirth;
-	@Column(name = "placeofbirth")
+	@Column(name = "PLACEOFBIRTH")
 	private String placeOfBirth;
-	@Column(name = "horoscope")
+	@Column(name = "HOROSCOPE")
 	private File horoscope;
-	@Column(name = "agencyid")
+	@Column(name = "AGENCYID")
 	private String agencyId;
-	@Column(name = "password")
+	@Column(name = "PASSWORD")
 	private String password;
 	/*@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "mpId")
@@ -94,7 +94,7 @@ public class Bride {
 	/*@OneToMany(cascade = CascadeType.ALL)
 	@JoinTable(name = "ORDER", joinColumns = @JoinColumn(name = "orderid"), inverseJoinColumns = @JoinColumn(name = "memberid"))
 	private List<Order> order = new ArrayList<>();*/
-	@Column(name = "creationdate")
+	@Column(name = "CREATIONDATE")
 	private Date creationDate;
 
 	public String getMemberId() {

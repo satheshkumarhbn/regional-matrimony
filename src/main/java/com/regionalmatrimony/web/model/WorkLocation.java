@@ -14,9 +14,9 @@ public class WorkLocation {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Id
-	@Column(name = "city")
+	@Column(name = "CITY")
 	private String city;
-	@Column(name = "displayname")
+	@Column(name = "DISPLAYNAME")
 	private String displayName;
 	public int getId() {
 		return id;

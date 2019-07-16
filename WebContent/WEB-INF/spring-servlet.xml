@@ -31,9 +31,9 @@
 	<jpa:repositories base-package="com.regionalmatrimony.web.dao" />
  	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<beans:property name="url" value="jdbc:mysql://localhost:3306/regionalmatrimony" />
-		<beans:property name="username" value="root" />
-		<beans:property name="password" value="satheshhbn" />
+		<beans:property name="url" value="jdbc:mysql://ec2-13-233-165-10.ap-south-1.compute.amazonaws.com:3306/regionalmatrimony" />
+		<beans:property name="username" value="appadmin" />
+		<beans:property name="password" value="admin123" />
  	</beans:bean >
 	<!-- <beans:bean id="handlerMapping" class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
 		<beans:property name="interceptors">

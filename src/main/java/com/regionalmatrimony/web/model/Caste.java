@@ -21,12 +21,12 @@ public class Caste {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
 	@Id
-	@Column(name = "castename")
+	@Column(name = "CASTENAME")
 	private String casteName;
-	@Column(name = "displayname")
+	@Column(name = "DISPLAYNAME")
 	private String displayName;
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "SUBCASTE", joinColumns = @JoinColumn(name = "castename"), inverseJoinColumns = @JoinColumn(name = "subcastename"))
+	@JoinTable(name = "SUBCASTE", joinColumns = @JoinColumn(name = "CASTENAME"), inverseJoinColumns = @JoinColumn(name = "SUBCASTENAME"))
 	private List<SubCaste> subCaste = new ArrayList<>();
 	public int getId() {
 		return id;

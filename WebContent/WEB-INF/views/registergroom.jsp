@@ -379,12 +379,10 @@
 										<div class="col-12 col-md-9">
 											<select name="maritalStatus" id="maritalStatus"
 												class="form-control">
-												<option value="0">Please select Groom's Marital
-													Status</option>
-												<option value="never married">Never Married</option>
-												<option value="divorced">Divorced</option>
-												<option value="widowed">Widowed</option>
-												<option value="awaiting divorced">Awaiting Divorced</option>
+												<option value="Never Married">Never Married</option>
+												<option value="Divorced">Divorced</option>
+												<option value="Widowed">Widowed</option>
+												<option value="Awaiting Divorced">Awaiting Divorced</option>
 											</select>
 										</div>
 									</div>

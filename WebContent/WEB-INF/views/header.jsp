@@ -19,12 +19,12 @@
 	<tag:url value="/getAllProfiles" var="urlGetAllProfiles" />
 	<tag:url value="/profile/G1900001" var="urlProfile" />
 	<tag:url value="/logout" var="urlLogout" />
+	<tag:url value="/myprofile" var="urlMyProfile"></tag:url>
+	<tag:url value="/editProfile" var="urlEditProfile"></tag:url>
 
 	<div class="matri-row matri-padding matri-theme-d2 matri-xlarge">
 		<div class="matri-quarter">
 			<div class="matri-bar">
-				<!--  <a href="#" class="matri-bar-item matri-button matri-left"><i
-					class="fa fa-bars"></i></a> -->
 				<button class="matri-bar-item matri-button matri-left openbtn"
 					onclick="openNav()">
 					<i class="fa fa-bars"></i>
@@ -38,8 +38,10 @@
 								<i class="fa fa-user-circle matri-left"></i> ${ user.fullName }
 							</button>
 							<div class="dropdown-content matri-theme-d2">
-								<a href="#">My Profile</a> <a href="#">Change Password</a> <a
-									href="${urlLogout }">Logout</a>
+								<a href="${urlMyProfile }">My Profile</a>
+								<a href="${urlEditProfile }">Edit Profile</a> 
+								<a href="#">Change Password</a> 
+								<a href="${urlLogout }">Logout</a>
 							</div>
 						</div>
 					</c:if>
@@ -62,8 +64,10 @@
 							${user.fullName } <i class="fa fa-user-circle"></i>
 						</button>
 						<div class="dropdown-content matri-theme-d2">
-							<a href="#">My Profile</a> <a href="#">Change Password</a> <a
-								href="${urlLogout }">Logout</a>
+							<a href="${urlMyProfile }">My Profile</a>
+							<a href="${urlEditProfile }">Edit Profile</a> 
+							<a href="#">Change Password</a> 
+							<a href="${urlLogout }">Logout</a>
 						</div>
 					</div>
 				</c:if>
